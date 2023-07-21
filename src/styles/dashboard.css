@@ -1,0 +1,628 @@
+/* font-family: 'DM Serif Display', serif; */
+
+.dashboard-div {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  border-radius: 24px;
+  padding: 1% 2%;
+}
+
+/* PC STYLES */
+/* ASIDE START */
+.phone-header {
+  display: none;
+}
+
+.pc-sidebar {
+  padding: 5% 5% 5% 0;
+}
+
+/* LOGO DIV START  */
+.logo-div {
+  margin: 15% 0 0 5%;
+}
+
+.logo-text {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.logo-span {
+  color: var(--primary-color);
+}
+
+.logo-icon {
+  font-size: 1.6rem;
+  color: var(--tertiary-color);
+  vertical-align: middle;
+}
+
+/* LOGO DIV END */
+
+/* SIDE BAR COMPONENTS START */
+.sidebar-components {
+  margin: 20% 0 0;
+}
+
+.sidebar-link-tag {
+  text-decoration: none;
+}
+
+.nav-item {
+  padding: 0.2rem 0.2rem 0.01rem;
+  width: 10rem;
+  border-radius: 100px;
+  color: var(--secondary-color);
+}
+
+.nav-item:hover {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: center;
+}
+
+.nav-link-text {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.sidebar-icons {
+  margin: 0 3% 0 0;
+}
+
+.sidebar-img {
+  width: 80%;
+  margin: 0 0 5%;
+}
+
+/* SIDE BAR COMPONENTS END */
+/* ASIDE END */
+
+/* HEADER START */
+/* SEARCH DIV START */
+.header-search-div.rounded {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 3% 0 0;
+}
+
+.nav-search-box.form-control {
+  color: var(--primary-color);
+  font-size: 0.8rem;
+  font-weight: 500;
+  width: auto;
+}
+
+.nav-search-box::placeholder {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+.header-search-icon {
+  color: var(--primary-color);
+}
+
+/* SEARCH DIV END */
+
+/* HEADER ICON DIV START */
+.header-icons-div {
+  margin: 5% 0 4% 30%;
+  border-radius: 100px;
+}
+
+.header-notification-icon {
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin: 0 0.5rem;
+  border-radius: 100px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+/* HEADER ICON DIV END */
+
+/* HEADER USER DIV START */
+.header-user-text {
+  text-align: right;
+  font-size: 8rem;
+  font-weight: 500;
+  margin: 15% 0 0 0;
+  color: var(--primary-color);
+}
+
+.header-user-img-col {
+  padding: 5% 0 0 0;
+}
+
+.header-user-img {
+  border: none;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+
+/* HEADER USER DIV END */
+/* HEADER END */
+
+/* DASHBOARD CONTENT START  */
+.dashboard-content-board-div {
+  text-align: center;
+}
+
+.dashboard-content-board-img {
+  width: 80%;
+}
+
+/* dashboard content div start  */
+/* dashboard content header start */
+.dashboard-content-header-div {
+  width: 90%;
+  margin: auto;
+}
+
+.dashboard-content-div {
+  margin: 5% 0;
+}
+
+.dashboard-content-header {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.dashboard-content-sub-header {
+  font-size: 0.8rem;
+  float: right;
+  margin: 1% 0 0;
+  color: var(--quatenary-color);
+}
+
+/* dashboard content header end */
+
+/* dashboard content card start */
+.dashboard-content-card {
+  margin: 5%;
+  border-radius: 6px;
+  padding: 4%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+}
+
+.dashboard-content-card:hover {
+  background-color: var(--tertiary-color);
+}
+
+.dashboard-content-img {
+  width: 100%;
+}
+
+.dashboard-content-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin: 4% 0 0;
+}
+
+/* dashboard content card end */
+/* dashboard content div end */
+
+/* dashboard activity start  */
+.dashboard-activity-img {
+  width: 60%;
+  margin: 0 0 0 10%;
+}
+
+.dashboard-activity-resources-div {
+  margin: 10% 0 0;
+}
+
+.dashboard-activity-courses,
+.dashboard-activity-videos {
+  text-align: center;
+  padding: 5%;
+  border-radius: 12px;
+  color: white;
+  background-color: var(--secondary-color);
+}
+
+.dashboard-activity-header {
+  margin: 10% 0 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.dashboard-activity-text {
+  font-size: 0.8rem;
+}
+
+/* dashboard activity end  */
+
+/* dashboard instructor card start */
+.dashboard-instructor-card-div {
+  margin: 5% 0 0;
+}
+
+.dashboard-instructor-card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  background-color: white;
+  margin: 0 5% 8%;
+  cursor: pointer;
+}
+
+.dashboard-instructor-card:hover {
+  filter: brightness(80%);
+}
+
+.dashboard-instructor-img {
+  height: 100%;
+}
+
+.dashboard-instructor-text {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: black;
+  line-height: 1.2rem;
+  margin: 10% 0 0;
+}
+
+.dashboard-instructor-sub-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--secondary-color);
+}
+
+.instructor-icon {
+  color: var(--secondary-color);
+  font-size: 0.6rem;
+}
+
+/* dashboard instructor card end */
+/* DASHBOARD CONTENT END */
+
+/* start of pc styles */
+@media screen and (max-width: 991px) {
+  /* ie it ends at 991px */
+
+  /* ASIDE START */
+  .pc-sidebar {
+    padding: 5% 0;
+  }
+
+  /* LOGO DIV START  */
+  .logo-div {
+    margin: 25% 0 0 0;
+  }
+
+  .logo-icon {
+    font-size: 1.4rem;
+    color: var(--tertiary-color);
+    vertical-align: middle;
+  }
+
+  /* LOGO DIV END */
+
+  /* SIDE BAR COMPONENTS START */
+  .nav-item {
+    padding: 1rem 0.5rem 0.01rem;
+    width: 8rem;
+    border-radius: 100px;
+    color: var(--secondary-color);
+  }
+
+  /* SIDE BAR COMPONENTS END */
+  /* ASIDE END */
+
+  /* HEADER START */
+  /* SEARCH DIV START */
+  .header-search-div.rounded {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 5% 0 0;
+  }
+
+  .nav-search-box.form-control {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 6rem;
+  }
+
+  /* SEARCH DIV END */
+
+  /* HEADER ICON DIV START */
+  .header-icons-div {
+    margin: 1% 0 0;
+    border-radius: 100px;
+  }
+
+  /* HEADER ICON DIV END */
+
+  /* dashboard content div start  */
+  .dashboard-instructor-text {
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 12% 0 0;
+  }
+
+  .dashboard-instructor-sub-text {
+    font-size: 1rem;
+  }
+
+  .instructor-icon {
+    font-size: 1rem;
+  }
+
+  .dashboard-content-header-div {
+    margin: 10% auto 0;
+  }
+
+  .dashboard-activity-header {
+    font-size: 1.2rem;
+  }
+
+  /* dashboard activity end  */
+
+  /* dashboard content div end */
+}
+
+/* start of medium tablet styles */
+@media screen and (max-width: 767px) {
+  /* ie it ends at 767px */
+
+  /* ASIDE START */
+  /* LOGO DIV START  */
+  .logo-div {
+    margin: 35% 0 0 5%;
+    width: 6rem;
+  }
+
+  .logo-text {
+    font-size: 0.8rem;
+  }
+
+  .logo-icon {
+    font-size: 1.2rem;
+  }
+
+  /* LOGO DIV END */
+
+  /* SIDE BAR COMPONENTS START */
+  .nav-item {
+    padding: 1rem 0.4rem 0.01rem;
+    width: 7rem;
+  }
+
+  .sidebar-img {
+    width: 100%;
+  }
+
+  /* SIDE BAR COMPONENTS END */
+  /* ASIDE END */
+
+  /* HEADER START */
+  /* SEARCH DIV START */
+  .nav-search-box.form-control {
+    color: var(--primary-color);
+    font-size: 0.8rem;
+    font-weight: 500;
+    width: 5rem;
+  }
+
+  /* SEARCH DIV END */
+
+  /* HEADER ICON DIV START */
+  .header-icons-div {
+    margin: 0;
+    border-radius: 100px;
+  }
+
+  /* HEADER ICON DIV END */
+
+  /* dashboard content div start */
+  .dashboard-content-img {
+    width: 80%;
+  }
+
+  .dashboard-content-header {
+    font-size: 1rem;
+  }
+
+  .dashboard-content-sub-header {
+    display: none;
+  }
+
+  .dashboard-activity-courses,
+  .dashboard-activity-videos {
+    width: 80%;
+    margin: 5% auto 0;
+    padding: 0.1%;
+  }
+
+  .dashboard-activity-header {
+    margin: 0;
+  }
+
+  .dashboard-activity-courses,
+  .dashboard-activity-videos {
+    padding: 5% 5% 2%;
+  }
+
+  .dashboard-instructor-img {
+    border-radius: 6px;
+  }
+
+  .dashboard-instructor-text {
+    font-size: 1rem;
+    line-height: 2rem;
+    margin: 10% 0 0;
+  }
+
+  .dashboard-instructor-sub-text {
+    font-size: 0.9rem;
+  }
+
+  .instructor-icon {
+    font-size: 0.8rem;
+  }
+
+  /* dashboard content div end */
+}
+
+/* start of phone styles */
+@media screen and (max-width: 479px) {
+  /* ie it ends at 479px */
+  /* 
+  body {
+    margin: 0;
+  } */
+
+  .dashboard-div {
+    background-color: white;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+  }
+
+  /* HEADER START */
+  .pc-sidebar,
+  .pc-header {
+    display: none;
+  }
+
+  .phone-header {
+    display: block;
+    padding: 3% 0;
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+  }
+
+  /* LOGO DIV START  */
+  .open-sidebar {
+    color: var(--tertiary-color);
+    font-size: 1rem;
+    margin: 0 3% 0 0;
+  }
+
+  .logo-div {
+    margin: 2% 0 0;
+    display: inline-block;
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+
+  .logo-span {
+    color: var(--primary-color);
+  }
+
+  .logo-icon {
+    font-size: 1.6rem;
+    color: var(--tertiary-color);
+    vertical-align: middle;
+  }
+
+  /* LOGO DIV END */
+  .header-icons-div {
+    text-align: center;
+    display: inline-block;
+    box-shadow: none;
+    margin: 0;
+  }
+
+  .header-user-img {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  }
+
+  .phone-user-header-div {
+    float: right;
+    margin: 0 10% 0 0;
+  }
+
+  .sidebar-components {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    margin: 0 0 0 -5%;
+    overflow-x: hidden;
+    background-color: white;
+    transition: 0.5s;
+    border: none;
+  }
+
+  .nav-item {
+    padding: 1rem 0.4rem 0.01rem;
+    width: auto;
+  }
+
+  .sidebar-img {
+    width: 100%;
+  }
+
+  /* HEADER END */
+
+  /* dashboard content div start */
+  .body-content {
+    padding: 25% 0 0;
+  }
+
+  .dashboard-greetings {
+    font-size: 0.8rem;
+    text-align: center;
+    color: var(--secondary-color);
+  }
+
+  .dashboard-content-board-img {
+    width: 100%;
+  }
+
+  .dashboard-content-header-div {
+    width: 100%;
+  }
+
+  .dashboard-content-sub-header {
+    display: block;
+  }
+
+  .dashboard-content-card-div {
+    width: 100%;
+    margin: auto;
+  }
+
+  .dashboard-content-card {
+    padding: 5%;
+  }
+
+  .dashboard-activity-header-div {
+    text-align: center;
+  }
+
+  .dashboard-activity-resources-div {
+    margin: 5% 0;
+  }
+
+  .dashboard-activity-img {
+    width: 50%;
+    margin: 0 25%;
+  }
+
+  .dashboard-instructor-card {
+    margin: 5% auto;
+    width: 100%;
+    padding: 0;
+  }
+
+  .dashboard-instructor-img {
+    height: 7rem;
+  }
+
+  .dashboard-instructor-text {
+    margin: 4% 0 0 0;
+  }
+
+  /* dashboard content div end */
+}
