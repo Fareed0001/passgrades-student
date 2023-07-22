@@ -37,8 +37,8 @@ const index = () => {
                     <div className="col">
                       <div className="agent-student-card card">
                         <Image
-                          height="100%"
-                          width="100%"
+                          height={400}
+                          width={300}
                           src="/images/landing-page-images/face0.jpg"
                           className="card-img-top student-image"
                           alt="student image"

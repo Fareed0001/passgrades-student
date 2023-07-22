@@ -33,13 +33,13 @@ const data = [
     id: 3,
     icon: <BiClipboard />,
     title: "Instructors",
-    link: "/Dashboard/Courses",
+    link: "/Dashboard/Instructors",
   },
   {
     id: 4,
     icon: <BiCommentAdd />,
     title: "Courses",
-    link: "/Dashboard/Instructors",
+    link: "/Dashboard/Courses",
   },
   {
     id: 5,
