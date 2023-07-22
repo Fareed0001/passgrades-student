@@ -14,7 +14,7 @@ export default function Home() {
     <>
       <div className="landingPageDiv">
         <Head>
-          <title>Passgrades e-learning for international exams</title>
+          <title>Passgrades E-Learning: Prepare for Success in International Exams | SAT, IELTS, PTE, GMAT, GRE, OET, SELT</title>
           <meta name="description" content="Prepare for SAT, IELTS, PTE, GMAT, GRE, OET, and SELT exams with Passgrade - Your Global E-Learning Partner. Get comprehensive study materials, expert instructors, and personalized learning for success in international tests." />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="images/logo/favicon.ico" />
