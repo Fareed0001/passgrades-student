@@ -1,6 +1,6 @@
-/* @tailwind base;
+@tailwind base;
 @tailwind components;
-@tailwind utilities; */
+@tailwind utilities;
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
 .landingPageDiv {
@@ -2681,7 +2681,7 @@ input[type="checkbox"] {
   /* SIGN UP FIRST COL END */
 
   /* SIGN UP SECOND COL START */
-  
+
   .sign-up-header {
     font-size: 1.4rem;
     color: #4b5fdc;
@@ -2857,9 +2857,6 @@ input[type="checkbox"] {
 }
 
 /* SIGN-IN.HTML END  */
-
-
-
 
 /* DASHBOARD.HTML START  */
 .body-content {
@@ -3860,31 +3857,6 @@ input[type="checkbox"] {
 /* CHECKOUT MEDIA QUERY END  */
 /* CHECKOUT.HTML END  */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* HEADER AND SIDE BAR STYLES START  */
 
 /* PC STYLES */
@@ -3948,7 +3920,7 @@ input[type="checkbox"] {
 }
 
 .sidebar-icons {
-  margin: 0 .3rem 0.2rem 0.8rem;
+  margin: 0 0.3rem 0.2rem 0.8rem;
 }
 
 .sidebar-img {
