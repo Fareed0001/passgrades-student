@@ -181,18 +181,19 @@ export default function Home() {
                     alt="writing-icon"
                   />
                   <p className="second-div-text">
-                    SELT
+                    IELTS UKVI
                   </p>
                 </div>
                 <div class="modal fade" id="thirdmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">SELT</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">IELTS UKVI</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        Secure English Language Test (SELT) is an English language proficiency test designed for individuals applying for UK visas or British citizenship. Recognized and approved by the UK government, SELT assesses candidates' speaking and listening abilities. With a focus on practical communication skills, SELT ensures applicants can effectively participate in daily conversations and navigate real-life situations in an English-speaking environment. By meeting the SELT requirements, applicants fulfill the language proficiency criteria for UK visa applications, spouse visas, settlement, and citizenship. SELT empowers individuals to embark on new journeys in the United Kingdom, fostering integration, and enabling a smooth transition into British society, work, or academic life.                      </div>
+                        IELTS UKVI (IELTS for UK Visas and Immigration) is a variant of the International English Language Testing System specifically designed for individuals applying for UK visas and certain immigration-related purposes. IELTS UKVI evaluates language proficiency in listening, reading, writing, and speaking, adhering to the UK Home Office's strict requirements. Recognized and accepted by UK Visas and Immigration, IELTS UKVI certifies applicants' English language abilities, ensuring they possess the necessary communication skills to successfully integrate into British society, work, or study. By demonstrating their language competence through IELTS UKVI, applicants can navigate the visa application process with confidence, unlocking opportunities to live, work, or study in the United Kingdom.
+                      </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       </div>
@@ -210,15 +211,15 @@ export default function Home() {
                     GRE
                   </p>
                 </div>
-                <div class="modal fade" id="secondmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="forthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">GMAT</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">GRE</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        The Graduate Management Admission Test (GMAT) is a standardized exam specifically designed for business school applicants. GMAT evaluates analytical writing, integrated reasoning, quantitative, and verbal reasoning skills, showcasing candidates' aptitude for advanced management education. Recognized and respected by business schools worldwide, GMAT assists in selecting qualified candidates, equipping them with the skills necessary for success in business and management careers. By enabling aspiring professionals to demonstrate their intellectual readiness and problem-solving abilities, GMAT paves the way for distinguished business education and influential leadership roles.
+                        The Graduate Record Examinations (GRE) is a widely accepted standardized test for graduate school admissions. GRE assesses critical thinking, analytical writing, verbal reasoning, and quantitative reasoning skills, providing graduate programs with valuable insights into candidates' academic potential. By showcasing candidates' abilities to tackle complex problems and embrace academic challenges, GRE plays a crucial role in shaping the future of graduate students across various disciplines. With GRE scores, students gain access to a multitude of graduate programs, fostering intellectual growth and professional success on a global scale.
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -237,6 +238,22 @@ export default function Home() {
                     PTE
                   </p>
                 </div>
+                <div class="modal fade" id="fifthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">PTE</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Pearson Test of English (PTE) is an innovative computer-based English language assessment widely accepted by universities, governments, and employers worldwide. PTE evaluates candidates' reading, writing, listening, and speaking skills through interactive tasks and real-life scenarios. With swift results and unbiased evaluation, PTE offers an accessible and reliable platform for individuals aiming to study, work, or immigrate to English-speaking countries. As a modern, efficient, and accurate language proficiency test, PTE empowers learners to demonstrate their language abilities effectively, unlocking abundant international opportunities and enriching personal and professional lives.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                 <div className="second-div-card  col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#sixthmodal">
                   <img
@@ -248,16 +265,15 @@ export default function Home() {
                     OET
                   </p>
                 </div>
-                <div class="modal fade" id="forthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal fade" id="sixthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">GRE</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">OET</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        The Graduate Record Examinations (GRE) is a widely accepted standardized test for graduate school admissions. GRE assesses critical thinking, analytical writing, verbal reasoning, and quantitative reasoning skills, providing graduate programs with valuable insights into candidates' academic potential. By showcasing candidates' abilities to tackle complex problems and embrace academic challenges, GRE plays a crucial role in shaping the future of graduate students across various disciplines. With GRE scores, students gain access to a multitude of graduate programs, fostering intellectual growth and professional success on a global scale.
-                      </div>
+                        Occupational English Test (OET) is an English language proficiency test designed for healthcare professionals seeking to work or study in English-speaking countries. Tailored to specific healthcare sectors, OET evaluates language skills, focusing on medical terminology and scenarios relevant to healthcare practice. Recognized by regulatory bodies, hospitals, and universities, OET ensures healthcare professionals' linguistic competence, providing safe and effective communication with patients and colleagues. With OET certification, healthcare professionals embark on rewarding careers, making a positive impact on patient care and contributing significantly to the global healthcare industry.                      </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                       </div>
@@ -292,23 +308,6 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div class="modal fade" id="fifthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">PTE</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        Pearson Test of English (PTE) is an innovative computer-based English language assessment widely accepted by universities, governments, and employers worldwide. PTE evaluates candidates' reading, writing, listening, and speaking skills through interactive tasks and real-life scenarios. With swift results and unbiased evaluation, PTE offers an accessible and reliable platform for individuals aiming to study, work, or immigrate to English-speaking countries. As a modern, efficient, and accurate language proficiency test, PTE empowers learners to demonstrate their language abilities effectively, unlocking abundant international opportunities and enriching personal and professional lives.
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <div className="second-div-card col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#eightmodal">
                   <img
                     className="second-div-icon"
@@ -323,11 +322,11 @@ export default function Home() {
                   <div class="modal-dialog">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">LANGUAGE PROGRAMSbv</h1>
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">LANGUAGE PROGRAMS</h1>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                      Language programs offer immersive and comprehensive language learning experiences for individuals of all proficiency levels. From beginners to advanced learners, language programs focus on developing speaking, listening, reading, and writing skills, fostering cultural understanding and fluency. These programs cater to diverse interests, including general language learning, business communication, academic preparation, and exam-focused courses like IELTS, TOEFL, or Cambridge exams. By providing a supportive and interactive learning environment, language programs empower learners to overcome language barriers, embrace new cultures, and thrive in today's interconnected world. Whether for personal enrichment, academic pursuits, or professional growth, language programs open doors to global opportunities and enrich lives through effective communication and cross-cultural appreciation.
+                        Language programs offer immersive and comprehensive language learning experiences for individuals of all proficiency levels. From beginners to advanced learners, language programs focus on developing speaking, listening, reading, and writing skills, fostering cultural understanding and fluency. These programs cater to diverse interests, including general language learning, business communication, academic preparation, and exam-focused courses like IELTS, TOEFL, or Cambridge exams. By providing a supportive and interactive learning environment, language programs empower learners to overcome language barriers, embrace new cultures, and thrive in today's interconnected world. Whether for personal enrichment, academic pursuits, or professional growth, language programs open doors to global opportunities and enrich lives through effective communication and cross-cultural appreciation.
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -335,6 +334,37 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                <div className="second-div-card  col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#ninthmodal">
+                  <img
+                    className="second-div-icon"
+                    src="images\landing-page-images\eng-vector.png"
+                    alt="english-icon"
+                  />
+                  <p className="second-div-text">
+                    PTE UKVI
+                  </p>
+                </div>
+                <div class="modal fade" id="ninthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">PTE UKVI</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        PTE UKVI (Pearson Test of English for UK Visas and Immigration) is a specialized version of the Pearson Test of English designed for individuals seeking to apply for UK visas or British citizenship. PTE UKVI assesses English language proficiency in listening, reading, speaking, and writing, adhering to the UK Home Office's specific requirements for immigration purposes. Recognized and accepted by UK Visas and Immigration, PTE UKVI provides a reliable measure of applicants' language abilities, ensuring they possess the necessary communication skills to adapt and thrive in English-speaking environments in the UK. By obtaining a satisfactory PTE UKVI score, applicants fulfill the language proficiency criteria for their visa application, enabling them to pursue their desired endeavors in the United Kingdom confidently.                              </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
 
               </div>
             </div>

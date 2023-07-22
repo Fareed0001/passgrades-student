@@ -2628,8 +2628,13 @@ input[type="checkbox"] {
   text-decoration: none;
 }
 
-.account-link {
+.account-link, .toggle-link {
   text-decoration: none;
+}
+
+.toggle-link {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .create-account-button,

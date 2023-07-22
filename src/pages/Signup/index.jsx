@@ -118,9 +118,6 @@ const index = () => {
                       <div className="invalid-feedback">
                         You must agree before submitting.
                       </div>
-                      <a className="forgot-password" href="AgentSignup">
-                        I am an agent
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -143,12 +140,17 @@ const index = () => {
                 </div> */}
                 {/* <!-- BUTTON  --> */}
 
+                <a className="toggle-link" href="AgentSignup">
+                  I am an Agent
+                </a>
+
                 <p className="account">
                   I have an account
                   <a className="account-link" href="Signin">
                     Sign in
                   </a>
                 </p>
+
               </form>
               {/* <!-- FORM  --> */}
             </div>
