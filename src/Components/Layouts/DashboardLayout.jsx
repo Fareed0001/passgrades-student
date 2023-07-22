@@ -2,6 +2,7 @@ import React, { children } from "react";
 import SideBar from "../SideBar";
 import Navbar from "../Navbar";
 import Image from "next/image";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const DashboardLayout = ({ children }) => {
   return (
@@ -15,14 +16,8 @@ const DashboardLayout = ({ children }) => {
                 {/* <!-- LOGO DIV START  --> */}
                 <div className="logo-div">
                   <p className="logo-text">
-                    <span className="logo-span">pass</span>
-                    <Image
-                          src="/images/logo/favicon.ico"
-                          height={30}
-                          width={30}
-                          className="mx-1 dashboard-logo-icon"
-                        />
-                    <span className="logo-span">grades</span>
+                    <BsFillCheckCircleFill className="dashboard-check-icon"/>
+                    <span className="logo-span">passgrades</span>
                   </p>
                 </div>
                 <SideBar />
