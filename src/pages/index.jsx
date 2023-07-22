@@ -2,7 +2,6 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import Image from "next/image";
 import {
   BsFillPlayFill,
   BsFillCheckCircleFill,
@@ -38,7 +37,7 @@ export default function Home() {
                             className="nav-0-link nav-1-link1"
                             href="#instructors"
                           >
-                            Teachers
+                            Tutors
                           </a>
                         </span>
                         {/* <span>
@@ -53,7 +52,7 @@ export default function Home() {
                     </div>
                     <div className="nav-div-1">
                       <p className="index-logo-text">
-                        <BsFillCheckCircleFill className="index-check-icon"/>
+                        <BsFillCheckCircleFill className="index-check-icon" />
                         <span className="index-logo-span0">Pass</span>
                         <span className="index-logo-span0">Grades</span>
                       </p>
@@ -120,56 +119,223 @@ export default function Home() {
                 Our Popular Courses
               </p>
               <div className="second-div-card-div row row-cols-1 row-cols-sm-2 row-cols-md-4 row-cols-lg-6">
-                <div className="second-div-card col-md-2">
+
+                <div className="second-div-card col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#firstmodal">
                   <img
                     className="second-div-icon"
                     src="images\landing-page-images\business-vector.png"
                     alt="business-icon"
                   />
                   <p className="second-div-text">
-                    IELTS general
+                    IELTS
                   </p>
                 </div>
-                <div className="second-div-card  col-md-2">
+                <div class="modal fade" id="firstmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">IELTS</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        The International English Language Testing System (IELTS) is a globally recognized English language proficiency exam. It assesses candidates' language skills in four modules: listening, reading, writing, and speaking. Designed for individuals seeking educational or employment opportunities in English-speaking countries, IELTS certifies language competence at various levels. Universities, immigration authorities, and employers rely on IELTS scores to gauge applicants' language abilities accurately. By providing a comprehensive evaluation of English language proficiency, IELTS opens doors to international education, professional growth, and global mobility, enabling individuals to embrace new cultures and excel in diverse environments.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="second-div-card  col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#secondmodal">
                   <img
                     className="second-div-icon"
                     src="images\landing-page-images\design-vector.png"
                     alt="design-icon"
                   />
                   <p className="second-div-text">
-                    IELTS academia
+                    GMAT
                   </p>
                 </div>
-                <div className="second-div-card  col-md-2">
+                <div class="modal fade" id="secondmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">GMAT</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        The Graduate Management Admission Test (GMAT) is a standardized exam specifically designed for business school applicants. GMAT evaluates analytical writing, integrated reasoning, quantitative, and verbal reasoning skills, showcasing candidates' aptitude for advanced management education. Recognized and respected by business schools worldwide, GMAT assists in selecting qualified candidates, equipping them with the skills necessary for success in business and management careers. By enabling aspiring professionals to demonstrate their intellectual readiness and problem-solving abilities, GMAT paves the way for distinguished business education and influential leadership roles.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="second-div-card col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#thirdmodal">
                   <img
                     className="second-div-icon"
                     src="images\landing-page-images\writing-vector.png"
                     alt="writing-icon"
                   />
                   <p className="second-div-text">
-                    Selt Academia
+                    SELT
                   </p>
                 </div>
-                <div className="second-div-card  col-md-2">
+                <div class="modal fade" id="thirdmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">SELT</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Secure English Language Test (SELT) is an English language proficiency test designed for individuals applying for UK visas or British citizenship. Recognized and approved by the UK government, SELT assesses candidates' speaking and listening abilities. With a focus on practical communication skills, SELT ensures applicants can effectively participate in daily conversations and navigate real-life situations in an English-speaking environment. By meeting the SELT requirements, applicants fulfill the language proficiency criteria for UK visa applications, spouse visas, settlement, and citizenship. SELT empowers individuals to embark on new journeys in the United Kingdom, fostering integration, and enabling a smooth transition into British society, work, or academic life.                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="second-div-card  col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#forthmodal">
                   <img
                     className="second-div-icon"
                     src="images\landing-page-images\web-development-vector.png"
                     alt="web-dev-icon"
                   />
                   <p className="second-div-text">
-                    Gre Academia
+                    GRE
                   </p>
                 </div>
-                <div className="second-div-card  col-md-2">
+                <div class="modal fade" id="secondmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">GMAT</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        The Graduate Management Admission Test (GMAT) is a standardized exam specifically designed for business school applicants. GMAT evaluates analytical writing, integrated reasoning, quantitative, and verbal reasoning skills, showcasing candidates' aptitude for advanced management education. Recognized and respected by business schools worldwide, GMAT assists in selecting qualified candidates, equipping them with the skills necessary for success in business and management careers. By enabling aspiring professionals to demonstrate their intellectual readiness and problem-solving abilities, GMAT paves the way for distinguished business education and influential leadership roles.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="second-div-card  col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#fifthmodal">
                   <img
                     className="second-div-icon"
                     src="images\landing-page-images\storage-vector.png"
                     alt="cloud-storage-icon"
                   />
                   <p className="second-div-text">
-                    PTE general
+                    PTE
                   </p>
                 </div>
+
+                <div className="second-div-card  col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#sixthmodal">
+                  <img
+                    className="second-div-icon"
+                    src="images\landing-page-images\book-vector.png"
+                    alt="book-icon"
+                  />
+                  <p className="second-div-text">
+                    OET
+                  </p>
+                </div>
+                <div class="modal fade" id="forthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">GRE</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        The Graduate Record Examinations (GRE) is a widely accepted standardized test for graduate school admissions. GRE assesses critical thinking, analytical writing, verbal reasoning, and quantitative reasoning skills, providing graduate programs with valuable insights into candidates' academic potential. By showcasing candidates' abilities to tackle complex problems and embrace academic challenges, GRE plays a crucial role in shaping the future of graduate students across various disciplines. With GRE scores, students gain access to a multitude of graduate programs, fostering intellectual growth and professional success on a global scale.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="second-div-card col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#seventhmodal">
+                  <img
+                    className="second-div-icon"
+                    src="images\landing-page-images\acorn-vector.png"
+                    alt="acorn-vector"
+                  />
+                  <p className="second-div-text">
+                    SAT
+                  </p>
+                </div>
+                <div class="modal fade" id="seventhmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">SAT</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        The Scholastic Assessment Test (SAT) is a widely recognized standardized exam designed to assess a student's readiness for college. It evaluates critical reading, writing, and math skills, enabling universities to gauge applicants' academic abilities and potential. The SAT provides a fair and objective measure of students' knowledge, fostering educational opportunities and guiding colleges in their admission decisions. As a crucial component of the college application process, a strong SAT score enhances prospects for admission to reputable institutions worldwide, empowering students to pursue their academic aspirations confidently.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="modal fade" id="fifthmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">PTE</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        Pearson Test of English (PTE) is an innovative computer-based English language assessment widely accepted by universities, governments, and employers worldwide. PTE evaluates candidates' reading, writing, listening, and speaking skills through interactive tasks and real-life scenarios. With swift results and unbiased evaluation, PTE offers an accessible and reliable platform for individuals aiming to study, work, or immigrate to English-speaking countries. As a modern, efficient, and accurate language proficiency test, PTE empowers learners to demonstrate their language abilities effectively, unlocking abundant international opportunities and enriching personal and professional lives.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="second-div-card col-md-2" type="button" data-bs-toggle="modal" data-bs-target="#eightmodal">
+                  <img
+                    className="second-div-icon"
+                    src="images\landing-page-images\language-vector.png"
+                    alt="language-icon"
+                  />
+                  <p className="second-div-text">
+                    LANGUAGE
+                  </p>
+                </div>
+                <div class="modal fade" id="eightmodal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">LANGUAGE PROGRAMSbv</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                      Language programs offer immersive and comprehensive language learning experiences for individuals of all proficiency levels. From beginners to advanced learners, language programs focus on developing speaking, listening, reading, and writing skills, fostering cultural understanding and fluency. These programs cater to diverse interests, including general language learning, business communication, academic preparation, and exam-focused courses like IELTS, TOEFL, or Cambridge exams. By providing a supportive and interactive learning environment, language programs empower learners to overcome language barriers, embrace new cultures, and thrive in today's interconnected world. Whether for personal enrichment, academic pursuits, or professional growth, language programs open doors to global opportunities and enrich lives through effective communication and cross-cultural appreciation.
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
             {/* <!-- SECOND DIV END -->
@@ -189,7 +355,7 @@ export default function Home() {
                     Various types of courses to upscale your skill
                   </p>
                   <p className="section-text third-div-text">
-                    Online learning allows the student and teacher to set their
+                    Online learning allows the student and tutor to set their
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
@@ -208,7 +374,7 @@ export default function Home() {
             <div className="forth-div container" id="instructors">
               <p className="section-header forth-div-header">
                 Our Expert
-                <span className="forth-div-header-colored">Instructor</span>
+                <span className="forth-div-header-colored"> Tutors</span>
               </p>
               <div className="forth-div-card-div">
 
@@ -310,7 +476,7 @@ export default function Home() {
                     Track your learning and impove yourself more
                   </p>
                   <p className="section-text fifth-div-text">
-                    Online learning allows the student and teacher to set their
+                    Online learning allows the student and tutor to set their
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
@@ -483,8 +649,8 @@ export default function Home() {
               <div className="seventh-div-header-div">
                 <p className="seventh-div-header">
                   Register today and get credible information, latest news,
-                  courses, resources and alot more what 
-                  <BsFillCheckCircleFill className="seventh-check-icon"/>
+                  courses, resources and alot more what
+                  <BsFillCheckCircleFill className="seventh-check-icon" />
                   PassGrades has to offer.
                 </p>
               </div>

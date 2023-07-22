@@ -203,6 +203,9 @@
   transition: all 0.8s ease;
 }
 
+.modal-body {
+  text-align: justify;
+}
 /* second div end  */
 
 /* third div start  */
@@ -1821,7 +1824,7 @@
 
   .second-div-card.col-md-2 {
     padding: 1rem;
-    margin: auto 1rem;
+    margin: 2rem 1rem;
     text-align: center;
     background-color: #f0ffff;
     border-radius: 24px;
