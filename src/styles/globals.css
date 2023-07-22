@@ -2624,18 +2624,17 @@ input[type="checkbox"] {
   text-decoration: none;
 }
 
-.forgot-password {
+.forgot-password, .toggle-link {
   float: right;
   text-decoration: none;
 }
 
-.account-link, .toggle-link {
+.account-link {
   text-decoration: none;
 }
 
 .toggle-link {
-  color: var(--primary-color);
-  font-weight: 700;
+  color: var(--secondary-color);
 }
 
 .create-account-button,
