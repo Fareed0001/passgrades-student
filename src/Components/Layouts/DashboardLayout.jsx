@@ -3,6 +3,9 @@ import SideBar from "../SideBar";
 import Navbar from "../Navbar";
 import Image from "next/image";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { BiMenu } from "react-icons/bi";
+import { AnimatePresence } from "framer-motion";
+import MobileNavigation from "../MobileNavigation";
 
 const DashboardLayout = ({ children }) => {
   const [Open, setOpen] = useState(false);
