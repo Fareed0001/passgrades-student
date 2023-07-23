@@ -17,10 +17,10 @@ const index = () => {
               <p className="sign-up-header agent-sign-up">
                 <i className="fa-solid fa-user-secret sign-up-header-icon"></i>
                 Agent sign up
+                <a className="toggle-link" href="Signup">
+                  I am a Student
+                </a>
               </p>
-              <a className="toggle-link" href="Signup">
-                I am a Student
-              </a>
 
               {/* <!-- FORM  --> */}
               <form
