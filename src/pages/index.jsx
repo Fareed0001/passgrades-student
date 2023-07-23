@@ -48,7 +48,7 @@ export default function Home() {
                       </span> */}
                       </p>
                     </div>
-                    <div className="nav-div-1 flex  bg-red-400">
+                    <div className="nav-div-1">
                       <p className="index-logo-text">
                         <span className="index-logo-span0 capitalize">
                           pass
