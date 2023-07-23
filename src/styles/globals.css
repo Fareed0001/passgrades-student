@@ -58,11 +58,10 @@
   color: var(--primary-color);
 }
 
-.index-logo-icon {
-  width: 2rem;
-  height: 2rem;
+.index-check-icon {
+ font-size: 1.5rem;
   color: var(--tertiary-color);
-  vertical-align: middle;
+  margin: auto .3rem .3rem auto;
 }
 
 /* nav-div-1 */
@@ -187,6 +186,7 @@
   font-weight: 500;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   width: 80%;
+  height: 80%;
   margin: 2% auto;
 }
 
@@ -204,6 +204,9 @@
   transition: all 0.8s ease;
 }
 
+.modal-body {
+  text-align: justify;
+}
 /* second div end  */
 
 /* third div start  */
@@ -814,17 +817,8 @@
   color: #f0ffff;
 }
 
-.seventh-div-logo {
-  display: inline-block;
-  margin: 0 1%;
-}
-
-.seventh-logo-span0 {
-  color: var(--primary-color);
-}
-
-.seventh-logo-icon {
-  color: var(--tertiary-color);
+.seventh-check-icon {
+  margin: auto .5% auto 1.5%;
 }
 
 .seventh-div-img {
@@ -1831,7 +1825,7 @@
 
   .second-div-card.col-md-2 {
     padding: 1rem;
-    margin: auto 1rem;
+    margin: 2rem 1rem;
     text-align: center;
     background-color: #f0ffff;
     border-radius: 24px;
@@ -2630,13 +2624,17 @@ input[type="checkbox"] {
   text-decoration: none;
 }
 
-.forgot-password {
+.forgot-password, .toggle-link {
   float: right;
   text-decoration: none;
 }
 
 .account-link {
   text-decoration: none;
+}
+
+.toggle-link {
+  color: var(--secondary-color);
 }
 
 .create-account-button,
@@ -3883,12 +3881,11 @@ input[type="checkbox"] {
   color: var(--primary-color);
 }
 
-.dashboard-logo-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-  color: var(--tertiary-color);
-  vertical-align: middle;
-}
+.dashboard-check-icon {
+  font-size: 1.2rem;
+   color: var(--tertiary-color);
+ }
+ 
 
 /* LOGO DIV END */
 

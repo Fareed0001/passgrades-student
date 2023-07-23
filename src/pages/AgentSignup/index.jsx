@@ -18,6 +18,10 @@ const index = () => {
                 <i className="fa-solid fa-user-secret sign-up-header-icon"></i>
                 Agent sign up
               </p>
+              <a className="toggle-link" href="Signup">
+                I am a Student
+              </a>
+
               {/* <!-- FORM  --> */}
               <form
                 action=""
@@ -124,9 +128,7 @@ const index = () => {
                       <div className="invalid-feedback">
                         You must agree before submitting.
                       </div>
-                      <a className="forgot-password" href="Signup">
-                        I am a Student
-                      </a>
+
                     </div>
                   </div>
                 </div>

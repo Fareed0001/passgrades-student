@@ -2,9 +2,7 @@ import React, { children, useState } from "react";
 import SideBar from "../SideBar";
 import Navbar from "../Navbar";
 import Image from "next/image";
-import { BiMenu } from "react-icons/bi";
-import MobileNavigation from "../MobileNavigation";
-import { AnimatePresence } from "framer-motion";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 
 const DashboardLayout = ({ children }) => {
   const [Open, setOpen] = useState(false);
@@ -32,15 +30,9 @@ const DashboardLayout = ({ children }) => {
               <div className="container">
                 {/* <!-- LOGO DIV START  --> */}
                 <div className="logo-div">
-                  <p className="logo-text flex gap-x-1 capitalize items-center justify-center">
-                    <span className="logo-span">pass</span>
-                    <Image
-                      src="/images/logo/favicon.ico"
-                      height={30}
-                      width={30}
-                      className=" dashboard-logo-icon"
-                    />
-                    <span className="logo-span">grades</span>
+                  <p className="logo-text">
+                    <BsFillCheckCircleFill className="dashboard-check-icon" />
+                    <span className="logo-span">passgrades</span>
                   </p>
                 </div>
                 <SideBar />

@@ -17,6 +17,11 @@ const index = () => {
               <p className="sign-up-header student-sign-up">
                 <i className="fa-solid fa-user sign-up-header-icon"></i>
                 Student sign up
+                
+              <a className="toggle-link" href="AgentSignup">
+                I am an Agent
+              </a>
+
               </p>
 
               {/* <!-- FORM  --> */}
@@ -118,9 +123,6 @@ const index = () => {
                       <div className="invalid-feedback">
                         You must agree before submitting.
                       </div>
-                      <a className="forgot-password" href="AgentSignup">
-                        I am an agent
-                      </a>
                     </div>
                   </div>
                 </div>
@@ -149,6 +151,7 @@ const index = () => {
                     Sign in
                   </a>
                 </p>
+
               </form>
               {/* <!-- FORM  --> */}
             </div>
