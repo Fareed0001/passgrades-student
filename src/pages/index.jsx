@@ -144,26 +144,26 @@ export default function Home() {
                   <p className="second-div-text">IELTS</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="firstmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           IELTS
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         The International English Language Testing System
                         (IELTS) is a globally recognized English language
                         proficiency exam. It assesses candidates' language
@@ -180,10 +180,10 @@ export default function Home() {
                         enabling individuals to embrace new cultures and excel
                         in diverse environments.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -207,26 +207,26 @@ export default function Home() {
                   <p className="second-div-text">GMAT</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="secondmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           GMAT
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         The Graduate Management Admission Test (GMAT) is a
                         standardized exam specifically designed for business
                         school applicants. GMAT evaluates analytical writing,
@@ -242,10 +242,10 @@ export default function Home() {
                         distinguished business education and influential
                         leadership roles.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -269,26 +269,26 @@ export default function Home() {
                   <p className="second-div-text">IELTS UKVI</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="thirdmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           IELTS UKVI
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         IELTS UKVI (IELTS for UK Visas and Immigration) is a
                         variant of the International English Language Testing
                         System specifically designed for individuals applying
@@ -306,10 +306,10 @@ export default function Home() {
                         opportunities to live, work, or study in the United
                         Kingdom.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -333,26 +333,26 @@ export default function Home() {
                   <p className="second-div-text">GRE</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="forthmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           GRE
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         The Graduate Record Examinations (GRE) is a widely
                         accepted standardized test for graduate school
                         admissions. GRE assesses critical thinking, analytical
@@ -367,10 +367,10 @@ export default function Home() {
                         fostering intellectual growth and professional success
                         on a global scale.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -394,26 +394,26 @@ export default function Home() {
                   <p className="second-div-text">PTE</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="fifthmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           PTE
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         Pearson Test of English (PTE) is an innovative
                         computer-based English language assessment widely
                         accepted by universities, governments, and employers
@@ -429,10 +429,10 @@ export default function Home() {
                         opportunities and enriching personal and professional
                         lives.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -456,26 +456,26 @@ export default function Home() {
                   <p className="second-div-text">OET</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="sixthmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           OET
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         Occupational English Test (OET) is an English language
                         proficiency test designed for healthcare professionals
                         seeking to work or study in English-speaking countries.
@@ -490,10 +490,10 @@ export default function Home() {
                         positive impact on patient care and contributing
                         significantly to the global healthcare industry.{" "}
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -517,26 +517,26 @@ export default function Home() {
                   <p className="second-div-text">SAT</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="seventhmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           SAT
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         The Scholastic Assessment Test (SAT) is a widely
                         recognized standardized exam designed to assess a
                         student's readiness for college. It evaluates critical
@@ -550,7 +550,7 @@ export default function Home() {
                         reputable institutions worldwide, empowering students to
                         pursue their academic aspirations confidently.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
                           class="btn btn-secondary"
@@ -642,26 +642,26 @@ export default function Home() {
                   <p className="second-div-text">PTE UKVI</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="ninthmodal"
                   tabindex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           PTE UKVI
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         PTE UKVI (Pearson Test of English for UK Visas and
                         Immigration) is a specialized version of the Pearson
                         Test of English designed for individuals seeking to
@@ -679,10 +679,10 @@ export default function Home() {
                         application, enabling them to pursue their desired
                         endeavors in the United Kingdom confidently.{" "}
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
