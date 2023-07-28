@@ -1,6 +1,10 @@
 import React from "react";
 
-const index = () => {
+const Index = () => {
+  const handleCreateAccount = () => {
+    alert("Fetch failed, site upload in progress");
+  };
+
   return (
     <section className="signupPage">
       <div className="container-fluid sign-up-container">
@@ -127,15 +131,16 @@ const index = () => {
                   </div>
                 </div>
 
-                {/* <!-- BOTTON  --> */}
+                {/* <!-- BUTTON  --> */}
                 <div className="col-md-6 d-grid">
-                  <button
+                  <a href="/Dashboard"><button
                     className="btn btn-primary create-account-button"
-                    type="submit"
+                    type="button"
+                    onClick={handleCreateAccount}
                   >
                     <i className="fa-solid fa-user button-icons"></i>
                     Create account
-                  </button>
+                  </button></a>
                 </div>
                 {/* <div className="col-md-6 d-grid">
                   <button className="btn btn-dark google-button" type="submit">
@@ -162,4 +167,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
