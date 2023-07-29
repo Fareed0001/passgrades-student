@@ -33,13 +33,13 @@ const Navbar = () => {
             <div className="row">
               <div className="col-auto header-user-text-col">
                 <p className="header-user-text">
-                  <span>Mohammed</span> <br /> <span>Gadafi</span>
+                   <span>{/* firstname */}</span> <br /> <span>{/* lastname */}</span> 
                 </p>
               </div>
               <div className="col-auto header-user-img-col">
                 <img
                   className="header-user-img"
-                  src="images\landing-page-images\face3.jpg"
+                  src="../images/landing-page-images/black.jpg"
                   alt="user-profile-pic"
                 />
               </div>

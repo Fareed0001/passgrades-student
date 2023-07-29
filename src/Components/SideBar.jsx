@@ -3,7 +3,6 @@ import {
   BiBookAdd,
   BiChalkboard,
   BiClipboard,
-  BiCommentAdd,
   BiLogIn,
   BiMessage,
   BiPen,
@@ -15,10 +14,10 @@ import Image from "next/image";
 
 const SideBar = () => {
   return (
-    <div className="sidebar-components flex items-center justify-center flex-col">
+    <div className="sidebar-components">
       <Link className="sidebar-link-tag" href="/Dashboard">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiClipboard className="sidebar-icons " />
             <span>Dashboard</span>
           </p>
@@ -26,7 +25,7 @@ const SideBar = () => {
       </Link>
       <Link className="sidebar-link-tag" href="/Dashboard/Class">
         <div className="nav-item className-nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiChalkboard className="sidebar-icons " />
             My class
           </p>
@@ -34,7 +33,7 @@ const SideBar = () => {
       </Link>
       <Link className="sidebar-link-tag" href="/Dashboard/Instructors">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiPen className="sidebar-icons " />
             Instructors
           </p>
@@ -42,7 +41,7 @@ const SideBar = () => {
       </Link>
       <Link className="sidebar-link-tag" href="/Dashboard/Courses">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiBookAdd className="sidebar-icons" />
             Courses
           </p>
@@ -50,7 +49,7 @@ const SideBar = () => {
       </Link>
       <Link className="sidebar-link-tag" href="/">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiMessage className="sidebar-icons " />
             Message
           </p>
@@ -58,7 +57,7 @@ const SideBar = () => {
       </Link>
       <Link className="sidebar-link-tag" href="/Dashboard/Profile">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiSolidContact className="sidebar-icons " />
             Profile
           </p>
@@ -66,7 +65,7 @@ const SideBar = () => {
       </Link>
       <Link className="sidebar-link-tag" href="/Dashboard/Settings">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <FiSettings className="sidebar-icons " />
             Settings
           </p>
@@ -83,7 +82,7 @@ const SideBar = () => {
 
       <Link className="sidebar-link-tag" href="">
         <div className="nav-item">
-          <p className="nav-link-text flex items-center">
+          <p className="nav-link-text">
             <BiLogIn className="sidebar-icons " />
             Log out
           </p>

@@ -1,26 +1,68 @@
-import React from "react";
+import React, { useState } from "react";
+
+//Card Component
+const CourseCard = ({ image, title, description, price }) => {
+  const [showDescription, setShowDescription] = useState(false);
+
+  const handleToggleDescription = () => {
+    setShowDescription((prevShowDescription) => !prevShowDescription);
+  };
+
+  return (
+    <div className="col">
+      <div className="courses-card">
+        <img
+          src={image}
+          className="card-img-top courses-card-img"
+          alt={title}
+        />
+        <div className="courses-card-body">
+          <p className="courses-card-title">{title}</p>
+          <p
+            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
+              }`}
+          >
+            {description}
+          </p>
+        </div>
+        <div className="courses-card-footer">
+          <small className="courses-details-text" onClick={handleToggleDescription}>
+            Details
+          </small>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+
+
+
+
 
 const DashboardClass = () => {
   return (
     <>
       <div className="container-fluid body-content">
         <div className="row">
-          <div className="className-video-div col-md-9">
+          <div className="class-div col-12">
+            <p className="class-course-title">Course title</p>
             <video
-              className="className-video"
+              className="class-video"
               controls
               controlsList="nodownload"
             >
               <source
-                src="images\dashboard-images\video.mp4"
+                src=""
                 type="video/mp4"
               />
             </video>
-            <p className="className-video-title">Introduction to the course</p>
-            <p className="className-video-resources">
-              Resources at: http://127.0.0.1:50296/dashboard-className.html
+            <p className="class-title">Introduction to the course</p>
+            <p className="class-resources">
+              Class resource:  {/* course resource: it downloads on click */}
             </p>
-            <div className="className-video-description">
+            <div className="class-description">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -34,171 +76,32 @@ const DashboardClass = () => {
             </div>
           </div>
 
-          <div className="col-md-3 className-next-video-col">
-            <div className="className-next-video" id="classNextVideo0">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>{" "}
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList0">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="className-next-video" id="classNextVideo1">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList1">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="className-next-video" id="classNextVideo2">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>{" "}
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList2">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="className-next-video" id="classNextVideo3">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList3">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
+          <div className="second-class-div col-12">
+            <div className="d-grid">
+              <button type="button" className="btn btn-primary class-button">Next class name{/* class title */}</button>
+              <button type="button" className="btn btn-primary class-button">Next class name</button>
+              <button type="button" className="btn btn-primary class-button">Next class name</button>
             </div>
           </div>
+
+          <div className="third-class-div col-12">
+            <p className="third-class-div-header">Enrolled courses</p>
+
+            <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
+              <CourseCard
+                image="/images/dashboard-images/sat.png"
+                title="SAT"
+                description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+              />
+              <CourseCard
+                image="/images/dashboard-images/sat.png"
+                title="SAT"
+                description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+              />
+            </div>
+
+          </div>
+
         </div>
       </div>
     </>
