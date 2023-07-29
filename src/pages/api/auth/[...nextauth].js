@@ -1,5 +1,4 @@
 import NextAuth from "next-auth";
-import axios from "@/utils/axios";
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const authOptions = {
@@ -17,8 +16,7 @@ export const authOptions = {
         // Add logic here to look up the user from the credentials supplied
         const { email, password } = credentials;
 
-        const LOGIN_URL = "/student/login";
-
+       
         const response = await fetch(
           "http://passmark.eu-north-1.elasticbeanstalk.com/api/v1/student/login",
           {
