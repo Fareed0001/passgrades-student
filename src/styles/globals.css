@@ -2949,6 +2949,7 @@ input[type="checkbox"] {
 }
 
 .dashboard-content-board-img {
+  margin: auto;
   width: 80%;
 }
 
@@ -3959,6 +3960,7 @@ input[type="checkbox"] {
 .dashboard-check-icon {
   font-size: 1.2rem;
   color: var(--tertiary-color);
+  display: inline;
 }
 
 /* LOGO DIV END */
@@ -3991,6 +3993,7 @@ input[type="checkbox"] {
 }
 
 .sidebar-icons {
+  display: inline;
   margin: 0 0.3rem 0.2rem 0.8rem;
 }
 

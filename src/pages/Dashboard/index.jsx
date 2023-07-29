@@ -1,12 +1,10 @@
 import React from "react";
-import { BiLogIn } from "react-icons/bi";
-import { FiSettings } from "react-icons/fi";
 
 const Dashboard = () => {
   return (
     <>
       <div className="container-fluid body-content">
-        <p className="dashboard-greetings">Good morning Mohammed Gadafi</p>
+        <p className="dashboard-greetings">Good {/* {timeOfDay} {firstname} {lastname} */}</p>
         <div className="dashboard-content-board-div">
           <img
             className="dashboard-content-board-img"
