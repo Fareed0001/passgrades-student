@@ -1,34 +1,33 @@
 import { useRouter } from "next/router";
-
 import "@/styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect } from "react";
 import DefaultLayout from "@/Components/Layouts/DefaultLayout";
 import DashboardLayout from "@/Components/Layouts/DashboardLayout";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { SessionProvider } from "next-auth/react";
 
-export default function App({ Component, pageProps }) {
+const queryClient = new QueryClient();
+
+export default function App({ Component, pageProps, session }) {
   const router = useRouter();
-
-  const pathname = router.pathname;
+  const { pathname } = router;
 
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap");
   }, []);
 
-  const getLayout = () => {
-    if (pathname.includes("Dashboard")) {
-      return (
-        <DashboardLayout>
-          <Component {...pageProps} />
-        </DashboardLayout>
-      );
-    }
-    return (
-      <DefaultLayout>
-        <Component {...pageProps} />
-      </DefaultLayout>
-    );
-  };
+  const LayoutWrapper = ({ children }) => (
+    <QueryClientProvider client={queryClient}>
+      <SessionProvider session={session}>
+        {pathname.includes("Dashboard") ? (
+          <DashboardLayout>{children}</DashboardLayout>
+        ) : (
+          <DefaultLayout>{children}</DefaultLayout>
+        )}
+      </SessionProvider>
+    </QueryClientProvider>
+  );
 
-  return getLayout();
+  return <LayoutWrapper>{<Component {...pageProps} />}</LayoutWrapper>;
 }

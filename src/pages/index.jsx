@@ -4,9 +4,11 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { BsFillPlayFill, BsFillCheckCircleFill } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
+import { signIn, signOut, useSession } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { data } = useSession();
   return (
     <>
       <div className="landingPageDiv">
@@ -54,22 +56,28 @@ export default function Home() {
                       </p>
                     </div>
                     <div className="nav-div-1">
-                      <p className="index-logo-text">
+                      <p className="index-logo-text flex">
                         <BsFillCheckCircleFill className="index-check-icon" />
                         <span className="index-logo-span0">Pass</span>
                         <span className="index-logo-span0">Grades</span>
                       </p>
                     </div>
-                    <div className="nav-div-2">
-                      <Link href="/Signin">
-                        <button
-                          type="button"
-                          className="nav-button nav-sign-in"
-                        >
-                          Sign in
-                        </button>
-                      </Link>
-                      <Link href="/Signup">
+                    <section className="nav-div-2">
+                      <button
+                        type="button"
+                        className="nav-button nav-sign-in"
+                        onClick={() => signOut()}
+                      >
+                        sign out
+                      </button>
+                      <button
+                        type="button"
+                        className="nav-button nav-sign-in"
+                        onClick={() => signIn()}
+                      >
+                        sign in
+                      </button>
+                      <Link href="/Dashboard">
                         <button
                           type="button"
                           className="nav-button nav-sign-up"
@@ -77,7 +85,7 @@ export default function Home() {
                           Sign up
                         </button>
                       </Link>
-                    </div>
+                    </section>
                   </div>
                 </nav>
               </nav>
@@ -105,20 +113,26 @@ export default function Home() {
                     Expert exam prep. Excel in SAT, IELTS, PTE, GMAT, GRE, OET,
                     and more worldwide. Your journey starts here!
                   </p>
-                  <Link href="Signup">
-                    <button type="button" className="nav-button try-now-button">
-                      Try now
-                    </button>
-                  </Link>
-                  <Link href="Signup">
-                    <button
-                      type="button"
-                      className="nav-button play-video-button"
-                    >
-                      <BsFillPlayFill className="h-6 w-6 animate-pulse play-video-icon" />{" "}
-                      Play video
-                    </button>
-                  </Link>
+
+                  <section className="flex gap-x-2">
+                    <Link href="Signup">
+                      <button
+                        type="button"
+                        className="nav-button try-now-button text-"
+                      >
+                        Try now
+                      </button>
+                    </Link>
+                    <Link href="Signup">
+                      <button
+                        type="button"
+                        className="nav-button play-video-button flex "
+                      >
+                        <BsFillPlayFill className="h-6 w-6 animate-pulse play-video-icon" />{" "}
+                        Play video
+                      </button>
+                    </Link>
+                  </section>
                 </div>
               </div>
             </div>
@@ -442,7 +456,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div
+                <section
                   className="second-div-card  col-md-2"
                   type="button"
                   data-bs-toggle="modal"
@@ -454,7 +468,7 @@ export default function Home() {
                     alt="book-icon"
                   />
                   <p className="second-div-text">OET</p>
-                </div>
+                </section>
                 <div
                   className="modal fade"
                   id="sixthmodal"
@@ -715,7 +729,10 @@ export default function Home() {
                     setting a schedule tat fits everyone.
                   </p>
                   <Link href="/Signup">
-                    <button type="button" className="nav-button try-now-button">
+                    <button
+                      type="button"
+                      className="nav-button try-now-button flex items-center justify-center gap-x-2"
+                    >
                       <IoMdAdd className="mr-3 third-div-icon" />
                       <span> Enroll now</span>
                     </button>
@@ -838,7 +855,10 @@ export default function Home() {
                     setting a schedule tat fits everyone.
                   </p>
                   <Link href="/Signup">
-                    <button type="button" className="nav-button try-now-button">
+                    <button
+                      type="button"
+                      className="nav-button try-now-button flex items-center justify-center"
+                    >
                       <IoMdAdd className="mr-3  third-div-icon" />
                       <span> Enroll now</span>
                     </button>
