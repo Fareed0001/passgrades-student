@@ -30,6 +30,7 @@ const index = () => {
     }
   }, [isSubmitSuccessful, reset]);
 
+
   return (
     <section className="h-full fixed overflow-auto bg-[#ebeefd] w-full">
       <div className="container-fluid signin-container">
@@ -129,11 +130,14 @@ const index = () => {
                   <button
                     className="btn btn-primary create-account-button"
                     type="submit"
+                    onClick={handleSignIn}
                   >
                     <i className="fa-solid fa-user button-icons"></i>
                     Sign in
                   </button>
+
                 </section>
+
 
                 {/* <!-- BUTTON  --> */}
 
@@ -174,3 +178,4 @@ export async function getServerSideProps(context) {
   }
 }
 export default index;
+

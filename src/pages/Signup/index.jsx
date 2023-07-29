@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { RegisterSchema } from "@/utils/schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+
 const index = () => {
   const {
     register,
@@ -200,16 +201,21 @@ const index = () => {
                   </div>
                 </div>
 
+
                 {/* <!-- BOTTON  --> */}
                 <section className="col-md-6 d-grid">
                   <button
+
                     className="btn btn-primary create-account-button"
-                    type="submit"
+                    type="button"
+                    onClick={handleCreateAccount}
                   >
                     <i className="fa-solid fa-user button-icons"></i>
                     Create account
+
                   </button>
                 </section>
+
                 {/* <div className="col-md-6 d-grid">
                   <button className="btn btn-dark google-button" type="submit">
                     <i className="fa-brands fa-google button-icons"></i>
@@ -234,4 +240,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;
