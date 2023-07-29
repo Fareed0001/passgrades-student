@@ -1,8 +1,17 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect } from "react";
+import { useSession } from "next-auth/react";
+import Router from "next/router";
 
 const index = () => {
-  return (
+  const { status, data } = useSession();
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      Router.replace("/auth/Signin");
+    }
+  }, [status]);
+
+  const content = (
     <section>
       <div className="dashboard-div">
         <div className="row pc-header-sidebar">
@@ -103,6 +112,7 @@ const index = () => {
       </div>
     </section>
   );
+  if (status === "authenticated") return <>{content}</>;
 };
 
 export default index;

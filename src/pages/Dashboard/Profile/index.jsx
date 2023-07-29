@@ -1,3 +1,4 @@
+import { useSession } from "next-auth/react";
 import React from "react";
 import {
   BsFillCameraFill,
@@ -5,8 +6,9 @@ import {
   BsPhoneVibrateFill,
 } from "react-icons/bs";
 
-
 const index = () => {
+  const { user } = useSession();
+  console.log(user);
   return (
     <div class="container-fluid body-content">
       {/* <!-- CONTENT START  --> */}
@@ -31,7 +33,6 @@ const index = () => {
             <span>
               <a class="user-email-link" href=" mailto:user-email@example.com">
                 <BsFillEnvelopeAtFill />
-
               </a>
             </span>
             <span>

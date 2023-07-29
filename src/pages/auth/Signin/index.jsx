@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { LoginSchema } from "@/utils/schema";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
 import Credentials from "next-auth/providers/credentials";
+import { LoginSchema } from "@/pages/utils/schema";
 
 const index = () => {
   const session = useSession();
@@ -30,7 +30,6 @@ const index = () => {
     }
   }, [isSubmitSuccessful, reset]);
 
-
   return (
     <section className="h-full fixed overflow-auto bg-[#ebeefd] w-full">
       <div className="container-fluid signin-container">
@@ -38,7 +37,7 @@ const index = () => {
           <div className="col-12 col-md-4 col-lg-6 sign-in-first-col">
             <img
               className="sign-in-img"
-              src="images\register-images\sign-in.gif"
+              src="/images/register-images/sign-in.gif"
               alt="sign-in.gif"
             />
           </div>
@@ -130,14 +129,10 @@ const index = () => {
                   <button
                     className="btn btn-primary create-account-button"
                     type="submit"
-                    onClick={handleSignIn}
                   >
-                    <i className="fa-solid fa-user button-icons"></i>
                     Sign in
                   </button>
-
                 </section>
-
 
                 {/* <!-- BUTTON  --> */}
 
@@ -165,17 +160,16 @@ const index = () => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const session = await getSession(context);
+// export async function getServerSideProps(context) {
+//   const session = await getSession(context);
 
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/",
-        permanent: false,
-      },
-    };
-  }
-}
+//   if (!session) {
+//     return {
+//       redirect: {
+//         destination: "/",
+//         permanent: false,
+//       },
+//     };
+//   }
+// }
 export default index;
-

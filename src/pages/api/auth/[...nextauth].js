@@ -1,22 +1,19 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-export const authOptions = {
+const authOptions = {
   // Configure one or more authentication providers
   providers: [
-    // ...add more providers here
     CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
-      name: "Credentials",
+      type: "credentials",
       credentials: {
-        email: { label: "email", type: "text", placeholder: "jsmith" },
-        password: { label: "password", type: "password" },
+        email: { label: "email", type: "text ", placeholder: "jsmith" },
+        password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied
         const { email, password } = credentials;
 
-       
         const response = await fetch(
           "http://passmark.eu-north-1.elasticbeanstalk.com/api/v1/student/login",
           {
@@ -44,10 +41,21 @@ export const authOptions = {
   session: {
     strategy: "jwt",
   },
-  secret: process.env.NEXTAUTH_SECRET,
+  callbacks: {
+    async jwt({ token, user }) {
+      return {
+        ...token,
+        ...user,
+      };
+    },
+    async session({ session, token, user }) {
+      session.user = token;
+      return session;
+    },
+  },
 
   pages: {
-    signIn: "/Signin",
+    signIn: "/auth/Signin",
   },
 };
 export default NextAuth(authOptions);

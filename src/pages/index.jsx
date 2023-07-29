@@ -5,10 +5,11 @@ import Link from "next/link";
 import { BsFillPlayFill, BsFillCheckCircleFill } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
 import { signIn, signOut, useSession } from "next-auth/react";
+import { useEffect } from "react";
+import Router from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
-  const { data } = useSession();
   return (
     <>
       <div className="landingPageDiv">
@@ -77,7 +78,7 @@ export default function Home() {
                       >
                         sign in
                       </button>
-                      <Link href="/Dashboard">
+                      <Link href="/auth/signup">
                         <button
                           type="button"
                           className="nav-button nav-sign-up"

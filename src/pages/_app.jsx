@@ -20,7 +20,7 @@ export default function App({ Component, pageProps, session }) {
 
   const LayoutWrapper = ({ children }) => (
     <QueryClientProvider client={queryClient}>
-      <SessionProvider session={session}>
+      <SessionProvider session={pageProps.session}>
         <Toaster />
         {pathname.includes("Dashboard") ? (
           <DashboardLayout>{children}</DashboardLayout>
