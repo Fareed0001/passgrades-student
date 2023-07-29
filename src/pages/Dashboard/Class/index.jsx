@@ -126,7 +126,7 @@ const DashboardClass = () => {
               <div className="className-video-list-div" id="classList2">
                 <p className="className-video-list">
                   <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
+                  <span className="className-video-list-text text-truncate">
                     Introduction to the course
                   </span>
                 </p>

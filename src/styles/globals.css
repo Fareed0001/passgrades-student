@@ -3239,6 +3239,30 @@ input[type="checkbox"] {
 
 /* DASHBOARD.HTML END  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* DASHBOARD-CLASS.HTML START  */
 
 .class-nav-item {
@@ -3379,6 +3403,28 @@ input[type="checkbox"] {
 
 /* DASHBOARD-CLASS.HTML END  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* DASHBOARD-INSTRUCTOR.HTML START  */
 /* MEDIA QUERY START  */
 /* start of medium tablet styles */
@@ -3453,6 +3499,10 @@ input[type="checkbox"] {
   font-size: 0.8rem;
   text-align: justify;
   padding: 0;
+}
+
+.course-card-text-hide {
+  display: none;
 }
 
 .courses-card-footer {
@@ -3564,7 +3614,6 @@ input[type="checkbox"] {
 
 .courses-card-title {
   font-size: 0.8rem;
-  padding: 2% 5%;
 }
 
 /* PROFILE CODES END  */

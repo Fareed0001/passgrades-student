@@ -1,108 +1,94 @@
-import React from "react";
+import React, { useState } from "react";
+import { FlutterWaveButton, closePaymentModal } from 'flutterwave-react-v3';
 
-const index = () => {
+//flutterwave start
+const config = {
+  public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY,
+  tx_ref: Date.now(),
+  amount: 4000,
+  currency: 'NGN',
+  payment_options: 'card,mobilemoney,ussd',
+  customer: { //needs user details
+    email: 'user@gmail.com',
+    phone_number: '070********',
+    name: 'john doe',
+  },
+  customizations: {
+    title: 'PassGrades',
+    description: 'Payment for course',
+  },
+};
+
+const fwConfig = {
+  ...config,
+  text: 'buy now',
+  callback: (response) => {
+    console.log(response);
+    closePaymentModal() // this will close the modal programmatically
+  },
+  onClose: () => { },
+};
+
+
+
+//Card Component
+const CourseCard = ({ image, title, description, price }) => {
+  const [showDescription, setShowDescription] = useState(false);
+
+  const handleToggleDescription = () => {
+    setShowDescription((prevShowDescription) => !prevShowDescription);
+  };
+
   return (
-    <div className="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4 mt-4">
-      <div className="col">
-        <div className="courses-card">
-          <img
-            src="/images/dashboard-images/sat.png"
-            className="card-img-top courses-card-img"
-            alt="sat"
-          />
-          <div className="courses-card-body">
-            <p className="courses-card-title">SAT</p>
-            <p className="courses-card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longerThis is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longerThis is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longerThis is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <p className="course-price">
-            ₦5,000 <span className="course-price-span">buy now</span>
+    <div className="col">
+      <div className="courses-card">
+        <img
+          src={image}
+          className="card-img-top courses-card-img"
+          alt={title}
+        />
+        <div className="courses-card-body">
+          <p className="courses-card-title">{title}</p>
+          <p
+            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
+              }`}
+          >
+            {description}
           </p>
-          <div className="courses-card-footer">
-            <small className="courses-details-text">Details</small>
-          </div>
         </div>
-      </div>
-      <div className="col">
-        <div className="courses-card">
-          <img
-            src="/images/dashboard-images/sat.png"
-            className="card-img-top courses-card-img"
-            alt="sat"
-          />
-          <div className="courses-card-body">
-            <p className="courses-card-title">SAT</p>
-            <p className="courses-card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <p className="course-price">
-            ₦5,000 <span className="course-price-span">buy now</span>
-          </p>
-          <div className="courses-card-footer">
-            <small className="courses-details-text">Details</small>
-          </div>
-        </div>
-      </div>
-      <div className="col">
-        <div className="courses-card">
-          <img
-            src="/images/dashboard-images/sat.png"
-            className="card-img-top courses-card-img"
-            alt="sat"
-          />
-          <div className="courses-card-body">
-            <p className="courses-card-title">SAT</p>
-            <p className="courses-card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <p className="course-price">
-            ₦5,000 <span className="course-price-span">buy now</span>
-          </p>
-          <div className="courses-card-footer">
-            <small className="courses-details-text">Details</small>
-          </div>
-        </div>
-      </div>
-      <div className="col">
-        <div className="courses-card">
-          <img
-            src="/images/dashboard-images/sat.png"
-            className="card-img-top courses-card-img"
-            alt="sat"
-          />
-          <div className="courses-card-body">
-            <p className="courses-card-title">SAT</p>
-            <p className="courses-card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer.
-            </p>
-          </div>
-          <p className="course-price">
-            ₦5,000 <span className="course-price-span">buy now</span>
-          </p>
-          <div className="courses-card-footer">
-            <small className="courses-details-text">Details</small>
-          </div>
+        <p className="course-price">
+          {price}
+          <span className="course-price-span"><FlutterWaveButton {...fwConfig} /></span>
+        </p>
+        <div className="courses-card-footer">
+          <small className="courses-details-text" onClick={handleToggleDescription}>
+            Details
+          </small>
         </div>
       </div>
     </div>
   );
 };
 
-export default index;
+const Index = () => {
+  return (
+    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
+      {/* Add multiple CourseCard components */}
+      <CourseCard
+        image="/images/dashboard-images/sat.png"
+        title="SAT"
+        description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+        price="₦5,000"
+      />
+      <CourseCard
+        image="/images/dashboard-images/sat.png"
+        title="SAT"
+        description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+        price="₦5,000"
+      />
+      {/* Add more CourseCard components for other courses */}
+    </div>
+  );
+};
+
+export default Index;
