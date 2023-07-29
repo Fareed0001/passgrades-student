@@ -280,6 +280,7 @@
 .modal-body {
   text-align: justify;
 }
+
 /* second div end  */
 
 /* third div start  */
@@ -422,7 +423,7 @@
   margin-top: 8%;
 }
 
-.services > * {
+.services>* {
   flex-grow: 1;
 }
 
@@ -438,7 +439,7 @@
   padding: 0;
 }
 
-.circle--rotate > li {
+.circle--rotate>li {
   position: absolute;
   left: 0;
   top: 0;
@@ -450,7 +451,7 @@
   visibility: hidden;
 }
 
-.circle--rotate > li .sixth-div-img-div {
+.circle--rotate>li .sixth-div-img-div {
   visibility: visible;
   cursor: pointer;
   text-align: center;
@@ -471,7 +472,7 @@
   height: 100%;
 }
 
-.circle--rotate > li i {
+.circle--rotate>li i {
   color: #ffffff;
   font-size: 24px;
   margin: auto;
@@ -481,12 +482,12 @@
   display: table;
 }
 
-.circle--rotate > li i::before {
+.circle--rotate>li i::before {
   display: table-cell;
   vertical-align: middle;
 }
 
-.circle--rotate > li img {
+.circle--rotate>li img {
   margin: auto;
 }
 
@@ -498,24 +499,24 @@
   margin: 0 auto;
 }
 
-.circle--slider .circle--rotate > li div {
+.circle--slider .circle--rotate>li div {
   position: relative;
   overflow: visible;
 }
 
-.circle--slider .circle--rotate > li div span {
+.circle--slider .circle--rotate>li div span {
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
   transition: all 2s;
   opacity: 0;
 }
 
-.circle--slider .circle--rotate > li.active div {
+.circle--slider .circle--rotate>li.active div {
   font-size: 20px;
   transition: all 1s;
 }
 
-.circle--slider .circle--rotate > li.active div span {
+.circle--slider .circle--rotate>li.active div span {
   width: 100%;
   height: 100%;
   display: block;
@@ -528,7 +529,7 @@
   opacity: 1;
 }
 
-.circle--slider .circle--rotate > li.active div span:before {
+.circle--slider .circle--rotate>li.active div span:before {
   position: absolute;
   height: 1px;
   top: -50%;
@@ -545,7 +546,7 @@
   z-index: -1;
 }
 
-.circle--slider .circle--rotate > li.active div span:after {
+.circle--slider .circle--rotate>li.active div span:after {
   position: absolute;
   height: 1px;
   top: 100%;
@@ -1236,7 +1237,7 @@
     margin-top: 8%;
   }
 
-  .services > * {
+  .services>* {
     flex-grow: 1;
   }
 
@@ -1253,7 +1254,7 @@
     padding: 0;
   }
 
-  .circle--rotate > li {
+  .circle--rotate>li {
     position: absolute;
     left: 0;
     top: 0;
@@ -1265,7 +1266,7 @@
     visibility: hidden;
   }
 
-  .circle--rotate > li .sixth-div-img-div {
+  .circle--rotate>li .sixth-div-img-div {
     visibility: visible;
     cursor: pointer;
     text-align: center;
@@ -1287,7 +1288,7 @@
     height: 100%;
   }
 
-  .circle--rotate > li i {
+  .circle--rotate>li i {
     color: #ffffff;
     font-size: 24px;
     margin: auto;
@@ -1297,12 +1298,12 @@
     display: table;
   }
 
-  .circle--rotate > li i::before {
+  .circle--rotate>li i::before {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .circle--rotate > li img {
+  .circle--rotate>li img {
     margin: auto;
   }
 
@@ -1314,26 +1315,26 @@
     margin: 0 auto;
   }
 
-  .circle--slider .circle--rotate > li div {
+  .circle--slider .circle--rotate>li div {
     position: relative;
     overflow: visible;
     background-color: #1f2845;
   }
 
-  .circle--slider .circle--rotate > li div span {
+  .circle--slider .circle--rotate>li div span {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     transition: all 2s;
     opacity: 0;
   }
 
-  .circle--slider .circle--rotate > li.active div {
+  .circle--slider .circle--rotate>li.active div {
     font-size: 20px;
     background-color: #654be4;
     transition: all 1s;
   }
 
-  .circle--slider .circle--rotate > li.active div span {
+  .circle--slider .circle--rotate>li.active div span {
     width: 100%;
     height: 100%;
     display: block;
@@ -1346,7 +1347,7 @@
     opacity: 1;
   }
 
-  .circle--slider .circle--rotate > li.active div span:before {
+  .circle--slider .circle--rotate>li.active div span:before {
     position: absolute;
     height: 1px;
     top: -50%;
@@ -1363,7 +1364,7 @@
     z-index: -1;
   }
 
-  .circle--slider .circle--rotate > li.active div span:after {
+  .circle--slider .circle--rotate>li.active div span:after {
     position: absolute;
     height: 1px;
     top: 100%;
@@ -2064,7 +2065,7 @@
     margin-top: 8%;
   }
 
-  .services > * {
+  .services>* {
     flex-grow: 1;
   }
 
@@ -2081,7 +2082,7 @@
     padding: 0;
   }
 
-  .circle--rotate > li {
+  .circle--rotate>li {
     position: absolute;
     left: 0;
     top: 0;
@@ -2093,7 +2094,7 @@
     visibility: hidden;
   }
 
-  .circle--rotate > li .sixth-div-img-div {
+  .circle--rotate>li .sixth-div-img-div {
     visibility: visible;
     cursor: pointer;
     text-align: center;
@@ -2115,7 +2116,7 @@
     height: 100%;
   }
 
-  .circle--rotate > li i {
+  .circle--rotate>li i {
     color: #ffffff;
     font-size: 24px;
     margin: auto;
@@ -2125,12 +2126,12 @@
     display: table;
   }
 
-  .circle--rotate > li i::before {
+  .circle--rotate>li i::before {
     display: table-cell;
     vertical-align: middle;
   }
 
-  .circle--rotate > li img {
+  .circle--rotate>li img {
     margin: auto;
   }
 
@@ -2142,26 +2143,26 @@
     margin: 0 auto;
   }
 
-  .circle--slider .circle--rotate > li div {
+  .circle--slider .circle--rotate>li div {
     position: relative;
     overflow: visible;
     background-color: #1f2845;
   }
 
-  .circle--slider .circle--rotate > li div span {
+  .circle--slider .circle--rotate>li div span {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
     transition: all 2s;
     opacity: 0;
   }
 
-  .circle--slider .circle--rotate > li.active div {
+  .circle--slider .circle--rotate>li.active div {
     font-size: 20px;
     background-color: #654be4;
     transition: all 1s;
   }
 
-  .circle--slider .circle--rotate > li.active div span {
+  .circle--slider .circle--rotate>li.active div span {
     width: 100%;
     height: 100%;
     display: block;
@@ -2174,7 +2175,7 @@
     opacity: 1;
   }
 
-  .circle--slider .circle--rotate > li.active div span:before {
+  .circle--slider .circle--rotate>li.active div span:before {
     position: absolute;
     height: 1px;
     top: -50%;
@@ -2191,7 +2192,7 @@
     z-index: -1;
   }
 
-  .circle--slider .circle--rotate > li.active div span:after {
+  .circle--slider .circle--rotate>li.active div span:after {
     position: absolute;
     height: 1px;
     top: 100%;
@@ -2619,7 +2620,7 @@
   transform: perspective(100px) rotateX(5deg) rotateY(-5deg);
 }
 
-.agent-student-checkbox:checked ~ .agent-student-label:hover {
+.agent-student-checkbox:checked~.agent-student-label:hover {
   -webkit-transform: perspective(100px) rotateX(-5deg) rotateY(5deg);
   transform: perspective(100px) rotateX(-5deg) rotateY(5deg);
 }
@@ -2628,7 +2629,7 @@
   display: none;
 }
 
-.agent-student-checkbox:checked ~ .agent-student-label::before {
+.agent-student-checkbox:checked~.agent-student-label::before {
   left: 30px;
   background-color: #000000;
   background-image: linear-gradient(315deg, #000000 0%, #414141 70%);
@@ -2643,12 +2644,10 @@
   width: 20px;
   border-radius: 50%;
   background-color: #000000;
-  background-image: linear-gradient(
-    130deg,
-    #757272 10%,
-    #ffffff 11%,
-    #726f6f 62%
-  );
+  background-image: linear-gradient(130deg,
+      #757272 10%,
+      #ffffff 11%,
+      #726f6f 62%);
   left: 10px;
   -webkit-box-shadow: 0 2px 1px rgba(0, 0, 0, 0.3),
     10px 10px 10px rgba(0, 0, 0, 0.3);
@@ -3243,26 +3242,6 @@ input[type="checkbox"] {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* DASHBOARD-CLASS.HTML START  */
 
 .class-nav-item {
@@ -3294,6 +3273,32 @@ input[type="checkbox"] {
   font-size: 0.8rem;
   text-align: justify;
 }
+
+.second-class-div, .third-class-div {
+  padding: 5% 0;
+}
+
+.class-button {
+  margin: 1% 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* CLASS CODES END  */
 
 /* start of pc styles */
@@ -3315,7 +3320,7 @@ input[type="checkbox"] {
 /* @media screen and (max-width: 767px) {
   /* ie it ends at 767px */
 
-  
+
 /* }
 
 /* start of phone styles */
@@ -3878,6 +3883,7 @@ input[type="checkbox"] {
 
 /* start of phone styles */
 @media screen and (max-width: 479px) {
+
   /* ie it ends at 479px */
   .checkoutPage {
     padding: 0;
@@ -4254,4 +4260,5 @@ input[type="checkbox"] {
   color: var(--tertiary-color);
   vertical-align: middle;
 }
+
 /* LOGO DIV END */
