@@ -39,7 +39,7 @@ const Navbar = () => {
               <div className="col-auto header-user-img-col">
                 <img
                   className="header-user-img"
-                  src="{/* photo */}"
+                  src="../images/landing-page-images/black.jpg"
                   alt="user-profile-pic"
                 />
               </div>
