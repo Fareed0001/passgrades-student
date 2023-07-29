@@ -2,11 +2,11 @@ import React from "react";
 
 const index = () => {
   return (
-    <div className="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
+    <div className="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4 mt-4">
       <div className="col">
         <div className="courses-card">
           <img
-            src="images\dashboard-images\sat.png"
+            src="/images/dashboard-images/sat.png"
             className="card-img-top courses-card-img"
             alt="sat"
           />
@@ -35,7 +35,7 @@ const index = () => {
       <div className="col">
         <div className="courses-card">
           <img
-            src="images\dashboard-images\sat.png"
+            src="/images/dashboard-images/sat.png"
             className="card-img-top courses-card-img"
             alt="sat"
           />
@@ -58,7 +58,7 @@ const index = () => {
       <div className="col">
         <div className="courses-card">
           <img
-            src="images\dashboard-images\sat.png"
+            src="/images/dashboard-images/sat.png"
             className="card-img-top courses-card-img"
             alt="sat"
           />
@@ -81,7 +81,7 @@ const index = () => {
       <div className="col">
         <div className="courses-card">
           <img
-            src="images\dashboard-images\sat.png"
+            src="/images/dashboard-images/sat.png"
             className="card-img-top courses-card-img"
             alt="sat"
           />

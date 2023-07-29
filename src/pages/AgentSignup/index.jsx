@@ -36,19 +36,38 @@ const Index = () => {
                 validate=""
               >
                 <div className="col-md-6">
-                  <label htmlForfor="fname" className="form-label signup-form-label">
+                  <label
+                    htmlForfor="fname"
+                    className="form-label signup-form-label"
+                  >
                     First name
                   </label>
-                  <input type="text" className="form-control" id="fname" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="fname"
+                    required
+                  />
                 </div>
                 <div className="col-md-6">
-                  <label htmlForfor="lname" className="form-label signup-form-label">
+                  <label
+                    htmlForfor="lname"
+                    className="form-label signup-form-label"
+                  >
                     Last name
                   </label>
-                  <input type="text" className="form-control" id="lname" required />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="lname"
+                    required
+                  />
                 </div>
                 <div className="col-md-6">
-                  <label htmlForfor="email" className="form-label signup-form-label">
+                  <label
+                    htmlForfor="email"
+                    className="form-label signup-form-label"
+                  >
                     Email
                   </label>
                   <input
@@ -59,13 +78,24 @@ const Index = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label className="form-label signup-form-label" htmlForfor="phone">
+                  <label
+                    className="form-label signup-form-label"
+                    htmlForfor="phone"
+                  >
                     Phone number
                   </label>
-                  <input type="text" id="phone" className="form-control" required />
+                  <input
+                    type="text"
+                    id="phone"
+                    className="form-control"
+                    required
+                  />
                 </div>
                 <div className="col-md-6">
-                  <label htmlForfor="inputPassword" className="form-label signup-form-label">
+                  <label
+                    htmlForfor="inputPassword"
+                    className="form-label signup-form-label"
+                  >
                     Password
                   </label>
                   <input
@@ -76,7 +106,10 @@ const Index = () => {
                   />
                 </div>
                 <div className="col-md-6">
-                  <label htmlForfor="confirmPassword" className="form-label signup-form-label">
+                  <label
+                    htmlForfor="confirmPassword"
+                    className="form-label signup-form-label"
+                  >
                     Confirm password
                   </label>
                   <input
@@ -87,10 +120,17 @@ const Index = () => {
                   />
                 </div>
                 <div className="col-md-12 company-name-div">
-                  <label htmlForfor="company" className="form-label signup-form-label">
+                  <label
+                    htmlForfor="company"
+                    className="form-label signup-form-label"
+                  >
                     Company name
                   </label>
-                  <input type="text" className="form-control" id="companyname" />
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="companyname"
+                  />
                 </div>
 
                 <div className="check-boxes-div">
@@ -121,7 +161,10 @@ const Index = () => {
                         id="invalidCheck"
                         required
                       />
-                      <label className="form-check-label" htmlForfor="invalidCheck">
+                      <label
+                        className="form-check-label"
+                        htmlForfor="invalidCheck"
+                      >
                         I agree to the{" "}
                         <a className="terms-link" href="">
                           terms
@@ -134,22 +177,25 @@ const Index = () => {
                       <div className="invalid-feedback">
                         You must agree before submitting.
                       </div>
-
                     </div>
                   </div>
                 </div>
 
-                {/* <!-- BUTTON  --> */}
-                <div className="col-md-6 d-grid">
-                 <a href="/Dashboard"> <button
+
+                {/* <!-- BOTTON  --> */}
+                <section className="col-md-6 d-grid">
+                  <button
+
                     className="btn btn-primary create-account-button"
                     type="button"
                     onClick={handleCreateAccount}
                   >
                     <i className="fa-solid fa-user button-icons"></i>
                     Create account
-                  </button></a>
-                </div>
+
+                  </button>
+                </section>
+
                 {/* <div className="col-md-6 d-grid">
                   <button className="btn btn-dark google-button" type="submit">
                     <i className="fa-brands fa-google button-icons"></i>
