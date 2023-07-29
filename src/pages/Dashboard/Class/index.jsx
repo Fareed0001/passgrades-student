@@ -5,9 +5,10 @@ const DashboardClass = () => {
     <>
       <div className="container-fluid body-content">
         <div className="row">
-          <div className="className-video-div col-md-9">
+          <div className="class-div col-md-9">
+            <p className="class-course-title">Course title</p>
             <video
-              className="className-video"
+              className="class-video"
               controls
               controlsList="nodownload"
             >
@@ -16,11 +17,11 @@ const DashboardClass = () => {
                 type="video/mp4"
               />
             </video>
-            <p className="className-video-title">Introduction to the course</p>
-            <p className="className-video-resources">
-              Resources at: http://127.0.0.1:50296/dashboard-className.html
+            <p className="class-title">Introduction to the course</p>
+            <p className="class-resources">
+              Class resource:  {/* course resource */}
             </p>
-            <div className="className-video-description">
+            <div className="class-description">
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
               ever since the 1500s, when an unknown printer took a galley of
@@ -34,171 +35,8 @@ const DashboardClass = () => {
             </div>
           </div>
 
-          <div className="col-md-3 className-next-video-col">
-            <div className="className-next-video" id="classNextVideo0">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>{" "}
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList0">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
+      
 
-            <div className="className-next-video" id="classNextVideo1">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList1">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="className-next-video" id="classNextVideo2">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>{" "}
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList2">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>{" "}
-                  <span className="className-video-list-text text-truncate">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
-
-            <div className="className-next-video" id="classNextVideo3">
-              <p className="className-next-video-text">
-                <i className="fa-regular fa-file-video className-next-video-icon"></i>
-                Graphic design
-                <i className="fa-solid fa-caret-down className-up-down-icon"></i>
-              </p>
-              <div className="className-video-list-div" id="classList3">
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the coursetion to the coursetion to the
-                    coursetion to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-                <p className="className-video-list">
-                  <i className="fa-solid fa-file-video className-video-list-icon"></i>
-                  <span className="className-video-list-text">
-                    Introduction to the course
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </>

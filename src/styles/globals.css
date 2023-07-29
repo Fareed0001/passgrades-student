@@ -3271,72 +3271,29 @@ input[type="checkbox"] {
   text-align: center;
 }
 
+.class-course-title {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .class-video {
   width: 100%;
   height: auto;
 }
 
-.class-video-title {
+.class-title {
   font-size: 1rem;
   color: var(--primary-color);
+  margin: 2% 0 0;
+  font-weight: 600;
 }
 
-.class-video-resources,
-.class-video-description {
+.class-resources,
+.class-description {
   font-size: 0.8rem;
   text-align: justify;
 }
-
-.class-next-video-text {
-  background-color: #ebeefd;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 6px;
-  margin: 0 0 10%;
-  padding: 8%;
-  cursor: pointer;
-  color: black;
-  font-size: 0.8rem;
-}
-
-.class-next-video-text:hover {
-  background-color: #d3d6e4;
-}
-
-.class-next-video-icon {
-  color: var(--secondary-color);
-  margin: 0 5% 0 0;
-}
-
-.class-nav-video-list-div {
-  background-color: #ebeefd;
-  padding: 5%;
-}
-
-.class-video-list {
-  background-color: white;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  border-radius: 6px;
-  margin: 0 0 5%;
-  padding: 5%;
-  cursor: pointer;
-  color: black;
-  font-size: 0.6rem;
-}
-
-.class-video-list-icon {
-  margin: 0 2% 0 0;
-}
-
-.class-course-content {
-  font-size: 0.6rem;
-}
-
-.class-up-down-icon {
-  color: var(--secondary-color);
-  float: right;
-  margin: 3% 3% 0 0;
-}
-
 /* CLASS CODES END  */
 
 /* start of pc styles */
@@ -3344,62 +3301,28 @@ input[type="checkbox"] {
   /* ie it ends at 991px */
 
   /* CLASS CODES START  */
-  .class-video-title {
+  .class-title {
     font-size: 0.9rem;
   }
 
-  .class-video-resources,
-  .class-video-description {
+  .class-resources,
+  .class-description {
     font-size: 0.7rem;
-  }
-
-  .class-next-video-text {
-    padding: 5% 10%;
-    font-size: 0.6rem;
-  }
-
-  .class-next-video-text:hover {
-    background-color: #d3d6e4;
   }
 }
 
 /* start of medium tablet styles */
-@media screen and (max-width: 767px) {
+/* @media screen and (max-width: 767px) {
   /* ie it ends at 767px */
 
-  .class-next-video-col {
-    margin: 5% 0 0;
-  }
-
-  .class-next-video-text {
-    margin: 0 0 3%;
-    padding: 3%;
-  }
-
-  .class-next-video-icon {
-    margin: 0 3% 0 0;
-  }
-
-  .class-up-down-icon {
-    color: var(--secondary-color);
-    float: right;
-    margin: 1% 3% 0 0;
-  }
-
-  .class-video-list {
-    margin: 0 0 3%;
-    padding: 2%;
-  }
-}
+  
+/* }
 
 /* start of phone styles */
-@media screen and (max-width: 479px) {
+/* @media screen and (max-width: 479px) {
   /* ie it ends at 479px */
 
-  .body-content {
-    padding: 25% 0 10%;
-  }
-}
+/*} */
 
 /* DASHBOARD-CLASS.HTML END  */
 
