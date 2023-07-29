@@ -3651,6 +3651,10 @@ input[type="checkbox"] {
 /* DASHBOARD-PROFILE.HTML END  */
 
 /* DASHBOARD-SETTINGS.HTML START  */
+.settings-div {
+  margin: 2% auto 6%;
+}
+
 .settings-nav-item {
   background-color: var(--primary-color);
   color: white;
