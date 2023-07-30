@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { RegisterSchema } from "@/utils/schema";
+
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useToast } from "../../../components/ui/use-toast";
+import { useRouter } from "next/navigation";
+import { RegisterSchema } from "@/pages/utils/schema";
 
-
-const index = () => {
+const Index = () => {
+  const { toast } = useToast();
+  const router = useRouter();
   const {
     register,
     formState: { errors, isSubmitSuccessful },
@@ -22,18 +26,59 @@ const index = () => {
     },
     resolver: yupResolver(RegisterSchema),
   });
-  const submitHandler = (data) => {
-    console.log(data);
+  const password = watch("password");
+  const confirmpassword = watch("confirmpassword");
+
+  const submitHandler = async (data) => {
+    const { firstname, lastname, phonenumber: phone, email, password } = data;
+    const formattedData = {
+      firstname,
+      lastname,
+      phone,
+      email,
+      password,
+    };
+
+    try {
+      const response = await fetch(
+        "https://api.passgrades.com/api/v1/student/register",
+        {
+          method: "POST",
+          body: JSON.stringify(formattedData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      if (!response.ok) {
+        throw new Error("Something went wrong");
+      }
+      const data = await response.json();
+      console.log();
+
+      toast({
+        title: "Account Created",
+        description: `Sucessfully Created an Account`,
+      });
+      router.push("/Signin");
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: `Student Already Exists`,
+      });
+      console.error(error);
+    }
   };
+
+  useEffect(() => {
+    import("bootstrap/dist/js/bootstrap");
+  }, []);
 
   useEffect(() => {
     if (isSubmitSuccessful) {
       reset();
     }
   }, [reset, isSubmitSuccessful]);
-
-  const password = watch("password");
-  const confirmpassword = watch("confirmpassword");
 
   return (
     <section className="h-full fixed overflow-auto bg-[#ebeefd] w-full flex items-center justify-center">
@@ -150,7 +195,7 @@ const index = () => {
                 </div>
                 <div className="col-md-6">
                   <label
-                    htmlForfor="confirmPassword"
+                    htmlFor="confirmPassword"
                     className="form-label signup-form-label"
                   >
                     Confirm password
@@ -201,28 +246,15 @@ const index = () => {
                   </div>
                 </div>
 
-
                 {/* <!-- BOTTON  --> */}
                 <section className="col-md-6 d-grid">
                   <button
-
                     className="btn btn-primary create-account-button"
-                    type="button"
-                    onClick={handleCreateAccount}
+                    type="submit"
                   >
-                    <i className="fa-solid fa-user button-icons"></i>
                     Create account
-
                   </button>
                 </section>
-
-                {/* <div className="col-md-6 d-grid">
-                  <button className="btn btn-dark google-button" type="submit">
-                    <i className="fa-brands fa-google button-icons"></i>
-                    Sign-in with google
-                  </button>
-                </div> */}
-                {/* <!-- BUTTON  --> */}
 
                 <p className="account">
                   I have an account

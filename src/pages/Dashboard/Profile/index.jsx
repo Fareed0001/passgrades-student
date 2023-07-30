@@ -5,7 +5,6 @@ import {
   BsPhoneVibrateFill,
 } from "react-icons/bs";
 
-
 //Card Component
 const CourseCard = ({ image, title, description, price }) => {
   const [showDescription, setShowDescription] = useState(false);
@@ -25,14 +24,18 @@ const CourseCard = ({ image, title, description, price }) => {
         <div className="courses-card-body">
           <p className="courses-card-title">{title}</p>
           <p
-            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
-              }`}
+            className={`courses-card-text ${
+              showDescription ? "" : "course-card-text-hide"
+            }`}
           >
             {description}
           </p>
         </div>
         <div className="courses-card-footer">
-          <small className="courses-details-text" onClick={handleToggleDescription}>
+          <small
+            className="courses-details-text"
+            onClick={handleToggleDescription}
+          >
             Details
           </small>
         </div>
@@ -64,8 +67,22 @@ const Index = () => {
           <p class="user-role">
             {/* {role} */}
             <span>
-              <BsFillEnvelopeAtFill class="user-email-link" href=" mailto:user-email@example.com" />
-              <BsPhoneVibrateFill class="user-phone-number-link" href="tel:+2349052927094" />
+              <a class="user-email-link" href=" mailto:user-email@example.com">
+                <BsFillEnvelopeAtFill />
+              </a>
+            </span>
+            <span>
+              <a class="user-phone-number-link" href="tel:+2349052927094">
+                <BsPhoneVibrateFill />
+              </a>
+              <BsFillEnvelopeAtFill
+                class="user-email-link"
+                href=" mailto:user-email@example.com"
+              />
+              <BsPhoneVibrateFill
+                class="user-phone-number-link"
+                href="tel:+2349052927094"
+              />
             </span>
           </p>
         </div>
@@ -76,7 +93,6 @@ const Index = () => {
         <div class="user-courses">
           {/* <!-- COURSES START  --> */}
           <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
-
             <CourseCard
               image="/images/dashboard-images/sat.png"
               title="SAT"
@@ -87,8 +103,6 @@ const Index = () => {
               title="SAT"
               description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
             />
-
-
           </div>
         </div>
       </div>
