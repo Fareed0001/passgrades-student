@@ -1,7 +1,7 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect } from "react";
 import Router from "next/router";
-// import Cookies from "js-cookie";
+import Cookies from "js-cookie";
 
 const Dashboard = () => {
   const { status, data } = useSession();
