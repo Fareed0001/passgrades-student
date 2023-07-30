@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import Router from "next/router";
 
 const index = () => {
-  const { status, data } = useSession();
+  const { status } = useSession();
   useEffect(() => {
     if (status === "unauthenticated") {
       Router.replace("/auth/Signin");

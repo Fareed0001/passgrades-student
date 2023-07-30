@@ -3,10 +3,12 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
-import Credentials from "next-auth/providers/credentials";
+import { useRouter } from "next/navigation";
+import { useToast } from "../../../components/ui/use-toast";
 import { LoginSchema } from "@/pages/utils/schema";
 
 const index = () => {
+  const { toast } = useToast();
   const session = useSession();
   const form = useForm({
     resolver: yupResolver(LoginSchema),
@@ -16,12 +18,25 @@ const index = () => {
   const onSubmit = async (data) => {
     const { email, password } = data;
 
-    const result = await signIn("credentials", {
-      email: email,
-      password: password,
-      redirect: true,
-      callbackUrl: "/Dashboard",
-    });
+    try {
+      const result = await signIn("credentials", {
+        email: email,
+        password: password,
+        redirect: true,
+        callbackUrl: "/Dashboard",
+      });
+      console.log(result);
+
+      // toast({
+      //   title: "Sucessful login",
+      //   description: `You have sucessfully logged in`,
+      // });
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: `${error.message}`,
+      });
+    }
   };
 
   useEffect(() => {

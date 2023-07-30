@@ -1,6 +1,8 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
+const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+
 const authOptions = {
   // Configure one or more authentication providers
   providers: [
@@ -14,16 +16,13 @@ const authOptions = {
         // Add logic here to look up the user from the credentials supplied
         const { email, password } = credentials;
 
-        const response = await fetch(
-          "http://passmark.eu-north-1.elasticbeanstalk.com/api/v1/student/login",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ email, password }),
-          }
-        );
+        const response = await fetch(`${baseUrl}/student/login`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
 
         const user = await response.json();
         console.log(response.status);
