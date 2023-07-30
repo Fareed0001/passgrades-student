@@ -81,13 +81,13 @@ const Index = () => {
   }, [reset, isSubmitSuccessful]);
 
   return (
-    <section className="h-full fixed overflow-auto bg-[#ebeefd] w-full flex items-center justify-center">
-      <div className="">
-        <div className="row lg:w-[80%] mx-auto">
+    <section className="signinPage h-full fixed overflow-auto bg-[#ebeefd] w-full">
+      <div className="container-fluid signin-container">
+        <div className="row">
           <div className="col-lg-5 sign-up-first-col">
             <img
               className="sign-up-img"
-              src="images/register-images/sign-up.gif"
+              src="/images/register-images/sign-up.gif"
               alt="sign-up.gif"
             />
           </div>
@@ -211,14 +211,14 @@ const Index = () => {
                   </p>
                 </div>
                 <div className="check-boxes-div">
-                  <div className="col-12">
+                  {/* <div className="col-12">
                     <a className="forgot-password" href="">
                       forgot password?
                     </a>
-                  </div>
+                  </div> */}
 
                   <div className="col-12">
-                    <div className="form-check">
+                    <div className="">
                       <input
                         className="form-check-input"
                         type="checkbox"
