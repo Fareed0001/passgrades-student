@@ -43,7 +43,8 @@ const index = () => {
 
                 <div className="agent-student-div">
                   <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div className="col">
+                    
+                    {/* <div className="col">
                       <div className="agent-student-card card">
                         <Image
                           height={400}
@@ -62,45 +63,9 @@ const index = () => {
                           </a>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div className="col">
-                      <div className="agent-student-card card">
-                        <img
-                          src="/images/landing-page-images/face0.jpg"
-                          className="card-img-top student-image"
-                          alt="student image"
-                        />
-                        <div className="card-body">
-                          <p className="student-name">Isiah Sylvester</p>
-                          <a
-                            href="dashboard.html"
-                            className="btn btn-primary agent-student-card-link"
-                          >
-                            Login
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col">
-                      <div className="agent-student-card card">
-                        <img
-                          className="student-image card-img-top"
-                          src="/images/landing-page-images/face0.jpg"
-                          alt="student image"
-                        />
-                        <div className="card-body">
-                          <p className="student-name">Isiah Sylvester</p>
-                          <a
-                            href="dashboard.html"
-                            className="btn btn-primary agent-student-card-link"
-                          >
-                            Login
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                   
                   </div>
                 </div>
                 {/* <!-- MY STUDENT END --> */}

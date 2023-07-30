@@ -16,7 +16,7 @@ const DashboardLayout = ({ children }) => {
   return (
     <div className="dashboard-div">
       <BiMenu
-        className=" block md:hidden mt-10 text-4xl z-40"
+        className="open-sidebar-icon"
         onClick={mobilesidebarHandler}
       />
 

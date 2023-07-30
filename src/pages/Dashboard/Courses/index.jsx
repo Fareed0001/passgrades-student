@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import axios from "@/pages/utils/axios";
 import { useSession } from "next-auth/react";
-import Cookies from "js-cookie";
+// import Cookies from "js-cookie";
 import { Session } from "next-auth";
 
 //flutterwave start
@@ -83,7 +83,7 @@ const Index = (props) => {
   const { data } = useSession();
   const [Courses, setCourses] = useState([]);
   const [Loading, setLoading] = useState(false);
-  Cookies.set("AuthToken", data?.user?.token, { expires: 1 });
+  // Cookies.set("AuthToken", data?.user?.token, { expires: 1 });
 
   useEffect(() => {
     setLoading(true);

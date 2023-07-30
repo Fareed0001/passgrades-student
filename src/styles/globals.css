@@ -1319,7 +1319,7 @@ input[type="checkbox"] {
   .sign-up-second-col {
     padding-right: 0;
   }
-  
+
 }
 
 /* start of pc styles */
@@ -2526,12 +2526,12 @@ input[type="checkbox"] {
 }
 
 .logo-span {
-  color: var(--primary-color);
+  color: #000d83;
 }
 
 .dashboard-check-icon {
   font-size: 1.2rem;
-  color: var(--tertiary-color);
+  color: #3ec4ff;
   display: inline;
 }
 
@@ -2598,6 +2598,10 @@ input[type="checkbox"] {
 
 .header-search-icon {
   color: var(--primary-color);
+}
+
+.open-sidebar-icon {
+  display: none;
 }
 
 /* SEARCH DIV END */
@@ -2742,30 +2746,68 @@ input[type="checkbox"] {
   /* ie it ends at 479px */
 
   /* HEADER START */
-  .pc-sidebar,
   .pc-header {
     display: none;
   }
 
-  .phone-header {
+  /* MOBILE NAV CSS START  */
+
+  .open-sidebar-icon {
     display: block;
-    padding: 3% 0;
-    position: fixed;
-    background-color: white;
-    width: 100%;
-    z-index: 1;
-    top: 0;
+    color: #000d83;
+    font-size: 1.3rem;
+    margin: 8%;
+    position: absolute;
+    font-weight: 600;
   }
+
+  .open-sidebar-icon:hover {
+    display: block;
+    color: #000d83;
+    font-size: 1.3rem;
+    margin: 8%;
+    position: absolute;
+    font-weight: 600;
+  }
+
+  .close-sidebar-icon {
+    display: block;
+    color: #000d83;
+    font-size: 1.4rem;
+    margin: 15% 0 0 15%;
+    font-weight: 600;
+  }
+
+  .side-bar-component-div {
+    margin-left: 2.5rem;
+    /* Equivalent to Tailwind's ml-10 */
+  }
+
+  .mobile-side-bar-icon {
+    display: inline;
+    margin: 0 .5rem 0 0;
+  }
+
+  .side-bar-content {
+    font-weight: 600;
+    width: 80%;
+    margin: 5% 0;
+    padding: 5%;
+    border-radius: 12px;
+  }
+
+  .side-bar-content:hover {
+    background-color: #4b5fdc;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(177, 186, 233, 0.35)5px 1.95px 2.6px;
+  }
+
+  /* MOBILE NAV CSS END  */
 
   /* LOGO DIV START  */
-  .open-sidebar {
-    color: var(--tertiary-color);
-    font-size: 1rem;
-    margin: 0 3% 0 0;
-  }
-
   .logo-div {
-    margin: 2% 0 0;
+    margin: 2% 0 0 15%;
     display: inline-block;
     width: auto;
   }
@@ -2797,21 +2839,8 @@ input[type="checkbox"] {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
-  .phone-user-header-div {
-    float: right;
-    margin: 0 10% 0 0;
-  }
-
   .sidebar-components {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    margin: 0 0 0 -5%;
-    overflow-x: hidden;
-    background-color: white;
-    transition: 0.5s;
-    border: none;
+    display: none;
   }
 
   .nav-item {

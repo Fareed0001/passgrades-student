@@ -19,43 +19,43 @@ import {
 const data = [
   {
     id: 1,
-    icon: <BiBookAdd />,
+    icon: <BiBookAdd className="mobile-side-bar-icon" />,
     title: "Dashboard",
-    link: "/Dashboard/Agent",
+    link: "/Dashboard",
   },
   {
     id: 2,
-    icon: <BiChalkboard />,
+    icon: <BiChalkboard className="mobile-side-bar-icon" />,
     title: "My Class",
     link: "/Dashboard/Class",
   },
   {
     id: 3,
-    icon: <BiClipboard />,
+    icon: <BiClipboard className="mobile-side-bar-icon" />,
     title: "Instructors",
     link: "/Dashboard/Instructors",
   },
   {
     id: 4,
-    icon: <BiCommentAdd />,
+    icon: <BiCommentAdd className="mobile-side-bar-icon" />,
     title: "Courses",
     link: "/Dashboard/Courses",
   },
   {
     id: 5,
-    icon: <BiMessage />,
+    icon: <BiMessage className="mobile-side-bar-icon" />,
     title: "Message",
     link: "/Dashboard/Profile",
   },
   {
     id: 6,
-    icon: <CgProfile />,
+    icon: <CgProfile className="mobile-side-bar-icon" />,
     title: "profile",
     link: "/Dashboard/Profile",
   },
   {
     id: 8,
-    icon: <BiLogIn />,
+    icon: <BiLogIn className="mobile-side-bar-icon" />,
     title: "settings",
     link: "/Dashboard/Settings",
   },
@@ -91,24 +91,29 @@ const MobileNavigation = ({ modalctrl, Open }) => {
       >
         <LiaTimesSolid
           onClick={modalctrl}
-          className="mt-10 ml-4 text-4xl text-blue-800"
+          className="close-sidebar-icon"
         />
-
-        <div className="flex justify-center flex-col gap-y-5 items-start  text-xl text-blue-900 ml-10">
+        <div className="side-bar-component-div">
           {data.map((link) => (
             <Link
+
               key={link.id}
               href={link.link}
               className="no-underline"
               onClick={modalctrl}
             >
-              <div className="flex items-center justify-start gap-x-4 font-semibold">
+              <div className="side-bar-content">
                 <span>{link.icon}</span>
                 {link.title}
               </div>
             </Link>
           ))}
         </div>
+        <img
+          className="sidebar-img"
+          src="/images/dashboard-images/sidebar-img.jpg"
+          alt=""
+        />
       </motion.div>
     </>
   );
