@@ -56,14 +56,16 @@ export default function Home() {
                       </p>
                     </div>
                     <section className="nav-div-2">
-                      <button
-                        type="button"
-                        className="nav-button nav-sign-in"
-                        onClick={() => signIn()}
-                      >
-                        sign in
-                      </button>
-                      <Link href="/auth/signup">
+                      <Link href="/auth/Signin">
+                        <button
+                          type="button"
+                          className="nav-button nav-sign-in"
+                          onClick={() => signIn()}
+                        >
+                          sign in
+                        </button>
+                      </Link>
+                      <Link href="/auth/Signup">
                         <button
                           type="button"
                           className="nav-button nav-sign-up"
@@ -101,7 +103,7 @@ export default function Home() {
                   </p>
 
                   <section className="">
-                    <Link href="/auth/signup" className="signup-link">
+                    <Link href="/auth/Signup" className="signup-link">
                       <button
                         type="button"
                         className="nav-button try-now-button "
@@ -109,7 +111,7 @@ export default function Home() {
                         Try now
                       </button>
                     </Link>
-                    <Link href="/auth/signup" className="signup-link">
+                    <Link href="/auth/Signup" className="signup-link">
                       <button
                         type="button"
                         className="nav-button play-video-button "
@@ -714,7 +716,7 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/auth/signup" className="signup-link">
+                  <Link href="/auth/Signup" className="signup-link">
                     <button
                       type="button"
                       className="nav-button try-now-button"
@@ -840,7 +842,7 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/auth/signup" className="signup-link">
+                  <Link href="/auth/Signup" className="signup-link">
                     <button
                       type="button"
                       className="nav-button try-now-button"
@@ -861,7 +863,7 @@ export default function Home() {
                   Register today and get credible information, latest news,
                   courses, resources and alot more what
                   <span className="seventh-div-span"><BsFillCheckCircleFill className="seventh-check-icon" />
-                  PassGrades has to offer.</span>
+                    PassGrades has to offer.</span>
                 </p>
               </div>
               <div className="row">
@@ -873,7 +875,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="seventh-div-col1 col-md">
-                  <Link href="/auth/signup" className="signup-link">
+                  <Link href="/auth/Signup" className="signup-link">
                     <button
                       type="button"
                       className="nav-button seventh-div-button"

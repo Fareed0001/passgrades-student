@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useToast } from "../../../components/ui/use-toast";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/pages/utils/schema";
+import Link from "next/link";
 
 const Index = () => {
   const { toast } = useToast();
@@ -60,7 +61,7 @@ const Index = () => {
         title: "Account Created",
         description: `Sucessfully Created an Account`,
       });
-      router.push("/Signin");
+      router.push("/auth/Signin");
     } catch (error) {
       toast({
         title: "Error",
@@ -258,7 +259,7 @@ const Index = () => {
 
                 <p className="account">
                   I have an account
-                  <a className="account-link" href="Signin">
+                  <a className="account-link" href="/auth/Signin">
                     Sign in
                   </a>
                 </p>

@@ -153,7 +153,7 @@ const index = () => {
 
                 <p className="account">
                   I don't have an account?{" "}
-                  <Link className="account-link" href="Signup">
+                  <Link className="account-link" href="/auth/Signup">
                     Sign up
                   </Link>
                 </p>
@@ -165,7 +165,7 @@ const index = () => {
                   Sign in with google
                 </button>
               </section> */}
-              
+
               {/* <!-- FORM  --> */}
               {/* <DevTool control={control} /> */}
             </div>
