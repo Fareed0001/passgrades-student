@@ -67,14 +67,6 @@ const Index = () => {
           <p class="user-role">
             {/* {role} */}
             <span>
-              <a class="user-email-link" href=" mailto:user-email@example.com">
-                <BsFillEnvelopeAtFill />
-              </a>
-            </span>
-            <span>
-              <a class="user-phone-number-link" href="tel:+2349052927094">
-                <BsPhoneVibrateFill />
-              </a>
               <BsFillEnvelopeAtFill
                 class="user-email-link"
                 href=" mailto:user-email@example.com"

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
-import axios from "@/pages/utils/axios";
+import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
 import Cookies from "js-cookie";
 import { Session } from "next-auth";

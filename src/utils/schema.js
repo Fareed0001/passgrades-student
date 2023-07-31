@@ -1,4 +1,10 @@
+import { Fragment } from "react";
 import * as Yup from "yup";
+
+export default function SchemaPage() {
+  return <Fragment />;
+}
+
 
 export const LoginSchema = Yup.object().shape({
   email: Yup.string()

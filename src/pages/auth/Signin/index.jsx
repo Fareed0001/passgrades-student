@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useToast } from "../../../components/ui/use-toast";
-import { LoginSchema } from "@/pages/utils/schema";
+import { LoginSchema } from "@/utils/schema";
 
 const index = () => {
   const { toast } = useToast();
