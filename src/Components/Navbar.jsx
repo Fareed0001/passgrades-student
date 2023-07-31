@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -30,20 +31,22 @@ const Navbar = () => {
 
           {/* <!-- USER IMAGE START --> */}
           <div className="header-user-div">
-            <div className="row">
-              <div className="col-auto header-user-text-col">
-                <p className="header-user-text">
-                   <span>{/* firstname */}</span> <br /> <span>{/* lastname */}</span> 
-                </p>
+            <Link href="/Dashboard/Profile">
+              <div className="row">
+                <div className="col-auto header-user-text-col">
+                  <p className="header-user-text">
+                    <span>{/* firstname */}</span> <br /> <span>{/* lastname */}</span>
+                  </p>
+                </div>
+                <div className="col-auto header-user-img-col">
+                  <img
+                    className="header-user-img"
+                    src="../images/landing-page-images/black.jpg"
+                    alt="user-profile-pic"
+                  />
+                </div>
               </div>
-              <div className="col-auto header-user-img-col">
-                <img
-                  className="header-user-img"
-                  src="../images/landing-page-images/black.jpg"
-                  alt="user-profile-pic"
-                />
-              </div>
-            </div>
+            </Link>
           </div>
           {/* <!-- USER IMAGE END --> */}
         </div>
