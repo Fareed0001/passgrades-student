@@ -1,6 +1,11 @@
+import { useSession } from "next-auth/react";
 import React from "react";
 
 const Navbar = () => {
+  const { status, data } = useSession();
+  const firstname = data?.user?.data?.firstname;
+  const lastname = data?.user?.data?.lastname;
+
   return (
     <header className="pc-header">
       <nav className="navbar navbar-expand-lg">
@@ -33,7 +38,7 @@ const Navbar = () => {
             <div className="row">
               <div className="col-auto header-user-text-col">
                 <p className="header-user-text">
-                   <span>{/* firstname */}</span> <br /> <span>{/* lastname */}</span> 
+                  <span>{firstname}</span> <br /> <span>{lastname}</span>
                 </p>
               </div>
               <div className="col-auto header-user-img-col">

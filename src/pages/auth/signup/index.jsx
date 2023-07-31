@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useToast } from "../../../components/ui/use-toast";
 import { useRouter } from "next/navigation";
-import { RegisterSchema } from "@/pages/utils/schema";
+import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
 
 const Index = () => {

@@ -1,5 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { useToast } from "../../../components/ui/use-toast";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -25,12 +26,14 @@ const authOptions = {
         });
 
         const user = await response.json();
-        console.log(response.status);
-        console.log(user);
 
         if (response.ok && user) {
           return user;
         } else {
+          const errorData = await response.json();
+          const errorMessage = errorData?.error || "Authentication failed";
+          console.log(error);
+
           return null;
         }
       },
@@ -55,6 +58,7 @@ const authOptions = {
 
   pages: {
     signIn: "/auth/Signin",
+    error: "/auth/error",
   },
 };
 export default NextAuth(authOptions);
