@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
-import Cookies from "js-cookie";
-import { Session } from "next-auth";
+
+import { Loader, Loader2Icon } from "lucide-react";
 
 //flutterwave start
 const config = {
@@ -47,7 +47,7 @@ const CourseCard = ({ image, title, description, price }) => {
       <div className="courses-card">
         <img
           src={image}
-          className="card-img-top courses-card-img"
+          className="card-img-top courses-card-img h-[200px] w-[200px]"
           alt={title}
         />
         <div className="courses-card-body">
@@ -61,7 +61,7 @@ const CourseCard = ({ image, title, description, price }) => {
           </p>
         </div>
         <p className="course-price">
-          {price}
+          ₦{price}
           <span className="course-price-span">
             <FlutterWaveButton {...fwConfig} />
           </span>
@@ -83,7 +83,6 @@ const Index = (props) => {
   const { data } = useSession();
   const [Courses, setCourses] = useState([]);
   const [Loading, setLoading] = useState(false);
-  Cookies.set("AuthToken", data?.user?.token, { expires: 1 });
 
   useEffect(() => {
     setLoading(true);
@@ -93,34 +92,48 @@ const Index = (props) => {
         if (!authToken) {
           return null;
         }
-        const response = await axios.get("/student/mycourses", {
+
+        const response = await axios.get("/courses", {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
         });
+
         const responseData = response?.data;
-        console.log(responseData);
-        setCourses(responseData);
+        setCourses(responseData?.data);
         setLoading(false);
       } catch (error) {
+        setLoading(false);
         console.log(error.message);
       }
     }
     getcourses();
-  }, []);
+  }, [data]);
 
   return (
-    <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4">
-      {/* Add multiple CourseCard components */}
-      {/* {Courses.map((course) => yes)} */}
-      <CourseCard
-        image="/images/dashboard-images/sat.png"
-        title="SAT"
-        description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-        price="₦5,000"
-      />
-      {/* Add more CourseCard components for other courses */}
-    </div>
+    <>
+      <div className="font-semibold text-xl text-gray-500">
+        Courses Avalable
+      </div>
+      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4 h-full relative">
+        {Loading ? (
+          <div className=" absolute flex items-center justify-center  text-xl font-bold animate-pulse  top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+            <Loader2Icon className="animate-spin" />
+          </div>
+        ) : Courses.length === 0 ? (
+          <div className=""> No available courses</div>
+        ) : (
+          Courses.map((course) => (
+            <CourseCard
+              image={course.cover_image}
+              title={course.title}
+              description={course.description}
+              price={course.student_price}
+            />
+          ))
+        )}
+      </div>
+    </>
   );
 };
 
@@ -142,3 +155,15 @@ const Index = (props) => {
 //   };
 // }
 export default Index;
+
+{
+  /* <CourseCard
+        image="/images/dashboard-images/sat.png"
+        title="SAT"
+        description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
+        price="₦5,000"
+      /> */
+}
+{
+  /* Add more CourseCard components for other courses */
+}

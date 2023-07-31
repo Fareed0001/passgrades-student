@@ -259,9 +259,9 @@ const Index = () => {
 
                 <p className="account">
                   I have an account
-                  <a className="account-link" href="/auth/Signin">
+                  <Link className="account-link" href="/auth/Signin">
                     Sign in
-                  </a>
+                  </Link>
                 </p>
               </form>
               {/* <!-- FORM  --> */}

@@ -1,7 +1,6 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect } from "react";
 import Router from "next/router";
-import Cookies from "js-cookie";
 
 const Dashboard = () => {
   const { status, data } = useSession();
@@ -11,7 +10,7 @@ const Dashboard = () => {
   const content = (
     <div className="container-fluid body-content">
       <p className="dashboard-greetings">
-        Good day {lastname} {firstname}{" "}
+        Good morning {lastname} {firstname}
       </p>
       <div className="dashboard-content-board-div">
         <img

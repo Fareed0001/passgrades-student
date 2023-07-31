@@ -7,7 +7,6 @@ import DashboardLayout from "@/Components/Layouts/DashboardLayout";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SessionProvider } from "next-auth/react";
 import { Toaster } from "@/components/ui/toaster";
-
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps, session }) {

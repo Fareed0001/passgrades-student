@@ -17,6 +17,7 @@ const index = () => {
   const { errors, isSubmitSuccessful } = formState;
   const onSubmit = async (data) => {
     const { email, password } = data;
+    console.log(data);
 
     try {
       const result = await signIn("credentials", {
@@ -25,7 +26,6 @@ const index = () => {
         redirect: true,
         callbackUrl: "/Dashboard",
       });
-      console.log(result);
 
       // toast({
       //   title: "Sucessful login",

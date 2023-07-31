@@ -1,66 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { CourseCard } from "@/Components/CourseCard";
+import { useSession } from "next-auth/react";
+import axios from "@/utils/axios";
+import { Loader2Icon } from "lucide-react";
+import App from "@/Components/App";
 
 //Card Component
-const CourseCard = ({ image, title, description, price }) => {
-  const [showDescription, setShowDescription] = useState(false);
-
-  const handleToggleDescription = () => {
-    setShowDescription((prevShowDescription) => !prevShowDescription);
-  };
-
-  return (
-    <div className="col">
-      <div className="courses-card">
-        <img
-          src={image}
-          className="card-img-top courses-card-img"
-          alt={title}
-        />
-        <div className="courses-card-body">
-          <p className="courses-card-title">{title}</p>
-          <p
-            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
-              }`}
-          >
-            {description}
-          </p>
-        </div>
-        <div className="courses-card-footer">
-          <small className="courses-details-text" onClick={handleToggleDescription}>
-            Details
-          </small>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
-
-
-
-
 
 const DashboardClass = () => {
+  const { data } = useSession();
+  const [Courses, setCourses] = useState([]);
+  const [Loading, setLoading] = useState(false);
+  useEffect(() => {
+    setLoading(true);
+    async function getcourses() {
+      try {
+        const authToken = data?.user?.token;
+        if (!authToken) {
+          return null;
+        }
+
+        const response = await axios.get("/student/mycourses", {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+
+        const responseData = response?.data;
+        setCourses(responseData?.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+    getcourses();
+  }, [data]);
   return (
     <>
       <div className="container-fluid body-content">
         <div className="row">
           <div className="class-div col-12">
             <p className="class-course-title">Course title</p>
-            <video
-              className="class-video"
-              controls
-              controlsList="nodownload"
-            >
-              <source
-                src=""
-                type="video/mp4"
-              />
+            <video className="class-video" controls controlsList="nodownload">
+              {/* <App /> */}
             </video>
             <p className="class-title">Introduction to the course</p>
             <p className="class-resources">
-              Class resource:  {/* course resource: it downloads on click */}
+              Class resource: {/* course resource: it downloads on click */}
             </p>
             <div className="class-description">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -78,9 +64,15 @@ const DashboardClass = () => {
 
           <div className="second-class-div col-12">
             <div className="d-grid">
-              <button type="button" className="btn btn-primary class-button">Next class name{/* class title */}</button>
-              <button type="button" className="btn btn-primary class-button">Next class name</button>
-              <button type="button" className="btn btn-primary class-button">Next class name</button>
+              <button type="button" className="btn btn-primary class-button">
+                Next class name{/* class title */}
+              </button>
+              <button type="button" className="btn btn-primary class-button">
+                Next class name
+              </button>
+              <button type="button" className="btn btn-primary class-button">
+                Next class name
+              </button>
             </div>
           </div>
 
@@ -88,20 +80,26 @@ const DashboardClass = () => {
             <p className="third-class-div-header">Enrolled courses</p>
 
             <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
-              <CourseCard
-                image="/images/dashboard-images/sat.png"
-                title="SAT"
-                description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-              />
-              <CourseCard
-                image="/images/dashboard-images/sat.png"
-                title="SAT"
-                description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-              />
+              {Loading ? (
+                <div className=" absolute mx-auto flex items-center justify-center  text-xl font-bold animate-pulse  top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
+                  <Loader2Icon className="animate-spin" />
+                </div>
+              ) : Courses.length === 0 ? (
+                <div className=" mt-10 mx-auto font-semibold text-sm text-gray-500 ">
+                  You Havent Enrolled to Any Course yet
+                </div>
+              ) : (
+                Courses.map((course) => (
+                  <CourseCard
+                    image={course.cover_image}
+                    title={course.title}
+                    description={course.description}
+                    price={course.student_price}
+                  />
+                ))
+              )}
             </div>
-
           </div>
-
         </div>
       </div>
     </>
