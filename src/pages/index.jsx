@@ -4,7 +4,7 @@ import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import { BsFillPlayFill, BsFillCheckCircleFill } from "react-icons/bs";
 import { IoMdAdd } from "react-icons/io";
-import { signIn, signOut, useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useEffect } from "react";
 import Router from "next/router";
 const inter = Inter({ subsets: ["latin"] });
@@ -46,14 +46,6 @@ export default function Home() {
                             Tutors
                           </a>
                         </span>
-                        {/* <span>
-                        <a
-                          className="nav-0-link nav-1-link2"
-                          href="#testimonies"
-                        >
-                          Comments
-                        </a>
-                      </span> */}
                       </p>
                     </div>
                     <div className="nav-div-1">
@@ -76,7 +68,7 @@ export default function Home() {
                         className="nav-button nav-sign-in"
                         onClick={() => signIn()}
                       >
-                        sign in
+                        Sign in
                       </button>
                       <Link href="/auth/signup">
                         <button
