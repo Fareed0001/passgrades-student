@@ -1,11 +1,9 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-// import { useToast } from "../../../components/ui/use-toast";
 
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
 
 const authOptions = {
-  // Configure one or more authentication providers
   providers: [
     CredentialsProvider({
       type: "credentials",
