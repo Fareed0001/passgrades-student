@@ -714,7 +714,7 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/Signup">
+                  <Link href="/auth/signup">
                     <button
                       type="button"
                       className="nav-button try-now-button flex items-center justify-center gap-x-2"
@@ -840,7 +840,7 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/Signup">
+                  <Link href="/auth/signup">
                     <button
                       type="button"
                       className="nav-button try-now-button flex items-center justify-center"
@@ -1026,7 +1026,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="seventh-div-col1 col-md">
-                  <Link href="/Signup">
+                  <Link href="/auth/signup">
                     <button
                       type="button"
                       className="nav-button seventh-div-button"
