@@ -55,16 +55,16 @@ const Index = () => {
       const data = await response.json();
       console.log();
 
-      toast({
-        title: "Account Created",
-        description: `Sucessfully Created an Account`,
-      });
+      // toast({
+      //   title: "Account Created",
+      //   description: `Sucessfully Created an Account`,
+      // });
       router.push("/auth/Signin");
     } catch (error) {
-      toast({
-        title: "Error",
-        description: `Student Already Exists`,
-      });
+      // toast({
+      //   title: "Error",
+      //   description: `Student Already Exists`,
+      // });
       console.error(error);
     }
   };

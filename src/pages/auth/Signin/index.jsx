@@ -151,7 +151,7 @@ const index = () => {
 
                 <p className="account">
                   I don't have an account?{" "}
-                  <Link className="account-link" href="/auth/Signup">
+                  <Link className="account-link" href="/auth/signup">
                     Sign up
                   </Link>
                 </p>

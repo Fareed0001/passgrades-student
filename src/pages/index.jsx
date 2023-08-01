@@ -59,13 +59,6 @@ export default function Home() {
                       <button
                         type="button"
                         className="nav-button nav-sign-in"
-                        onClick={() => signOut()}
-                      >
-                        sign out
-                      </button>
-                      <button
-                        type="button"
-                        className="nav-button nav-sign-in"
                         onClick={() => signIn()}
                       >
                         Sign in
