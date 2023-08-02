@@ -101,11 +101,11 @@ const index = () => {
                 </div>
 
                 <div className="check-boxes-div">
-                  <div className="col-12">
+                  {/* <div className="col-12">
                     <a className="forgot-password" href="">
                       forgot password?
                     </a>
-                  </div>
+                  </div> */}
 
                   <div className="col-12">
                     <div className="form-check">

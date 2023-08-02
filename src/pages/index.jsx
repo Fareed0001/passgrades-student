@@ -100,19 +100,19 @@ export default function Home() {
                     and more worldwide. Your journey starts here!
                   </p>
 
-                  <section className="flex gap-x-2">
-                    <Link href="Signup">
+                  <section className="">
+                    <Link href="/auth/signup">
                       <button
                         type="button"
-                        className="nav-button try-now-button text-"
+                        className="nav-button try-now-button signup-link"
                       >
                         Try now
                       </button>
                     </Link>
-                    <Link href="Signup">
+                    <Link href="/auth/signup">
                       <button
                         type="button"
-                        className="nav-button play-video-button flex "
+                        className="nav-button play-video-button signup-link"
                       >
                         <BsFillPlayFill className="h-6 w-6 animate-pulse play-video-icon" />{" "}
                         Play video
@@ -714,10 +714,10 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/auth/signup">
+                  <Link href="/auth/signup" className="signup-link">
                     <button
                       type="button"
-                      className="nav-button try-now-button flex items-center justify-center gap-x-2"
+                      className="nav-button try-now-button"
                     >
                       <IoMdAdd className="mr-3 third-div-icon" />
                       <span> Enroll now</span>
@@ -840,10 +840,10 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/auth/signup">
+                  <Link href="/auth/signup"  className="signup-link">
                     <button
                       type="button"
-                      className="nav-button try-now-button flex items-center justify-center"
+                      className="nav-button try-now-button"
                     >
                       <IoMdAdd className="mr-3  third-div-icon" />
                       <span> Enroll now</span>
@@ -853,159 +853,6 @@ export default function Home() {
               </div>
             </div>
             {/* <!-- FIFTH DIV END  -->
-
-    <!-- SIXTH DIV START  --> */}
-            {/* <div className="sixth-div container" id="testimonies">
-            <p className="section-header sixth-div-header">
-              What <span className="sixth-div-header-span">People</span> Say
-            </p> */}
-
-            {/* <!-- carousel  --> */}
-            {/* <section className="services">
-              <div className="circle--slider">
-                <div className="rotate--circle">
-                  <ul className="circle--rotate" id="circle--rotate">
-                    <li className="block">
-                      <div className="sixth-div-img-div">
-                        <img
-                          className="six-div-img"
-                          src="images\landing-page-images\face0.jpg"
-                          alt=""
-                        />
-                        <span></span>
-                      </div>
-                    </li>
-                    <li className="block">
-                      <div className="sixth-div-img-div">
-                        <img
-                          className="six-div-img"
-                          src="images\landing-page-images\face1.jpg"
-                          alt=""
-                        />
-                        <span></span>
-                      </div>
-                    </li>
-                    <li className="block">
-                      <div className="sixth-div-img-div">
-                        <img
-                          className="six-div-img"
-                          src="images\landing-page-images\face2.jpg"
-                          alt=""
-                        />
-                        <span></span>
-                      </div>
-                    </li>
-                    <li className="block">
-                      <div className="sixth-div-img-div">
-                        <img
-                          className="six-div-img"
-                          src="images\landing-page-images\face3.jpg"
-                          alt=""
-                        />
-                        <span></span>
-                      </div>
-                    </li>
-                    <li className="block">
-                      <div className="sixth-div-img-div">
-                        <img
-                          className="six-div-img"
-                          src="images\landing-page-images\face4.jpg"
-                          alt=""
-                        />
-                        <span></span>
-                      </div>
-                    </li>
-                  </ul>
-                  <div className="animate-wrapper">
-                    <div className="animate">
-                      <div className="animate-img">
-                        <div className="animate-img__in">
-                          <div className="animate-more">
-                            <div className="animate-title">
-                              <p className="carousel-text">
-                                This is the best place I have gotten an online
-                                education from
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="animate">
-                      <div className="animate-img">
-                        <div
-                          className="animate-img__in"
-                          data-image="&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-                        >
-                          <div className="animate-more">
-                            <div className="animate-title">
-                              <p className="carousel-text">
-                                This web portal is too soft for real. The web
-                                developer should be paid more
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="animate">
-                      <div className="animate-img">
-                        <div
-                          className="animate-img__in"
-                          data-image="&amp;auto=format&amp;fit=crop&amp;w=614&amp;q=80"
-                        >
-                          <div className="animate-more">
-                            <div className="animate-title">
-                              <p className="carousel-text">
-                                At this point, I believe Fareed is not only
-                                good. He is the best
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="animate">
-                      <div className="animate-img">
-                        <div
-                          className="animate-img__in"
-                          data-image="&amp;auto=format&amp;fit=crop&amp;w=1350&amp;q=80"
-                        >
-                          <div className="animate-more">
-                            <div className="animate-title">
-                              <p className="carousel-text">
-                                In need of quality education to study abroad.
-                                Use this web portal
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="animate">
-                      <div className="animate-img">
-                        <div
-                          className="animate-img__in"
-                          data-image="&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-                        >
-                          <div className="animate-more">
-                            <div className="animate-title">
-                              <p className="carousel-text">
-                                Finally, a good place to gain international
-                                level standard knowledge
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div> */}
-            {/* <!-- carousel  -->
-    <!-- SIXTH DIV END  -->
 
     <!-- SEVENTH DIV START  --> */}
             <div className="seventh-div container">
@@ -1026,7 +873,7 @@ export default function Home() {
                   />
                 </div>
                 <div className="seventh-div-col1 col-md">
-                  <Link href="/auth/signup">
+                  <Link href="/auth/signup" className="signup-link">
                     <button
                       type="button"
                       className="nav-button seventh-div-button"

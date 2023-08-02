@@ -1,5 +1,3 @@
-// layouts/DefaultLayout.js
-
 import React from "react";
 
 const DefaultLayout = ({ children }) => {
