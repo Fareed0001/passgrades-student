@@ -2755,8 +2755,8 @@ input[type="checkbox"] {
   .open-sidebar-icon {
     display: block;
     color: #000d83;
-    font-size: 1.3rem;
-    margin: 8%;
+    font-size: 1.4rem;
+    margin: 5% auto 0 5%;
     position: absolute;
     font-weight: 600;
   }

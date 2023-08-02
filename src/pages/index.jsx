@@ -840,7 +840,7 @@ export default function Home() {
                     own learning pace, and there's the added flexibility of
                     setting a schedule tat fits everyone.
                   </p>
-                  <Link href="/auth/signup"  className="signup-link">
+                  <Link href="/auth/signup" className="signup-link">
                     <button
                       type="button"
                       className="nav-button try-now-button"
@@ -860,8 +860,8 @@ export default function Home() {
                 <p className="seventh-div-header">
                   Register today and get credible information, latest news,
                   courses, resources and alot more what
-                  <BsFillCheckCircleFill className="seventh-check-icon" />
-                  PassGrades has to offer.
+                  <span className="seventh-div-span"><BsFillCheckCircleFill className="seventh-check-icon" />
+                    PassGrades has to offer.</span>
                 </p>
               </div>
               <div className="row">
