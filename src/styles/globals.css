@@ -2770,7 +2770,7 @@ input[type="checkbox"] {
 
   .open-sidebar-icon {
     display: block;
-    color: #000d83;
+    color: #4b5fdc;
     font-size: 1.4rem;
     margin: 8% 4%;
     position: absolute;
@@ -2779,8 +2779,8 @@ input[type="checkbox"] {
 
   .close-sidebar-icon {
     display: block;
-    color: #000d83;
-    font-size: 0.8rem; /* Corrected font size value */
+    color: #4b5fdc;
+    font-size: 1.4rem; 
     margin: 0;
     font-weight: 600;
   }
