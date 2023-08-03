@@ -44,7 +44,7 @@ const index = () => {
                 <div className="agent-student-div">
                   <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     
-                    {/* <div className="col">
+                    <div className="col">
                       <div className="agent-student-card card">
                         <Image
                           height={400}
@@ -63,7 +63,7 @@ const index = () => {
                           </a>
                         </div>
                       </div>
-                    </div> */}
+                    </div>
 
                    
                   </div>

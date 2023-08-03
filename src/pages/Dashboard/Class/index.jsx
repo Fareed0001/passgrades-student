@@ -3,7 +3,6 @@ import { CourseCard } from "@/Components/CourseCard";
 import { useSession } from "next-auth/react";
 import axios from "@/utils/axios";
 import { Loader2Icon } from "lucide-react";
-import App from "@/Components/App";
 
 //Card Component
 

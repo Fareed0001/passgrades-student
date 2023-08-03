@@ -2,7 +2,7 @@ import React from "react";
 
 const index = () => {
   return (
-    <div class="container-fluid body-content">
+    <div class="container-fluid dashboard-settings-body-content">
       {/* <!-- CONTENT START  --> */}
 
       <div class="settings-div">

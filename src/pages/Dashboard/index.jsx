@@ -8,7 +8,7 @@ const Dashboard = () => {
   const lastname = data?.user?.data?.lastname;
 
   const content = (
-    <div className="container-fluid body-content">
+    <div className="container-fluid dashboard-body-content">
       <p className="dashboard-greetings">
         Good morning {lastname} {firstname}
       </p>

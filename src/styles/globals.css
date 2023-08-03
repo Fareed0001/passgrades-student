@@ -341,7 +341,7 @@
 }
 
 .forth-div-card {
-  width: 80%;
+  width: 100%;
   border: none;
   margin: 0 auto 10%;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
@@ -1518,7 +1518,7 @@ input[type="checkbox"] {
 /* SIGN-IN.HTML END  */
 
 /* DASHBOARD.HTML START  */
-.body-content {
+.dashboard-body-content {
   padding: 3% 0 0;
 }
 
@@ -1762,8 +1762,8 @@ input[type="checkbox"] {
   }
 
   /* dashboard content div start */
-  .body-content {
-    padding: 25% 0 10%;
+  .dashboard-body-content {
+    padding: 5% 0 10%;
   }
 
   .dashboard-greetings {
@@ -1947,7 +1947,7 @@ input[type="checkbox"] {
 @media screen and (max-width: 767px) {
   /* ie it ends at 767px */
 
-  .body-content {
+  .dashboard-instructor-body-content {
     padding: 0;
   }
 
@@ -1979,6 +1979,12 @@ input[type="checkbox"] {
   background-color: var(--primary-color);
   color: white;
   text-align: center;
+}
+
+.available-courses {
+  font-weight: 600; /* Equivalent to font-semibold */
+  font-size: 1.25rem; /* Equivalent to text-xl */
+  color: grey;
 }
 
 .courses-card {
@@ -2074,7 +2080,7 @@ input[type="checkbox"] {
 }
 
 .user-camera-icon-label {
-  background-color: var(--secondary-color);
+  background-color: #4b5fdc;
   border: 1px solid white;
   border-radius: 50%;
   color: white;
@@ -2098,7 +2104,6 @@ input[type="checkbox"] {
 }
 
 .user-role {
-  color: grey;
   line-height: 1rem;
   margin: 0 5%;
 }
@@ -2111,7 +2116,7 @@ input[type="checkbox"] {
 
 .user-email-link,
 .user-phone-number-link {
-  color: var(--secondary-color);
+  color: #4b5fdc;
 }
 
 .user-courses-div {
@@ -2162,6 +2167,11 @@ input[type="checkbox"] {
   .user-courses-div {
     width: 100%;
   }
+  
+.available-courses {
+  text-align: center;
+  font-size: 1rem;
+}
 }
 
 /* DASHBOARD-PROFILE.HTML END  */
@@ -2245,7 +2255,7 @@ input[type="checkbox"] {
   /* ie it ends at 991px */
 
   /* SETTINGS CODES START  */
-  .body-content {
+  .dashboard-settings-body-content {
     padding: 3% 0 0;
   }
 
@@ -2259,7 +2269,7 @@ input[type="checkbox"] {
 @media screen and (max-width: 767px) {
   /* ie it ends at 767px */
 
-  .body-content {
+  .dashboard-settings-body-content {
     padding: 5% 5% 5% 10%;
   }
 
@@ -2277,8 +2287,8 @@ input[type="checkbox"] {
 @media screen and (max-width: 479px) {
   /* ie it ends at 479px */
 
-  .body-content {
-    padding: 25% 5%;
+  .dashboard-settings-body-content {
+    padding: 5%;
   }
 
   .settings-header {
@@ -2535,6 +2545,11 @@ input[type="checkbox"] {
   display: inline;
 }
 
+.dashboard-profile {
+  text-decoration: none;
+  display: inline-block;
+}
+
 /* LOGO DIV END */
 
 /* SIDE BAR COMPONENTS START */
@@ -2544,6 +2559,7 @@ input[type="checkbox"] {
 
 .sidebar-link-tag {
   text-decoration: none;
+  display: inline-block;
 }
 
 .nav-item {
@@ -2756,16 +2772,7 @@ input[type="checkbox"] {
     display: block;
     color: #000d83;
     font-size: 1.4rem;
-    margin: 5% auto 0 5%;
-    position: absolute;
-    font-weight: 600;
-  }
-
-  .open-sidebar-icon:hover {
-    display: block;
-    color: #000d83;
-    font-size: 1.3rem;
-    margin: 8%;
+    margin: 8% 4%;
     position: absolute;
     font-weight: 600;
   }
@@ -2773,10 +2780,11 @@ input[type="checkbox"] {
   .close-sidebar-icon {
     display: block;
     color: #000d83;
-    font-size: 1.4rem;
-    margin: 15% 0 0 15%;
+    font-size: 0.8rem; /* Corrected font size value */
+    margin: 0;
     font-weight: 600;
   }
+  
 
   .side-bar-component-div {
     margin-left: 2.5rem;
@@ -2807,9 +2815,9 @@ input[type="checkbox"] {
 
   /* LOGO DIV START  */
   .logo-div {
-    margin: 2% 0 0 15%;
-    display: inline-block;
+    margin: 2% auto 0;
     width: auto;
+    text-align: center;
   }
 
   .logo-text {
@@ -2874,7 +2882,7 @@ input[type="checkbox"] {
 
 .logo-icon {
   font-size: 1.2rem;
-  color: var(--tertiary-color);
+  color: #000d83;
   vertical-align: middle;
 }
 

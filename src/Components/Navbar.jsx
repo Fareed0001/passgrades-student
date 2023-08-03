@@ -36,7 +36,7 @@ const Navbar = () => {
 
           {/* <!-- USER IMAGE START --> */}
           <div className="header-user-div">
-            <Link href="/Dashboard/Profile">
+            <Link href="/Dashboard/Profile" className="dashboard-profile">
               <div className="row">
                 <div className="col-auto header-user-text-col">
                   <p className="header-user-text">

@@ -1,4 +1,5 @@
 import React, { children, useState } from "react";
+import Link from "next/link";
 import SideBar from "../SideBar";
 import Navbar from "../Navbar";
 import Image from "next/image";
@@ -33,11 +34,13 @@ const DashboardLayout = ({ children }) => {
               <div className="container">
                 {/* <!-- LOGO DIV START  --> */}
                 <div className="logo-div">
-                  <p className="logo-text">
-                    <BsFillCheckCircleFill className="dashboard-check-icon" />
-                    <span className="logo-span">passgrades</span>
-                  </p>
-                </div>
+                  <Link href="/" className="sidebar-link-tag">
+                    <p className="logo-text">
+                      <BsFillCheckCircleFill className="dashboard-check-icon" />
+                      <span className="logo-span">passgrades</span>
+                    </p>
+                  </Link>
+                </div>      
                 <SideBar />
               </div>
             </aside>

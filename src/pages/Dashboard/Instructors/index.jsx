@@ -2,7 +2,7 @@ import React from "react";
 
 const index = () => {
   return (
-    <div className="container-fluid body-content">
+    <div className="container-fluid dashboard-instructor-body-content">
 
       <div className="row">
         <div className="col-12 col-md-6 col-lg-3">
