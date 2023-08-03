@@ -2781,7 +2781,7 @@ input[type="checkbox"] {
     display: block;
     color: #4b5fdc;
     font-size: 1.4rem; 
-    margin: 0;
+    margin: 8%;
     font-weight: 600;
   }
   
@@ -2798,7 +2798,11 @@ input[type="checkbox"] {
 
   .side-bar-content {
     font-weight: 600;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 80%;
+    background-color: #3ec4ff;
     margin: 5% 0;
     padding: 5%;
     border-radius: 12px;
@@ -2806,9 +2810,6 @@ input[type="checkbox"] {
 
   .side-bar-content:hover {
     background-color: #4b5fdc;
-    color: white;
-    text-align: center;
-    box-shadow: rgba(177, 186, 233, 0.35)5px 1.95px 2.6px;
   }
 
   /* MOBILE NAV CSS END  */
@@ -2857,7 +2858,8 @@ input[type="checkbox"] {
   }
 
   .sidebar-img {
-    width: 100%;
+    width: 80%;
+    margin: auto;
   }
 
   /* HEADER END */
