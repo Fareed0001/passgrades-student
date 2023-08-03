@@ -47,7 +47,7 @@ const SideBar = () => {
           </p>
         </div>
       </Link>
-      <Link className="sidebar-link-tag" href="/">
+      <Link className="sidebar-link-tag" href="/Dashboard/Messages">
         <div className="nav-item">
           <p className="nav-link-text">
             <BiMessage className="sidebar-icons " />

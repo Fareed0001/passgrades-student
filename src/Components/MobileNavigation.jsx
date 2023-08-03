@@ -45,7 +45,7 @@ const data = [
     id: 5,
     icon: <BiMessage className="mobile-side-bar-icon" />,
     title: "Message",
-    link: "/Dashboard/Profile",
+    link: "/Dashboard/Messages",
   },
   {
     id: 6,

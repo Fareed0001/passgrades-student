@@ -1870,23 +1870,6 @@ input[type="checkbox"] {
   margin: 1% 0 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* CLASS CODES END  */
 
 /* start of pc styles */
@@ -1923,6 +1906,12 @@ input[type="checkbox"] {
 
 
 
+/* DASHBOARD MESSAGES START  */
+.dashboard-messages-header {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
 
 
@@ -1933,9 +1922,7 @@ input[type="checkbox"] {
 
 
 
-
-
-
+/* DASHBOARD MESSAGES END  */
 
 
 
