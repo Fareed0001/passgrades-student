@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
+import Image from "next/image";
 
 const Index = () => {
   const router = useRouter();
