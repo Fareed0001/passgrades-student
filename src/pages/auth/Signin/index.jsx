@@ -5,6 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { LoginSchema } from "@/utils/schema";
+import Image from "next/image";
 
 const index = () => {
   const session = useSession();
