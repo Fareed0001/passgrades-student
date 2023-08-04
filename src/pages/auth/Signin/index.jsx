@@ -48,10 +48,12 @@ const index = () => {
       <div className="container-fluid signin-container">
         <div className="row">
           <div className="col-12 col-md-4 col-lg-6 sign-in-first-col">
-            <img
+            <Image
               className="sign-in-img"
               src="/images/register-images/sign-in.gif"
               alt="sign-in.gif"
+              width={200} // Set the width
+              height={200} // Set the height
             />
           </div>
           <div className="col-12 col-md-8 col-lg-6 sign-in-second-col">
