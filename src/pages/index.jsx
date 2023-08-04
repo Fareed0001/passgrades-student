@@ -8,6 +8,7 @@ import { signIn, useSession } from "next-auth/react";
 import { useEffect } from "react";
 import Router from "next/router";
 const inter = Inter({ subsets: ["latin"] });
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -81,10 +82,13 @@ export default function Home() {
             <div className="first-div container">
               <div className="row">
                 <div className="first-div-col1 col-md order-md-2">
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="first-div-gif"
-                    src="images\landing-page-images\e-learning.gif"
+                    src="/images/landing-page-images/e-learning.gif"
                     alt="e-learning gif"
+                    priority
                   />
                 </div>
                 <div className="first-div-col0 col-md order-md-1">
@@ -136,17 +140,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#firstmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\business-vector.png"
+                    src="/images/landing-page-images/business-vector.png"
                     alt="business-icon"
                   />
+
                   <p className="second-div-text">IELTS</p>
                 </div>
                 <div
                   className="modal fade"
                   id="firstmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -199,17 +206,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#secondmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\design-vector.png"
+                    src="/images/landing-page-images/design-vector.png"
                     alt="design-icon"
                   />
+
                   <p className="second-div-text">GMAT</p>
                 </div>
                 <div
                   className="modal fade"
                   id="secondmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -261,17 +271,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#thirdmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\writing-vector.png"
+                    src="/images/landing-page-images/writing-vector.png"
                     alt="writing-icon"
                   />
+
                   <p className="second-div-text">IELTS UKVI</p>
                 </div>
                 <div
                   className="modal fade"
                   id="thirdmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -325,17 +338,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#forthmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\web-development-vector.png"
+                    src="/images/landing-page-images/web-development-vector.png"
                     alt="web-dev-icon"
                   />
+
                   <p className="second-div-text">GRE</p>
                 </div>
                 <div
                   className="modal fade"
                   id="forthmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -386,17 +402,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#fifthmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\storage-vector.png"
+                    src="/images/landing-page-images/storage-vector.png"
                     alt="cloud-storage-icon"
                   />
+
                   <p className="second-div-text">PTE</p>
                 </div>
                 <div
                   className="modal fade"
                   id="fifthmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -448,17 +467,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#sixthmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\book-vector.png"
+                    src="/images/landing-page-images/book-vector.png"
                     alt="book-icon"
                   />
+
                   <p className="second-div-text">OET</p>
                 </section>
                 <div
                   className="modal fade"
                   id="sixthmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -509,17 +531,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#seventhmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\acorn-vector.png"
+                    src="/images/landing-page-images/acorn-vector.png"
                     alt="acorn-vector"
                   />
+
                   <p className="second-div-text">SAT</p>
                 </div>
                 <div
                   className="modal fade"
                   id="seventhmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -553,7 +578,7 @@ export default function Home() {
                       <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -569,34 +594,37 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#eightmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\language-vector.png"
+                    src="/images/landing-page-images/language-vector.png"
                     alt="language-icon"
                   />
+
                   <p className="second-div-text">LANGUAGE</p>
                 </div>
                 <div
-                  class="modal fade"
+                  className="modal fade"
                   id="eightmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <div className="modal-dialog">
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <h1 className="modal-title fs-5" id="exampleModalLabel">
                           LANGUAGE PROGRAMS
                         </h1>
                         <button
                           type="button"
-                          class="btn-close"
+                          className="btn-close"
                           data-bs-dismiss="modal"
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">
+                      <div className="modal-body">
                         Language programs offer immersive and comprehensive
                         language learning experiences for individuals of all
                         proficiency levels. From beginners to advanced learners,
@@ -615,10 +643,10 @@ export default function Home() {
                         opportunities and enrich lives through effective
                         communication and cross-cultural appreciation.
                       </div>
-                      <div class="modal-footer">
+                      <div className="modal-footer">
                         <button
                           type="button"
-                          class="btn btn-secondary"
+                          className="btn btn-secondary"
                           data-bs-dismiss="modal"
                         >
                           Close
@@ -634,17 +662,20 @@ export default function Home() {
                   data-bs-toggle="modal"
                   data-bs-target="#ninthmodal"
                 >
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="second-div-icon"
-                    src="images\landing-page-images\eng-vector.png"
+                    src="/images/landing-page-images/eng-vector.png"
                     alt="english-icon"
                   />
+
                   <p className="second-div-text">PTE UKVI</p>
                 </div>
                 <div
                   className="modal fade"
                   id="ninthmodal"
-                  tabindex="-1"
+                  tabIndex="-1"
                   aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
@@ -699,11 +730,14 @@ export default function Home() {
             <div className="third-div container">
               <div className="row">
                 <div className="col-12 col-lg-6 third-div-col0">
-                  <img
+                  <Image
+                    height={100}
+                    width={100}
                     className="third-div-img"
-                    src="images\landing-page-images\scale-up.png"
+                    src="/images/landing-page-images/scale-up.png"
                     alt="scale-up.jpg"
                   />
+
                 </div>
                 <div className="col-12 col-lg-6 third-div-col1">
                   <p className="section-header third-div-header">
@@ -738,10 +772,12 @@ export default function Home() {
                 <div className="row">
                   <div className="col-12 col-md-6 col-lg-3">
                     <div className="forth-div-card card">
-                      <img
-                        src="images\landing-page-images\design-instructor.jpg"
+                      <Image
+                        src="/images/landing-page-images/instructor1.jpg"
                         className="forth-div-card-img card-img-top"
                         alt="..."
+                        width={100} // Adjust the width as needed
+                        height={100} // Adjust the height as needed
                       />
                       <div className="forth-div-card-body">
                         <p className="forth-div-card-header">
@@ -758,14 +794,17 @@ export default function Home() {
                   </div>
                   <div className="col-12 col-md-6 col-lg-3">
                     <div className="forth-div-card card">
-                      <img
-                        src="images\landing-page-images\developer-instructor.jpg"
+                      <Image
+                        src="/images/landing-page-images/instructor.jpg"
                         className="forth-div-card-img card-img-top"
                         alt="..."
+                        width={100} // Adjust the width as needed
+                        height={100} // Adjust the height as needed
                       />
+
                       <div className="forth-div-card-body">
                         <p className="forth-div-card-header">
-                          Farid Ibrahim
+                          Isiah Vincent
                           <span className="forth-div-card-icon">
                             <i className="fa-solid fa-code"></i>
                           </span>
@@ -778,14 +817,17 @@ export default function Home() {
                   </div>
                   <div className="col-12 col-md-6 col-lg-3">
                     <div className="forth-div-card card">
-                      <img
-                        src="images\landing-page-images\writing-instructor.jpg"
+                      <Image
+                        src="/images/landing-page-images/instructor6.jpg"
                         className="forth-div-card-img card-img-top"
                         alt="landing page image"
+                        width={100} // Adjust the width as needed
+                        height={100} // Adjust the height as needed
                       />
+
                       <div className="forth-div-card-body">
                         <p className="forth-div-card-header">
-                          Isiah Vincent
+                          Farid Ibrahim
                           <span className="forth-div-card-icon">
                             <i className="fa-solid fa-marker"></i>
                           </span>
@@ -798,14 +840,17 @@ export default function Home() {
                   </div>
                   <div className="col-12 col-md-6 col-lg-3">
                     <div className="forth-div-card card">
-                      <img
-                        src="images\landing-page-images\business-instructure.jpg"
+                      <Image
+                        src="/images/landing-page-images/instructor3.jpg"
                         className="forth-div-card-img card-img-top"
-                        alt="..."
+                        alt="landing page image"
+                        width={100} // Adjust the width as needed
+                        height={100} // Adjust the height as needed
                       />
+
                       <div className="forth-div-card-body">
                         <p className="forth-div-card-header">
-                          Aaron Abraham
+                          Arjun Rasheed
                           <span className="forth-div-card-icon">
                             <i className="fa-solid fa-user-tie"></i>
                           </span>
@@ -825,11 +870,14 @@ export default function Home() {
             <div className="fifth-div container">
               <div className="row">
                 <div className="col-md-12 col-lg-6 fifth-div-col0">
-                  <img
+                  <Image
                     className="fifth-div-img"
-                    src="images\landing-page-images\track-learning.gif"
+                    src="/images/landing-page-images/track-learning.gif"
                     alt="scale-up.jpg"
+                    width={100} // Adjust the width as needed
+                    height={100} // Adjust the height as needed
                   />
+
                 </div>
                 <div className="col-md-12 col-lg-6 fifth-div-col1">
                   <p className="section-header fifth-div-header">
@@ -866,10 +914,12 @@ export default function Home() {
               </div>
               <div className="row">
                 <div className="seventh-div-col0 col-md">
-                  <img
+                  <Image
                     className="seventh-div-img"
-                    src="images\landing-page-images\register-gif.gif"
+                    src="/images/landing-page-images/register-gif.gif"
                     alt="register-gif"
+                    width={100} // Adjust the width as needed
+                    height={100} // Adjust the height as needed
                   />
                 </div>
                 <div className="seventh-div-col1 col-md">
@@ -879,6 +929,14 @@ export default function Home() {
                       className="nav-button seventh-div-button"
                     >
                       Register now
+                    </button>
+                  </Link>
+                  <Link href="http://admin.passgrades.com/" className="signup-link">
+                    <button
+                      type="button"
+                      className="nav-button seventh-div-button"
+                    >
+                      I am an admin
                     </button>
                   </Link>
                 </div>

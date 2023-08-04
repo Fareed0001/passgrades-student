@@ -13,17 +13,13 @@ const index = () => {
 
   const content = (
     <section>
-      <div className="dashboard-div">
+      <div className="agent-dashboard-div">
         <div className="row pc-header-sidebar">
-          <div className="col-sm-9">
+          <div className="">
             {/* <!-- SECTION START  --> */}
             <section>
-              {/* <!-- PC HEADER START --> */}
 
-              {/* <!-- PHONE HEADER END -->
-                    <!-- HEADER END  --> */}
-
-              <div className="container-fluid body-content">
+              <div className="container-fluid agent-body-content">
                 {/* <!-- MY STUDENT START --> */}
                 <div className="agent-row row">
                   <div className="col-6">
@@ -33,7 +29,7 @@ const index = () => {
                     <a href="sign-up.html">
                       <button
                         type="button"
-                        className="btn btn-primary add-new-student-button w-40 mb-3"
+                        className="btn btn-primary agent-dashboard-button w-40 mb-3"
                       >
                         Add new student
                       </button>
@@ -43,7 +39,7 @@ const index = () => {
 
                 <div className="agent-student-div">
                   <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    
+
                     <div className="col">
                       <div className="agent-student-card card">
                         <Image
@@ -55,20 +51,22 @@ const index = () => {
                         />
                         <div className="card-body">
                           <p className="student-name">Isiah Sylvester</p>
-                          <a
-                            href="dashboard.html"
-                            className="btn btn-primary agent-student-card-link"
-                          >
-                            Login
-                          </a>
+                          <div className="d-grid">
+                            <a
+                              href="dashboard.html"
+                              className="btn btn-primary agent-dashboard"
+                            >
+                              Login
+                            </a>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                   
                   </div>
                 </div>
                 {/* <!-- MY STUDENT END --> */}
+
               </div>
             </section>
             {/* <!-- SECTION END  --> */}

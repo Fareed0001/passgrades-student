@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image';
 
 const index = () => {
   return (
@@ -7,10 +8,12 @@ const index = () => {
       <div className="row">
         <div className="col-12 col-md-6 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\design-instructor.jpg"
+            <Image
+              src="/images/landing-page-images/design-instructor.jpg" // Use an absolute path
               className="forth-div-card-img card-img-top"
               alt="Instructors image"
+              width={100} // Adjust the width
+              height={100} // Adjust the height
             />
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
@@ -27,10 +30,14 @@ const index = () => {
         </div>
         <div className="col-12 col-md-6 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\developer-instructor.jpg"
+
+            <Image
+              src="/images/landing-page-images/developer-instructor.jpg"
               className="forth-div-card-img card-img-top"
               alt="Instructors image"
+              width={100} // Adjust the width
+              height={100} // Adjust the height
+              layout="fixed" // Set the layout mode
             />
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
@@ -47,10 +54,13 @@ const index = () => {
         </div>
         <div className="col-12 col-md-6 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\writing-instructor.jpg"
+            <Image
+              src="/images/landing-page-images/writing-instructor.jpg"
               className="forth-div-card-img card-img-top"
               alt="Instructors image"
+              width={100} // Adjust the width
+              height={100} // Adjust the height
+              layout="fixed" // Set the layout mode
             />
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
@@ -65,10 +75,13 @@ const index = () => {
         </div>
         <div className="col-12 col-md-6 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\business-instructure.jpg"
+            <Image
+              src="/images/landing-page-images/business-instructure.jpg"
               className="forth-div-card-img card-img-top"
               alt="Instructors image"
+              width={100} // Adjust the width
+              height={100} // Adjust the height
+              layout="fixed" // Set the layout mode
             />
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">

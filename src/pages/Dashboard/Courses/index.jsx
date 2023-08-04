@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
 import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
-
+import Image from "next/image";
 import { Loader, Loader2Icon } from "lucide-react";
 
 //flutterwave start
 const config = {
   public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY,
   tx_ref: Date.now(),
-  amount: 4000,
+  amount: 200,
   currency: "NGN",
   payment_options: "card,mobilemoney,ussd",
   customer: {
@@ -31,7 +31,7 @@ const fwConfig = {
     console.log(response);
     closePaymentModal(); // this will close the modal programmatically
   },
-  onClose: () => {},
+  onClose: () => { },
 };
 
 //Card Component
@@ -45,17 +45,18 @@ const CourseCard = ({ image, title, description, price }) => {
   return (
     <div className="col">
       <div className="courses-card">
-        <img
+        <Image
           src={image}
-          className="card-img-top courses-card-img h-[200px] w-[200px]"
+          className="card-img-top courses-card-img" // Add any non-styling classes here
           alt={title}
+          width={200} // Set the width
+          height={200} // Set the height
         />
         <div className="courses-card-body">
           <p className="courses-card-title">{title}</p>
           <p
-            className={`courses-card-text ${
-              showDescription ? "" : "course-card-text-hide"
-            }`}
+            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
+              }`}
           >
             {description}
           </p>

@@ -4,6 +4,8 @@ import {
   BsFillEnvelopeAtFill,
   BsPhoneVibrateFill,
 } from "react-icons/bs";
+import Image from 'next/image';
+
 
 //Card Component
 const CourseCard = ({ image, title, description, price }) => {
@@ -16,17 +18,19 @@ const CourseCard = ({ image, title, description, price }) => {
   return (
     <div className="col">
       <div className="courses-card">
-        <img
+        <Image
           src={image}
           className="card-img-top courses-card-img"
           alt={title}
+          width={100} // Adjust the width
+          height={100} // Adjust the height
+          layout="fixed" // Set the layout mode
         />
         <div className="courses-card-body">
           <p className="courses-card-title">{title}</p>
           <p
-            className={`courses-card-text ${
-              showDescription ? "" : "course-card-text-hide"
-            }`}
+            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
+              }`}
           >
             {description}
           </p>
@@ -46,33 +50,36 @@ const CourseCard = ({ image, title, description, price }) => {
 
 const Index = () => {
   return (
-    <div class="container-fluid body-content">
+    <div className="container-fluid body-content">
       {/* <!-- CONTENT START  --> */}
 
-      <div class="user-profile-image-div">
-        <img
-          class="user-profile-image"
-          src="../images/landing-page-images/black.jpg"
+      <div className="user-profile-image-div">
+        <Image
+          className="user-profile-image"
+          src="/images/landing-page-images/black.jpg"
           alt="user image"
+          width={100} // Adjust the width
+          height={100} // Adjust the height
+          layout="fixed" // Set the layout mode
         />
-        <label for="profilePicInput" class="user-camera-icon-label">
+        <label for="profilePicInput" className="user-camera-icon-label">
           <BsFillCameraFill className="user-camera-icon" />
         </label>
-        <input class="profilePicInput" id="profilePicInput" type="file" />
+        <input className="profilePicInput" id="profilePicInput" type="file" />
       </div>
 
-      <div class="user-details-div">
-        <div class="user-header-div">
-          <p class="user-name"> {/* {firstname} {lastname} */}</p>
-          <p class="user-role">
+      <div className="user-details-div">
+        <div className="user-header-div">
+          <p className="user-name"> {/* {firstname} {lastname} */}</p>
+          <p className="user-role">
             {/* {role} */}
             <span>
               <BsFillEnvelopeAtFill
-                class="user-email-link"
+                className="user-email-link"
                 href=" mailto:user-email@example.com"
               />
               <BsPhoneVibrateFill
-                class="user-phone-number-link"
+                className="user-phone-number-link"
                 href="tel:+2349052927094"
               />
             </span>
@@ -80,11 +87,11 @@ const Index = () => {
         </div>
       </div>
 
-      <div class="user-courses-div">
-        <div class="user-courses-header">Registered courses</div>
-        <div class="user-courses">
+      <div className="user-courses-div">
+        <div className="user-courses-header">Registered courses</div>
+        <div className="user-courses">
           {/* <!-- COURSES START  --> */}
-          <div class="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
+          <div className="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
             <CourseCard
               image="/images/dashboard-images/sat.png"
               title="SAT"

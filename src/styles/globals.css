@@ -413,6 +413,11 @@
   text-align: center;
 }
 
+.seventh-div-col1 {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+}
+
 .seventh-div-header-div {
   background-color: #4b5fdc;
   border-radius: 12px;
@@ -441,7 +446,7 @@
 
 /* seventh div button start */
 .seventh-div-button {
-  margin-top: 5%;
+  margin-top: 2%;
   font-size: 1.2rem;
   color: #f0ffff;
   border-radius: 16px;
@@ -783,7 +788,7 @@
 
   /* seventh div button start  */
   .seventh-div-button {
-    margin-top: 30%;
+    margin-top: 10%;
     float: left;
     font-size: 1.5rem;
     color: #f0ffff;
@@ -1136,7 +1141,7 @@
 
   /* seventh div button start  */
   .seventh-div-button {
-    margin-top: 25%;
+    margin-top: 12%;
     font-size: 1.5rem;
     color: #f0ffff;
     border-radius: 16px;
@@ -2726,6 +2731,12 @@ input[type="checkbox"] {
 
   /* HEADER START */
   /* SEARCH DIV START */
+  .header-search-div.rounded {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: 5% 0 0;
+    width: 40%;
+  }
+
   .nav-search-box.form-control {
     color: var(--primary-color);
     font-size: 0.8rem;
@@ -2854,6 +2865,10 @@ input[type="checkbox"] {
 
 /* HEADER AND SIDE BAR STYLES  */
 
+
+
+
+
 /* ADMIN STYLES STARTS HERE */
 
 .navbar {
@@ -2875,4 +2890,85 @@ input[type="checkbox"] {
   vertical-align: middle;
 }
 
-/* LOGO DIV END */
+/* ADMIN STYLES ENDS HERE */
+
+
+
+
+/* AGENT STYLES START  */
+.agent-dashboard-button {
+  float: right;
+}
+/* AGENT STYLES END  */
+
+
+
+
+/* TUTOR DASHBOARD START */
+
+.addNewCourse {
+  background-color: #ebeefd;
+  font-family: "Poppins", sans-serif;
+  padding: 4% 4% 6%;
+}
+
+.tutor-header-text {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tutor-input-field-div {
+  margin: auto auto 2%;
+}
+
+.tutor-form-label {
+  font-size: 0.9rem;
+}
+
+.tutor-text-area {
+  height: 6rem;
+}
+
+.btn.add-new-course-button {
+  font-size: 0.9rem;
+  margin: 1% 0 0 1%;
+}
+
+/* start of pc styles */
+@media screen and (max-width: 991px) {
+  /* ie it ends at 991px */
+
+  .btn.add-new-course-button {
+    margin: 3% 0 0 2%;
+  }
+}
+
+/* start of medium tablet styles */
+@media screen and (max-width: 767px) {
+  /* ie it ends at 767px */
+
+  .addNewClass {
+    padding: 5% 1%;
+  }
+
+  .btn.add-new-course-button {
+    margin: 4% 0 0 3%;
+  }
+}
+
+/* start of phone styles */
+@media screen and (max-width: 479px) {
+  /* ie it ends at 479px */
+
+  .addNewClass {
+    padding: 5% 2%;
+  }
+
+  .btn.add-new-course-button {
+    margin: 5% 0 0 4%;
+  }
+}
+
+
+/* TUTOR DASHBOARD END  */
