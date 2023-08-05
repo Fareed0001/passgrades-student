@@ -7,8 +7,7 @@ import {
   BsPhoneVibrateFill,
 } from "react-icons/bs";
 import Router from "next/router";
-import Image from 'next/image';
-
+import Image from "next/image";
 
 //Card Component
 const CourseCard = ({ image, title, description, price }) => {
@@ -38,8 +37,9 @@ const CourseCard = ({ image, title, description, price }) => {
         <div className="courses-card-body">
           <p className="courses-card-title">{title}</p>
           <p
-            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
-              }`}
+            className={`courses-card-text ${
+              showDescription ? "" : "course-card-text-hide"
+            }`}
           >
             {description}
           </p>
@@ -117,11 +117,6 @@ const Index = () => {
         />
       </div>
 
-      <div className="user-details-div">
-        <div className="user-header-div">
-          <p className="user-name"> {/* {firstname} {lastname} */}</p>
-          <p className="user-role">
-            {/* {role} */}
       <div class="user-details-div">
         <div class="user-header-div">
           <p class="user-name"> {`${firstname} ${lastname}`}</p>
@@ -130,14 +125,12 @@ const Index = () => {
             <span>
               <BsFillEnvelopeAtFill
                 className="user-email-link"
-                href=" mailto:user-email@example.com"
                 class="user-email-link"
                 href={`mailto:${email}`}
               />
               {email}
               <BsPhoneVibrateFill
                 className="user-phone-number-link"
-                href="tel:+2349052927094"
                 class="user-phone-number-link"
                 href={`tel:${phone}`}
               />
