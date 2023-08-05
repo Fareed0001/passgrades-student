@@ -2921,16 +2921,20 @@ input[type="checkbox"] {
 
 /* TUTOR DASHBOARD START */
 
-.addNewCourse {
-  background-color: #ebeefd;
+.tutor-div {
+  background-color: #f2f3f4;
   font-family: "Poppins", sans-serif;
   padding: 4% 4% 6%;
 }
 
 .tutor-header-text {
   font-size: 1.2rem;
-  text-align: center;
+  margin: 0 0 2% 2%;
   font-weight: 600;
+}
+
+.input-field-div {
+  margin: 2% auto;
 }
 
 .tutor-input-field-div {
@@ -2947,7 +2951,7 @@ input[type="checkbox"] {
 
 .btn.add-new-course-button {
   font-size: 0.9rem;
-  margin: 1% 0 0 1%;
+  margin: 1% 0 0 2%;
 }
 
 /* start of pc styles */
