@@ -49,10 +49,16 @@ const data = [
     link: "/Dashboard/Profile",
   },
   {
-    id: 8,
-    icon: <BiLogIn className="mobile-side-bar-icon" />,
+    id: 7,
+    icon: <FiSettings className="mobile-side-bar-icon" />,
     title: "settings",
     link: "/Dashboard/Settings",
+  },
+  {
+    id: 8,
+    icon: <BiLogIn className="mobile-side-bar-icon" />,
+    title: "Logout",
+    link: "/",
   },
 ];
 const sidebarVariants = {

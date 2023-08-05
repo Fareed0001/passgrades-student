@@ -158,17 +158,17 @@ const index = () => {
   return (
     <div className="container-fluid dashboard-settings-body-content">
       {/* <!-- CONTENT START  --> */}
-      <div className="settings-div">
-        <div className="settings-heading-div">
-          <p className="settings-header">Account settings</p>
-          <p className="settings-sub-header">
+      <div classNameName="settings-div">
+        <div classNameName="settings-heading-div">
+          <p classNameName="settings-header">Account settings</p>
+          <p classNameName="settings-sub-header">
             Edit your account settings and change your password here
           </p>
         </div>
-        <form className="settings-email-div">
+        <div class="settings-email-div">
           <label
             for="settingsEmail1"
-            className="form-label dashboard-settings-form-label"
+            class="form-label dashboard-settings-form-label"
           >
             Email:
           </label>
@@ -181,7 +181,7 @@ const index = () => {
           />
           <input
             type="email"
-            className="form-control mb-0"
+            classNameName="form-control mb-0"
             id="settingsEmail1"
             placeholder="enter new email"
             {...register("email")}
@@ -194,7 +194,7 @@ const index = () => {
             <DialogTrigger asChild>
               <Button
                 variant="outline"
-                className="text-white bg-black "
+                classNameName="text-white bg-black "
                 onClick={handleChangeClick}
               >
                 save
@@ -226,14 +226,14 @@ const index = () => {
           </Dialog>
         </form>
 
-        <form className="settings-password-div">
-          <label for="settingsPassword0" className="form-label">
+        <form classNameName="settings-password-div">
+          <label for="settingsPassword0" classNameName="form-label">
             Password:
           </label>
           <input
             type="password"
             id="settingsPassword0"
-            className="form-control mb-0"
+            classNameName="form-control mb-0"
             placeholder="enter current password"
             {...registerPasswordForm("password")}
           />
@@ -244,7 +244,7 @@ const index = () => {
           <input
             type="password"
             id="settingsPassword1"
-            className="form-control mb-0"
+            classNameName="form-control mb-0"
             placeholder="new password"
             {...registerPasswordForm("newpassword")}
           />
@@ -254,7 +254,7 @@ const index = () => {
           <input
             type="password"
             id="settingsPassword2"
-            className="form-control mb-0"
+            classNameName="form-control mb-0"
             placeholder="re-type new password"
             {...registerPasswordForm("retypepassword")}
           />
@@ -267,7 +267,7 @@ const index = () => {
             <DialogTrigger asChild>
               <Button
                 variant="outline"
-                className="text-white bg-black "
+                classNameName="text-white bg-black "
                 onClick={handlePasswordChangeClick}
               >
                 Change password

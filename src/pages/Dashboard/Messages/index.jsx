@@ -27,6 +27,19 @@ const index = () => {
           </div>
         </div>
         {/* ONLINE CLASS MESSAGES CARD END  */}
+            <div className="row row-cols-1 row-cols-md-2 g-4">
+
+                {/* ONLINE CLASS CARD START  */}
+                <div className="col">
+                    <div className="card">
+                        <div className="card-body">
+                            <h6 className="card-title">Class title</h6>
+                            <p className="card-text">Copy (class title) meeting password: (the password)</p>
+                            <a href="#" className="btn btn-primary">Join live class</a>
+                        </div>
+                    </div>
+                </div>
+                {/* ONLINE CLASS MESSAGES CARD END  */}
 
         {/* NORMAL MESSAGES HERE  */}
         <div className="col">
@@ -37,6 +50,14 @@ const index = () => {
                 the message enters here the message enters here
               </p>
             </div>
+                {/* NORMAL MESSAGES HERE  */}
+                <div className="col">
+                    <div className="card">
+
+                        <div className="card-body">
+                            <h6 className="card-title">Message title</h6>
+                            <p className="card-text details-card-text">the message enters here the message enters here</p>
+                        </div>
 
             <div className="courses-card-footer">
               <small>Details</small>

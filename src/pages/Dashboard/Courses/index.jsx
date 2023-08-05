@@ -53,6 +53,8 @@ const CourseCard = ({ image, title, description, price, id }) => {
           src={black}
           className="card-img-top courses-card-img h-[200px] w-[200px]"
           alt={title}
+          width={200} // Set the width
+          height={200} // Set the height
         />
         <div className="courses-card-body">
           <p className="courses-card-title">{title}</p>

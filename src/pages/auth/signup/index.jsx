@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
 import { useToast } from "@/components/ui/use-toast";
+import Image from "next/image";
 
 const Index = () => {
   const router = useRouter();
@@ -87,10 +87,12 @@ const Index = () => {
       <div className="container-fluid signin-container">
         <div className="row">
           <div className="col-lg-5 sign-up-first-col">
-            <img
+            <Image
               className="sign-up-img"
               src="/images/register-images/sign-up.gif"
               alt="sign-up.gif"
+              width={200} // Set the width
+              height={200} // Set the height
             />
           </div>
           <div className="col-lg-7 sign-up-second-col">

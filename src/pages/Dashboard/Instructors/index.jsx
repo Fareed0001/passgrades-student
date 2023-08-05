@@ -1,6 +1,5 @@
-import { useSession } from "next-auth/react";
-import React, { useEffect } from "react";
-import Router from "next/router";
+import React from "react";
+import Image from "next/image";
 
 const index = () => {
   const { status } = useSession();
@@ -12,12 +11,14 @@ const index = () => {
   return (
     <div className="container-fluid dashboard-instructor-body-content">
       <div className="row">
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\design-instructor.jpg"
+            <Image
+              src="/images/landing-page-images/instructor1.jpg"
               className="forth-div-card-img card-img-top"
-              alt="Instructors image"
+              alt="..."
+              width={100} // Adjust the width as needed
+              height={100} // Adjust the height as needed
             />
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
@@ -26,20 +27,23 @@ const index = () => {
                   <i className="fa-brands fa-figma"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">TOEFL Instructor</p>
+              <p className="forth-div-card-sub-header">IELTS Instructor</p>
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\developer-instructor.jpg"
+            <Image
+              src="/images/landing-page-images/instructor.jpg"
               className="forth-div-card-img card-img-top"
-              alt="Instructors image"
+              alt="..."
+              width={100} // Adjust the width as needed
+              height={100} // Adjust the height as needed
             />
+
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
-                Farid Ibrahim
+                Isiah Vincent
                 <span className="forth-div-card-icon">
                   <i className="fa-solid fa-code"></i>
                 </span>
@@ -48,16 +52,19 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\writing-instructor.jpg"
+            <Image
+              src="/images/landing-page-images/instructor6.jpg"
               className="forth-div-card-img card-img-top"
-              alt="Instructors image"
+              alt="landing page image"
+              width={100} // Adjust the width as needed
+              height={100} // Adjust the height as needed
             />
+
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
-                Isiah Vincent
+                Farid Ibrahim
                 <span className="forth-div-card-icon">
                   <i className="fa-solid fa-marker"></i>
                 </span>
@@ -66,21 +73,24 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
-            <img
-              src="..\images\landing-page-images\business-instructure.jpg"
+            <Image
+              src="/images/landing-page-images/instructor3.jpg"
               className="forth-div-card-img card-img-top"
-              alt="Instructors image"
+              alt="landing page image"
+              width={100} // Adjust the width as needed
+              height={100} // Adjust the height as needed
             />
+
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
-                Aaron Abraham
+                Arjun Rasheed
                 <span className="forth-div-card-icon">
                   <i className="fa-solid fa-user-tie"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">Business Instructor</p>
+              <p className="forth-div-card-sub-header">PTE Instructor</p>
             </div>
           </div>
         </div>

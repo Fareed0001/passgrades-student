@@ -85,7 +85,7 @@ const SideBar = () => {
         <div className="nav-item">
           <p className="nav-link-text">
             <BiLogIn className="sidebar-icons " />
-            Log out
+            Logout
           </p>
         </div>
       </Link>

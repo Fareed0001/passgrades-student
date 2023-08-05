@@ -1,6 +1,7 @@
 import { useSession } from "next-auth/react";
 import React, { useEffect } from "react";
 import Router from "next/router";
+import Image from 'next/image';
 
 const Dashboard = () => {
   const { status, data } = useSession();
@@ -13,10 +14,12 @@ const Dashboard = () => {
         Good morning {lastname} {firstname}
       </p>
       <div className="dashboard-content-board-div">
-        <img
+        <Image
           className="dashboard-content-board-img"
-          src="images\dashboard-images\dashboard.jpg"
+          src="/images/dashboard-images/dashboard.jpg"
           alt="dashboard-animation"
+          width={100} // Adjust the width
+          height={100} // Adjust the height
         />
       </div>
     </div>
