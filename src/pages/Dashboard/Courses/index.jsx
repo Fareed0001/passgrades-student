@@ -57,9 +57,6 @@ const CourseCard = ({ image, title, description, price, id }) => {
             className={`courses-card-text ${
               showDescription ? "" : "course-card-text-hide"
             }`}
-            className={`courses-card-text ${
-              showDescription ? "" : "course-card-text-hide"
-            }`}
           >
             {description}
           </p>

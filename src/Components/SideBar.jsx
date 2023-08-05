@@ -81,7 +81,7 @@ const SideBar = () => {
         alt=""
       />
 
-      <Link className="sidebar-link-tag" href="" onClick={() => signOut()}>
+      <Link className="sidebar-link-tag" href="/" onClick={() => signOut()}>
         <div className="nav-item">
           <p className="nav-link-text">
             <BiLogIn className="sidebar-icons " />

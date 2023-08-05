@@ -309,11 +309,14 @@ const index = () => {
             your account, you will be unsubscribed from all your courses, and
             will lose access forever.
           </p>
+          <button
+            type="submit"
+            className="btn btn-dark settings-button settings-delete-button"
+          >
+            Delete account <i className="fa-solid fa-trash-can"></i>
+          </button>
         </div>
       </div>
-      <button type="submit" className="btn btn-dark settings-button">
-        Change password
-      </button>
 
       {/* <!-- CONTENT END  --> */}
     </div>
