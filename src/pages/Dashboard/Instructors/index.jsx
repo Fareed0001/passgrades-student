@@ -6,7 +6,7 @@ const index = () => {
     <div className="container-fluid dashboard-instructor-body-content">
 
       <div className="row">
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
             <Image
               src="/images/landing-page-images/instructor1.jpg"
@@ -28,7 +28,7 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
             <Image
               src="/images/landing-page-images/instructor.jpg"
@@ -51,7 +51,7 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
             <Image
               src="/images/landing-page-images/instructor6.jpg"
@@ -74,7 +74,7 @@ const index = () => {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6 col-lg-3">
+        <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
             <Image
               src="/images/landing-page-images/instructor3.jpg"

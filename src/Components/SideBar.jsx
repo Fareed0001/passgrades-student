@@ -80,11 +80,11 @@ const SideBar = () => {
         alt=""
       />
 
-      <Link className="sidebar-link-tag" href="">
+      <Link className="sidebar-link-tag" href="/">
         <div className="nav-item">
           <p className="nav-link-text">
             <BiLogIn className="sidebar-icons " />
-            Log out
+            Logout
           </p>
         </div>
       </Link>
