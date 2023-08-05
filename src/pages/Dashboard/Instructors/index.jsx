@@ -1,10 +1,15 @@
 import React from "react";
-import Image from 'next/image';
+import Image from "next/image";
 
 const index = () => {
+  const { status } = useSession();
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      Router.replace("/auth/Signin");
+    }
+  }, [status]);
   return (
     <div className="container-fluid dashboard-instructor-body-content">
-
       <div className="row">
         <div className="col-6 col-md-4 col-lg-3">
           <div className="forth-div-card card">
@@ -22,9 +27,7 @@ const index = () => {
                   <i className="fa-brands fa-figma"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">
-                IELTS Instructor
-              </p>
+              <p className="forth-div-card-sub-header">IELTS Instructor</p>
             </div>
           </div>
         </div>
@@ -45,9 +48,7 @@ const index = () => {
                   <i className="fa-solid fa-code"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">
-                GMAT Instructor
-              </p>
+              <p className="forth-div-card-sub-header">GMAT Instructor</p>
             </div>
           </div>
         </div>
@@ -68,9 +69,7 @@ const index = () => {
                   <i className="fa-solid fa-marker"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">
-                SAT Instructor
-              </p>
+              <p className="forth-div-card-sub-header">SAT Instructor</p>
             </div>
           </div>
         </div>
@@ -91,14 +90,11 @@ const index = () => {
                   <i className="fa-solid fa-user-tie"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">
-                PTE Instructor
-              </p>
+              <p className="forth-div-card-sub-header">PTE Instructor</p>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 };

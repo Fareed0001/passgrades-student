@@ -6,8 +6,6 @@ import { BsFillCheckCircleFill, BsFillSignIntersectionFill } from "react-icons/b
 import { BiSolidLogInCircle } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
-import Router from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 import Image from "next/image";
 
@@ -750,10 +748,7 @@ export default function Home() {
                     setting a schedule tat fits everyone.
                   </p>
                   <Link href="/auth/signup" className="signup-link">
-                    <button
-                      type="button"
-                      className="nav-button try-now-button"
-                    >
+                    <button type="button" className="nav-button try-now-button">
                       <IoMdAdd className="mr-3 third-div-icon" />
                       <span> Enroll now</span>
                     </button>
@@ -890,10 +885,7 @@ export default function Home() {
                     setting a schedule tat fits everyone.
                   </p>
                   <Link href="/auth/signup" className="signup-link">
-                    <button
-                      type="button"
-                      className="nav-button try-now-button"
-                    >
+                    <button type="button" className="nav-button try-now-button">
                       <IoMdAdd className="mr-3  third-div-icon" />
                       <span> Enroll now</span>
                     </button>
@@ -909,8 +901,10 @@ export default function Home() {
                 <p className="seventh-div-header">
                   Register today and get credible information, latest news,
                   courses, resources and alot more what
-                  <span className="seventh-div-span"><BsFillCheckCircleFill className="seventh-check-icon" />
-                    PassGrades has to offer.</span>
+                  <span className="seventh-div-span">
+                    <BsFillCheckCircleFill className="seventh-check-icon" />
+                    PassGrades has to offer.
+                  </span>
                 </p>
               </div>
               <div className="row">

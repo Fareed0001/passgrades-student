@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import { FiSettings } from "react-icons/fi";
 import Image from "next/image";
+import { signOut } from "next-auth/react";
 
 const SideBar = () => {
   return (
@@ -80,7 +81,7 @@ const SideBar = () => {
         alt=""
       />
 
-      <Link className="sidebar-link-tag" href="/">
+      <Link className="sidebar-link-tag" href="" onClick={() => signOut()}>
         <div className="nav-item">
           <p className="nav-link-text">
             <BiLogIn className="sidebar-icons " />

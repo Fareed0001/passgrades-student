@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { CourseCard } from "@/Components/CourseCard";
 import { useSession } from "next-auth/react";
 import axios from "@/utils/axios";
+import Router from "next/router";
 import { Loader2Icon } from "lucide-react";
 
 //Card Component
 
 const DashboardClass = () => {
-  const { data } = useSession();
+  const { status, data } = useSession();
   const [Courses, setCourses] = useState([]);
   const [Loading, setLoading] = useState(false);
   useEffect(() => {
@@ -34,6 +35,13 @@ const DashboardClass = () => {
     }
     getcourses();
   }, [data]);
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      Router.replace("/auth/Signin");
+    }
+  }, [status]);
+
   return (
     <>
       <div className="container-fluid body-content">

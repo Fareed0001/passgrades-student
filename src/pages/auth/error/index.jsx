@@ -10,14 +10,12 @@ const ErrorPage = () => {
         <p className="text-lg text-gray-800 mt-4">
           Oops! Something went wrong.
         </p>
-        <p className="text-lg text-gray-800">
-          We couldn't find the page you're looking for.
+        <p className="text-lg text-gray-800 font-semibold">
+          Your login credentials are wrong in with your correct credentials
         </p>
-        <p className="text-lg text-gray-800">
-          Please check the URL or go back to the homepage.
-        </p>
+
         <Link href="/auth/Signin">
-          <span className="mt-6 block px-4 py-2 text-sm font-medium text-white bg-blue-400 no-underline rounded-md hover:bg-red-700">
+          <span className="mt-6 flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-400 no-underline rounded-md">
             Go to back to signin
           </span>
         </Link>

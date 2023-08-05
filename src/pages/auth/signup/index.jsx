@@ -4,10 +4,12 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
+import { useToast } from "@/components/ui/use-toast";
 import Image from "next/image";
 
 const Index = () => {
   const router = useRouter();
+  const { toast } = useToast();
   const {
     register,
     formState: { errors, isSubmitSuccessful },
@@ -50,22 +52,23 @@ const Index = () => {
         }
       );
       if (!response.ok) {
-        throw new Error("Something went wrong");
+        throw new Error("Student already exists");
+      } else {
+        toast({
+          title: "Account Created",
+          description: `Sucessfully Created an Account`,
+        });
       }
       const data = await response.json();
-      console.log();
 
-      // toast({
-      //   title: "Account Created",
-      //   description: `Sucessfully Created an Account`,
-      // });
       router.push("/auth/Signin");
     } catch (error) {
-      // toast({
-      //   title: "Error",
-      //   description: `Student Already Exists`,
-      // });
+      toast({
+        title: "Error",
+        description: `Student Already Exists`,
+      });
       console.error(error);
+      router.push("/auth/Signin");
     }
   };
 
