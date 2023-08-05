@@ -125,7 +125,7 @@ const Index = (props) => {
   return (
     <>
       <div className="available-courses">Courses available</div>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4 h-full relative">
+      <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4 h-full relative">
         {Loading ? (
           <div className=" absolute flex items-center justify-center  text-xl font-bold animate-pulse  top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
             <Loader2Icon className="animate-spin" />
