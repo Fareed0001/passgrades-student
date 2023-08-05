@@ -2,7 +2,8 @@ import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import { BsFillPlayFill, BsFillCheckCircleFill } from "react-icons/bs";
+import { BsFillCheckCircleFill, BsFillSignIntersectionFill } from "react-icons/bs";
+import { BiSolidLogInCircle } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect } from "react";
@@ -105,21 +106,21 @@ export default function Home() {
                   </p>
 
                   <section className="">
-                    <Link href="/auth/signup">
                       <button
                         type="button"
                         className="nav-button try-now-button signup-link"
+                        onClick={() => signIn()}
                       >
-                        Try now
+                      <BiSolidLogInCircle className="animate-pulse play-video-icon0" />{" "}
+                        Sign in
                       </button>
-                    </Link>
                     <Link href="/auth/signup">
                       <button
                         type="button"
                         className="nav-button play-video-button signup-link"
                       >
-                        <BsFillPlayFill className="h-6 w-6 animate-pulse play-video-icon" />{" "}
-                        Play video
+                        <BsFillSignIntersectionFill className="animate-pulse play-video-icon" />{" "}
+                        Sign up
                       </button>
                     </Link>
                   </section>
@@ -787,7 +788,7 @@ export default function Home() {
                           </span>
                         </p>
                         <p className="forth-div-card-sub-header">
-                          TOEFL Instructor
+                          IELTS Instructor
                         </p>
                       </div>
                     </div>
@@ -856,7 +857,7 @@ export default function Home() {
                           </span>
                         </p>
                         <p className="forth-div-card-sub-header">
-                          Business Instructor
+                          PTE Instructor
                         </p>
                       </div>
                     </div>

@@ -224,10 +224,18 @@
   transition: background-color 0.6s ease-in;
 }
 
+.play-video-icon0 {
+  color: white;
+  display: inline;
+  margin: auto auto 5%;
+  font-size: 1rem;
+}
+
 .play-video-icon {
   color: var(--tertiary-color);
   display: inline;
-  font-size: 1.5rem;
+  margin: auto auto 5%;
+  font-size: 1rem;
 }
 
 /* first-div-buttons */
@@ -595,7 +603,14 @@
     color: #f0ffff;
     transition: background-color 0.6s ease-in;
   }
-
+  
+  .play-video-icon0 {
+    margin: 3% auto 0;
+  }
+  
+  .play-video-icon {
+   margin: auto auto 0;
+  }
   /* first-div-buttons */
   /* first-div-col0 */
 

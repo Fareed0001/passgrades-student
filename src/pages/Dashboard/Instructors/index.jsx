@@ -23,7 +23,7 @@ const index = () => {
                 </span>
               </p>
               <p className="forth-div-card-sub-header">
-                TOEFL Instructor
+                IELTS Instructor
               </p>
             </div>
           </div>
@@ -92,7 +92,7 @@ const index = () => {
                 </span>
               </p>
               <p className="forth-div-card-sub-header">
-                Business Instructor
+                PTE Instructor
               </p>
             </div>
           </div>
