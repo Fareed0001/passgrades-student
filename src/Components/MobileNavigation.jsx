@@ -11,6 +11,7 @@ import {
   BiLogIn,
   BiMessage,
 } from "react-icons/bi";
+import { FiSettings } from "react-icons/fi";
 const data = [
   {
     id: 1,
