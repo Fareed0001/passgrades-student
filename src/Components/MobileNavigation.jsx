@@ -2,19 +2,14 @@ import Link from "next/link";
 import React from "react";
 import { LiaTimesSolid } from "react-icons/lia";
 import { motion } from "framer-motion";
-import { FiSettings } from "react-icons/fi";
 import { CgProfile } from "react-icons/cg";
 import {
   BiBookAdd,
   BiChalkboard,
   BiClipboard,
   BiCommentAdd,
-  BiCross,
   BiLogIn,
   BiMessage,
-  BiPen,
-  BiSolidContact,
-  BiTime,
 } from "react-icons/bi";
 const data = [
   {
@@ -89,14 +84,10 @@ const MobileNavigation = ({ modalctrl, Open }) => {
         animate={Open ? "open" : "closed"}
         exit="closed"
       >
-        <LiaTimesSolid
-          onClick={modalctrl}
-          className="close-sidebar-icon"
-        />
+        <LiaTimesSolid onClick={modalctrl} className="close-sidebar-icon" />
         <div className="side-bar-component-div">
           {data.map((link) => (
             <Link
-
               key={link.id}
               href={link.link}
               className="no-underline"

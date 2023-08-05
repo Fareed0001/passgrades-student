@@ -1,42 +1,44 @@
 import React, { useEffect, useState } from "react";
-import { FlutterWaveButton, closePaymentModal } from "flutterwave-react-v3";
+import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
-
-import { Loader, Loader2Icon } from "lucide-react";
-
-//flutterwave start
-const config = {
-  public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY,
-  tx_ref: Date.now(),
-  amount: 4000,
-  currency: "NGN",
-  payment_options: "card,mobilemoney,ussd",
-  customer: {
-    //needs user details
-    email: "user@gmail.com",
-    phone_number: "070********",
-    name: "john doe",
-  },
-  customizations: {
-    title: "PassGrades",
-    description: "Payment for course",
-  },
-};
-
-const fwConfig = {
-  ...config,
-  text: "buy now",
-  callback: (response) => {
-    console.log(response);
-    closePaymentModal(); // this will close the modal programmatically
-  },
-  onClose: () => {},
-};
+import { Loader2Icon } from "lucide-react";
+import Image from "next/image";
+import black from "public/images/landing-page-images/black.jpg";
+import Router from "next/router";
 
 //Card Component
-const CourseCard = ({ image, title, description, price }) => {
+const CourseCard = ({ image, title, description, price, id }) => {
   const [showDescription, setShowDescription] = useState(false);
+
+  const { status, data } = useSession();
+  const { email, phone, firstname, lastname } = data.user.data;
+
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      Router.replace("/auth/Signin");
+    }
+  }, [status]);
+
+  const config = {
+    public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY,
+    tx_ref: Date.now(),
+    amount: price,
+    currency: "NGN",
+    payment_options: "card,mobilemoney,ussd",
+    customer: {
+      email: email,
+      phone_number: phone,
+      name: `${firstname} ${lastname} ${id}`,
+    },
+    customizations: {
+      title: title,
+      description: description,
+      logo: image,
+    },
+  };
+
+  const handleFlutterPayment = useFlutterwave(config);
 
   const handleToggleDescription = () => {
     setShowDescription((prevShowDescription) => !prevShowDescription);
@@ -45,8 +47,10 @@ const CourseCard = ({ image, title, description, price }) => {
   return (
     <div className="col">
       <div className="courses-card">
-        <img
-          src={image}
+        <Image
+          height={200}
+          width={200}
+          src={black}
           className="card-img-top courses-card-img h-[200px] w-[200px]"
           alt={title}
         />
@@ -62,9 +66,20 @@ const CourseCard = ({ image, title, description, price }) => {
         </div>
         <p className="course-price">
           ₦{price}
-          <span className="course-price-span">
-            <FlutterWaveButton {...fwConfig} />
-          </span>
+          <button
+            className="course-price-span"
+            onClick={() =>
+              handleFlutterPayment({
+                callback: (response) => {
+                  console.log(response);
+                  closePaymentModal();
+                },
+                onClose: () => {},
+              })
+            }
+          >
+            pay
+          </button>
         </p>
         <div className="courses-card-footer">
           <small
@@ -112,9 +127,7 @@ const Index = (props) => {
 
   return (
     <>
-      <div className="available-courses">
-        Courses available
-      </div>
+      <div className="available-courses">Courses available</div>
       <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4 h-full relative">
         {Loading ? (
           <div className=" absolute flex items-center justify-center  text-xl font-bold animate-pulse  top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
@@ -125,6 +138,8 @@ const Index = (props) => {
         ) : (
           Courses.map((course) => (
             <CourseCard
+              key={course._id}
+              id={course._id}
               image={course.cover_image}
               title={course.title}
               description={course.description}

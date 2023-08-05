@@ -30,7 +30,7 @@ const authOptions = {
         } else {
           const errorData = await response.json();
           const errorMessage = errorData?.error || "Authentication failed";
-          console.log(error);
+          console.log(errorMessage);
 
           return null;
         }
@@ -57,6 +57,7 @@ const authOptions = {
   pages: {
     signIn: "/auth/Signin",
     error: "/auth/error",
+    signOut: "/auth/Signin",
   },
 };
 export default NextAuth(authOptions);

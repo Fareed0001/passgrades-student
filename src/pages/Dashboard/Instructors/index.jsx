@@ -1,9 +1,16 @@
-import React from "react";
+import { useSession } from "next-auth/react";
+import React, { useEffect } from "react";
+import Router from "next/router";
 
 const index = () => {
+  const { status } = useSession();
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      Router.replace("/auth/Signin");
+    }
+  }, [status]);
   return (
     <div className="container-fluid dashboard-instructor-body-content">
-
       <div className="row">
         <div className="col-12 col-md-6 col-lg-3">
           <div className="forth-div-card card">
@@ -19,9 +26,7 @@ const index = () => {
                   <i className="fa-brands fa-figma"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">
-                TOEFL Instructor
-              </p>
+              <p className="forth-div-card-sub-header">TOEFL Instructor</p>
             </div>
           </div>
         </div>
@@ -39,9 +44,7 @@ const index = () => {
                   <i className="fa-solid fa-code"></i>
                 </span>
               </p>
-              <p className="forth-div-card-sub-header">
-                GMAT Instructor
-              </p>
+              <p className="forth-div-card-sub-header">GMAT Instructor</p>
             </div>
           </div>
         </div>
@@ -82,7 +85,6 @@ const index = () => {
           </div>
         </div>
       </div>
-
     </div>
   );
 };

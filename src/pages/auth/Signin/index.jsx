@@ -1,13 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import Link from "next/link";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { LoginSchema } from "@/utils/schema";
+import { Loader2Icon } from "lucide-react";
 
 const index = () => {
   const session = useSession();
+  const [Loading, setLoading] = useState(false);
   const form = useForm({
     resolver: yupResolver(LoginSchema),
   });
@@ -15,8 +17,7 @@ const index = () => {
   const { errors, isSubmitSuccessful } = formState;
   const onSubmit = async (data) => {
     const { email, password } = data;
-    console.log(data);
-
+    setLoading(true);
     try {
       const result = await signIn("credentials", {
         email: email,
@@ -24,11 +25,7 @@ const index = () => {
         redirect: true,
         callbackUrl: "/Dashboard",
       });
-
-      // toast({
-      //   title: "Sucessful login",
-      //   description: `You have sucessfully logged in`,
-      // });
+      setLoading(false);
     } catch (error) {
       toast({
         title: "Something went wrong",
@@ -36,12 +33,11 @@ const index = () => {
       });
     }
   };
-
-  useEffect(() => {
-    if (isSubmitSuccessful) {
-      reset();
-    }
-  }, [isSubmitSuccessful, reset]);
+  // useEffect(() => {
+  //   if (isSubmitSuccessful) {
+  //     reset();
+  //   }
+  // }, [isSubmitSuccessful, reset]);
 
   return (
     <section className="h-full fixed overflow-auto bg-[#ebeefd] w-full">
@@ -140,10 +136,15 @@ const index = () => {
                 {/* <!-- BOTTON  --> */}
                 <section className="col-md-6 d-grid">
                   <button
-                    className="btn btn-primary create-account-button"
+                    disabled={Loading}
+                    className="btn btn-primary create-account-button flex items-center justify-center"
                     type="submit"
                   >
-                    Sign in
+                    {Loading ? (
+                      <Loader2Icon className="text-2xl animate-spin w-full" />
+                    ) : (
+                      "sign in"
+                    )}
                   </button>
                 </section>
 

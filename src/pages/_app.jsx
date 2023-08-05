@@ -6,6 +6,7 @@ import DefaultLayout from "@/Components/Layouts/DefaultLayout";
 import DashboardLayout from "@/Components/Layouts/DashboardLayout";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SessionProvider } from "next-auth/react";
+import { Toaster } from "@/Components/ui/toaster";
 const queryClient = new QueryClient();
 
 export default function App({ Component, pageProps, session }) {
@@ -19,6 +20,7 @@ export default function App({ Component, pageProps, session }) {
   const LayoutWrapper = ({ children }) => (
     <QueryClientProvider client={queryClient}>
       <SessionProvider session={pageProps.session}>
+        <Toaster />
         {pathname.includes("Dashboard") ? (
           <DashboardLayout>{children}</DashboardLayout>
         ) : (
