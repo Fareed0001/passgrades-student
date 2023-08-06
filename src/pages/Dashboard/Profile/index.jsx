@@ -1,7 +1,6 @@
 import { User } from "lucide-react";
 import { useSession } from "next-auth/react";
-import React, { useRef, useState } from "react";
-import { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   BsFillCameraFill,
   BsFillEnvelopeAtFill,

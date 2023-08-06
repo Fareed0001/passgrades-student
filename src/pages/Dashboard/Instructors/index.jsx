@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import Router from "next/router";
-
 
 const index = () => {
   const { status } = useSession();

@@ -4,4 +4,8 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    domains: ["passmark.s3.eu-north-1.amazonaws.com"],
+  },
+};
