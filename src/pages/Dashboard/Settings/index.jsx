@@ -4,7 +4,7 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Button } from "../../../Components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "../../../components/ui/use-toast";
 import {
   Dialog,
   DialogContent,

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
+import { useSession } from "next-auth/react";
 
 const index = () => {
   const { status } = useSession();

@@ -6,13 +6,17 @@ import { Loader2Icon } from "lucide-react";
 import Image from "next/image";
 import black from "public/images/landing-page-images/black.jpg";
 import Router from "next/router";
+import { useToast } from "../../../components/ui/use-toast";
 
 //Card Component
 const CourseCard = ({ image, title, description, price, id }) => {
   const [showDescription, setShowDescription] = useState(false);
 
+  const { toast } = useToast();
+
   const { status, data } = useSession();
   const { email, phone, firstname, lastname } = data.user.data;
+  const token = data?.user?.token;
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -44,6 +48,33 @@ const CourseCard = ({ image, title, description, price, id }) => {
     setShowDescription((prevShowDescription) => !prevShowDescription);
   };
 
+  const flutterwaveresp = async (response) => {
+    const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
+    if (response.status === "successful") {
+      try {
+        const response = await fetch(`${baseurl}/student/course/${id}`, {
+          method: "POST",
+          headers: {
+            Authorization: `Bearer ${token} `,
+          },
+        });
+        if (response.ok) {
+          console.log("course enrolled  successfully");
+          toast({
+            title: "Cheers: you got a course",
+            description: ` you just got ${title} and enrolled`,
+          });
+        } else {
+          console.error("Error in enrolement");
+        }
+      } catch (error) {
+        // Handle network or other errors
+        console.error("Error:", error);
+      }
+    }
+    closePaymentModal();
+  };
+
   return (
     <div className="col">
       <div className="courses-card">
@@ -70,10 +101,7 @@ const CourseCard = ({ image, title, description, price, id }) => {
             className="course-price-span"
             onClick={() =>
               handleFlutterPayment({
-                callback: (response) => {
-                  console.log(response);
-                  closePaymentModal();
-                },
+                callback: flutterwaveresp,
                 onClose: () => {},
               })
             }
