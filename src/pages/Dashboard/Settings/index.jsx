@@ -3,8 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button } from "../../../Components/ui/button";
-import { useToast } from "../../../components/ui/use-toast";
+import { Button } from "@/Components/ui/button";
+import { useToast } from "@/Components/ui/use-toast";
 import {
   Dialog,
   DialogContent,

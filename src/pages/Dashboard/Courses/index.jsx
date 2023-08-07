@@ -5,7 +5,7 @@ import { useSession } from "next-auth/react";
 import { Loader2Icon } from "lucide-react";
 import black from "public/images/landing-page-images/black.jpg";
 import Router from "next/router";
-import { useToast } from "../../../components/ui/use-toast";
+import { useToast } from "@/Components/ui/use-toast";
 
 //Card Component
 const CourseCard = ({ image, title, description, price, id }) => {

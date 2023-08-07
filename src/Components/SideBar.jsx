@@ -207,7 +207,7 @@ export default SideBar;
 //           </p>
 //         </div>
 //       </Link>
-//       <Link className="sidebar-link-tag" href="/Dashboard/Class">
+//       <Link className="sidebar-link-tag" href="/Dashboard/OnlineClass">
 //         <div className="nav-item className-nav-item">
 //           <p className="nav-link-text">
 //             <BiChalkboard className="sidebar-icons " />
