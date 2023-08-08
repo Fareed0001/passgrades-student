@@ -3,12 +3,6 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 
 const index = () => {
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      Router.replace("/auth/Signin");
-    }
-  }, [status]);
   return (
     <div className="container-fluid dashboard-instructor-body-content">
       <div className="row">
@@ -100,4 +94,5 @@ const index = () => {
   );
 };
 
+index.auth = true;
 export default index;

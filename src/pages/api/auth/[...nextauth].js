@@ -13,9 +13,11 @@ const authOptions = {
       },
       async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied
-        const { email, password } = credentials;
+        const { email, password, role } = credentials;
 
-        const response = await fetch(`${baseUrl}/student/login`, {
+        const endpoint = role === "student" ? "/student/login" : "/agent/login";
+
+        const response = await fetch(`${baseUrl}${endpoint}`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

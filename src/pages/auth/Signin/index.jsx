@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import Link from "next/link";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { getSession, signIn, useSession } from "next-auth/react";
@@ -14,15 +14,17 @@ const index = () => {
   const form = useForm({
     resolver: yupResolver(LoginSchema),
   });
-  const { register, handleSubmit, formState, reset } = form;
+  const { register, handleSubmit, formState, reset, control } = form;
   const { errors, isSubmitSuccessful } = formState;
   const onSubmit = async (data) => {
-    const { email, password } = data;
+    const { email, password, role } = data;
+
     setLoading(true);
     try {
       const result = await signIn("credentials", {
         email: email,
         password: password,
+        role: role,
         redirect: true,
         callbackUrl: "/Dashboard",
       });
@@ -97,6 +99,31 @@ const index = () => {
                   <p className="text-red-500 text-[0.7rem] font-bold mt-2">
                     {errors.password?.message}
                   </p>
+                </div>
+                <div className="col-md-6 ">
+                  <label
+                    htmlFor="role"
+                    className="form-label signup-form-label"
+                  >
+                    Role
+                  </label>
+                  <Controller
+                    name="role"
+                    control={control}
+                    defaultValue=""
+                    render={({ field }) => (
+                      <select {...field} id="role" className="form-control">
+                        <option value="">Select a role</option>
+                        <option value="student">Student</option>
+                        <option value="agent">Agent</option>
+                      </select>
+                    )}
+                  />
+                  {errors.role && (
+                    <p className="text-red-500 text-[0.7rem] font-bold mt-2">
+                      {errors.role.message}
+                    </p>
+                  )}
                 </div>
 
                 <div className="check-boxes-div">

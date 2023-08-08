@@ -11,12 +11,11 @@ import { useToast } from "../../../components/ui/use-toast";
 //Card Component
 const CourseCard = ({ image, title, description, price, id }) => {
   const [showDescription, setShowDescription] = useState(false);
-
   const { toast } = useToast();
-
   const { status, data } = useSession();
   const { email, phone, firstname, lastname } = data.user.data;
   const token = data?.user?.token;
+  const role = data?.user?.data?.role;
 
   useEffect(() => {
     if (status === "unauthenticated") {
@@ -48,11 +47,12 @@ const CourseCard = ({ image, title, description, price, id }) => {
     setShowDescription((prevShowDescription) => !prevShowDescription);
   };
 
+  const endpoint = role === "student" ? "/student/course" : "/agent/course";
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
     if (response.status === "successful") {
       try {
-        const response = await fetch(`${baseurl}/student/course/${id}`, {
+        const response = await fetch(`${baseurl}${endpoint}/${id}`, {
           method: "POST",
           headers: {
             Authorization: `Bearer ${token} `,
@@ -126,6 +126,7 @@ const Index = (props) => {
   const { data } = useSession();
   const [Courses, setCourses] = useState([]);
   const [Loading, setLoading] = useState(false);
+  const role = data?.user?.data?.role;
 
   useEffect(() => {
     setLoading(true);
@@ -144,6 +145,7 @@ const Index = (props) => {
 
         const responseData = response?.data;
         setCourses(responseData?.data);
+
         setLoading(false);
       } catch (error) {
         setLoading(false);
@@ -171,7 +173,9 @@ const Index = (props) => {
               image={course.cover_image}
               title={course.title}
               description={course.description}
-              price={course.student_price}
+              price={`${
+                role === "student" ? course.student_price : course.agent_price
+              }`}
             />
           ))
         )}

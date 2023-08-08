@@ -1,8 +1,10 @@
 const { useState } = require("react");
-import Image from 'next/image';
+import Image from "next/image";
+import { useRouter } from "next/router";
 
-export const CourseCard = ({ image, title, description, price }) => {
+export const CourseCard = ({ image, title, description, price, id }) => {
   const [showDescription, setShowDescription] = useState(false);
+  const router = useRouter();
 
   const handleToggleDescription = () => {
     setShowDescription((prevShowDescription) => !prevShowDescription);
@@ -21,8 +23,9 @@ export const CourseCard = ({ image, title, description, price }) => {
         <div className="courses-card-body">
           <p className="courses-card-title">{title}</p>
           <p
-            className={`courses-card-text ${showDescription ? "" : "course-card-text-hide"
-              }`}
+            className={`courses-card-text ${
+              showDescription ? "" : "course-card-text-hide"
+            }`}
           >
             {description}
           </p>
@@ -34,6 +37,15 @@ export const CourseCard = ({ image, title, description, price }) => {
           >
             Details
           </small>
+
+          <div
+            className="text-sm font-bold text-blue-300 cursor-pointer"
+            onClick={() => {
+              router.push(`/Dashboard/Class/${id}`);
+            }}
+          >
+            view class
+          </div>
         </div>
       </div>
     </div>

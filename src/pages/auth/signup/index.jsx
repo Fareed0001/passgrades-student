@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/utils/schema";
@@ -15,6 +15,7 @@ const Index = () => {
     formState: { errors, isSubmitSuccessful },
     reset,
     watch,
+    control,
     handleSubmit,
   } = useForm({
     defaultValues: {
@@ -31,41 +32,60 @@ const Index = () => {
   const confirmpassword = watch("confirmpassword");
 
   const submitHandler = async (data) => {
-    const { firstname, lastname, phonenumber: phone, email, password } = data;
-    const formattedData = {
+    const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
+    const {
       firstname,
       lastname,
-      phone,
+      phonenumber: phone,
       email,
       password,
-    };
+      role,
+    } = data;
+    console.log(role);
 
     try {
-      const response = await fetch(
-        "https://api.passgrades.com/api/v1/student/register",
-        {
-          method: "POST",
-          body: JSON.stringify(formattedData),
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      let formattedData = {
+        firstname,
+        lastname,
+        phone,
+        email,
+        password,
+      };
+
+      if (role === "agent") {
+        formattedData = {
+          ...formattedData,
+          company: "Passgrades",
+        };
+      }
+
+      console.log(formattedData);
+      const endpoint =
+        role === "student" ? "student/register" : "agent/register";
+
+      const response = await fetch(`${baseurl}/${endpoint}`, {
+        method: "POST",
+        body: JSON.stringify(formattedData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
       if (!response.ok) {
-        throw new Error("Student already exists");
+        throw new Error(`${role} already exists`);
       } else {
         toast({
           title: "Account Created",
-          description: `Sucessfully Created an Account`,
+          description: `Successfully Created an Account`,
         });
       }
-      const data = await response.json();
 
+      await response.json();
       router.push("/auth/Signin");
     } catch (error) {
       toast({
         title: "Error",
-        description: `Student Already Exists`,
+        description: `${error.message}`,
       });
       console.error(error);
       router.push("/auth/Signin");
@@ -162,6 +182,32 @@ const Index = () => {
                   <p className="text-red-500 text-[0.7rem] font-bold mt-2">
                     {errors.email?.message}
                   </p>
+                </div>
+
+                <div className="col-md-6 ">
+                  <label
+                    htmlFor="role"
+                    className="form-label signup-form-label"
+                  >
+                    Role
+                  </label>
+                  <Controller
+                    name="role"
+                    control={control}
+                    defaultValue=""
+                    render={({ field }) => (
+                      <select {...field} id="role" className="form-control">
+                        <option value="">Select a role</option>
+                        <option value="student">Student</option>
+                        <option value="agent">Agent</option>
+                      </select>
+                    )}
+                  />
+                  {errors.role && (
+                    <p className="text-red-500 text-[0.7rem] font-bold mt-2">
+                      {errors.role.message}
+                    </p>
+                  )}
                 </div>
                 <div className="col-md-6">
                   <label

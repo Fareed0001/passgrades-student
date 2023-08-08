@@ -11,9 +11,11 @@ import {
 import Link from "next/link";
 import { FiSettings } from "react-icons/fi";
 import Image from "next/image";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 const SideBar = () => {
+  const { data } = useSession();
+  const role = data?.user?.data?.role;
   return (
     <div className="sidebar-components">
       <Link className="sidebar-link-tag" href="/Dashboard">
@@ -32,14 +34,18 @@ const SideBar = () => {
           </p>
         </div>
       </Link>
-      <Link className="sidebar-link-tag" href="/Dashboard/Instructors">
-        <div className="nav-item">
-          <p className="nav-link-text">
-            <BiPen className="sidebar-icons " />
-            Instructors
-          </p>
-        </div>
-      </Link>
+      {role === "student" ? (
+        <Link className="sidebar-link-tag" href="/Dashboard/Instructors">
+          <div className="nav-item">
+            <p className="nav-link-text">
+              <BiPen className="sidebar-icons " />
+              Instructors
+            </p>
+          </div>
+        </Link>
+      ) : (
+        ""
+      )}
       <Link className="sidebar-link-tag" href="/Dashboard/Courses">
         <div className="nav-item">
           <p className="nav-link-text">
@@ -48,6 +54,18 @@ const SideBar = () => {
           </p>
         </div>
       </Link>
+      {role === "agent" ? (
+        <Link className="sidebar-link-tag" href="/Dashboard/Agent">
+          <div className="nav-item">
+            <p className="nav-link-text">
+              <BiBookAdd className="sidebar-icons" />
+              My Students
+            </p>
+          </div>
+        </Link>
+      ) : (
+        ""
+      )}
       <Link className="sidebar-link-tag" href="/Dashboard/Messages">
         <div className="nav-item">
           <p className="nav-link-text">

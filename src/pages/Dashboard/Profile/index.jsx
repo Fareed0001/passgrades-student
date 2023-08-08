@@ -17,11 +17,6 @@ const CourseCard = ({ image, title, description, price }) => {
   const handleToggleDescription = () => {
     setShowDescription((prevShowDescription) => !prevShowDescription);
   };
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      Router.replace("/auth/Signin");
-    }
-  }, [status]);
 
   return (
     <div className="col">
@@ -72,6 +67,7 @@ const Index = () => {
     formData.append("photo", imageref.current.files[0]);
 
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
+
     try {
       const response = await fetch(`${baseurl}/student/update/picture`, {
         method: "POST",
@@ -163,7 +159,8 @@ const Index = () => {
     </div>
   );
 };
-const url = process.env.NEXT_PUBLIC_BASE_URL;
+
+// const url = process.env.NEXT_PUBLIC_BASE_URL;
 
 // export const getStaticProps = async () => {
 //   const res = await fetch(`${url}/student/mycourses`);
@@ -171,4 +168,5 @@ const url = process.env.NEXT_PUBLIC_BASE_URL;
 //   return { props: { repo } };
 // };
 
+Index.auth = true;
 export default Index;

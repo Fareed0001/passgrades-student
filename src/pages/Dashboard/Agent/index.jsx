@@ -1,12 +1,46 @@
 import Image from "next/image";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
+import axios from "@/utils/axios";
+import StudentCard from "@/Components/StudentCard";
 
 const index = () => {
-  const { status } = useSession();
+  const { status, data } = useSession();
+  const role = data?.user?.data?.role;
+
+  const [Students, setStudents] = useState([]);
+  const [Loading, setLoading] = useState(false);
+
   useEffect(() => {
-    if (status === "unauthenticated") {
+    setLoading(true);
+    async function getStudents() {
+      try {
+        const authToken = data?.user?.token;
+        if (!authToken) {
+          return null;
+        }
+
+        const response = await axios.get("/agent/students", {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+
+        const responseData = response?.data;
+        setStudents(responseData?.data);
+        console.log(responseData);
+
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        console.log(error.message);
+      }
+    }
+    getStudents();
+  }, [data]);
+  useEffect(() => {
+    if (status === "unauthenticated" && role !== "agent") {
       Router.replace("/auth/Signin");
     }
   }, [status]);
@@ -16,9 +50,7 @@ const index = () => {
       <div className="agent-dashboard-div">
         <div className="row pc-header-sidebar">
           <div className="">
-            {/* <!-- SECTION START  --> */}
             <section>
-
               <div className="container-fluid agent-body-content">
                 {/* <!-- MY STUDENT START --> */}
                 <div className="agent-row row">
@@ -26,20 +58,25 @@ const index = () => {
                     <p className="agent-student-header">My students</p>
                   </div>
                   <div className="col-6">
-                    <a href="sign-up.html">
-                      <button
-                        type="button"
-                        className="btn btn-primary agent-dashboard-button w-40 mb-3"
-                      >
-                        Add new student
-                      </button>
-                    </a>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        router.push("Agent/AgentRegisterStudent");
+                      }}
+                      className="btn btn-primary agent-dashboard-button w-40 mb-3"
+                    >
+                      Add new student
+                    </button>
                   </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-x-3">
+                  {Students.map((student) => (
+                    <StudentCard />
+                  ))}
                 </div>
 
                 <div className="agent-student-div">
                   <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
                     <div className="col">
                       <div className="agent-student-card card">
                         <Image
@@ -62,20 +99,22 @@ const index = () => {
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
                 {/* <!-- MY STUDENT END --> */}
-
               </div>
             </section>
-            {/* <!-- SECTION END  --> */}
           </div>
         </div>
       </div>
     </section>
   );
-  if (status === "authenticated") return <>{content}</>;
+  return <>{content}</>;
 };
 
+// index.auth = {
+//   role: "agent",
+//   loading: "loading...",
+//   unauthorized: "/Signin",
+// };
 export default index;

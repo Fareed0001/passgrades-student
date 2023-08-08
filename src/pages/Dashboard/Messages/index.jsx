@@ -3,13 +3,6 @@ import React, { useEffect } from "react";
 import Router from "next/router";
 
 const index = () => {
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      Router.replace("/auth/Signin");
-    }
-  }, [status]);
-
   return (
     <div className="container-fluid dashboard-messages-body-content">
       <p className="dashboard-messages-header">Messages</p>
@@ -66,5 +59,6 @@ const index = () => {
     </div>
   );
 };
+index.auth = true;
 
 export default index;
