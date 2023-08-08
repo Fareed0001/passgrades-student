@@ -8,6 +8,7 @@ import StudentCard from "@/Components/StudentCard";
 const index = () => {
   const { status, data } = useSession();
   const role = data?.user?.data?.role;
+  const router = useRouter();
 
   const [Students, setStudents] = useState([]);
   const [Loading, setLoading] = useState(false);
@@ -29,7 +30,6 @@ const index = () => {
 
         const responseData = response?.data;
         setStudents(responseData?.data);
-        console.log(responseData);
 
         setLoading(false);
       } catch (error) {
