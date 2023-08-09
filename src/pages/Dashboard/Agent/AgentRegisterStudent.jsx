@@ -13,7 +13,7 @@ import { useSession } from "next-auth/react";
 const AgentRegisterStudent = () => {
   const [passwordseen, setpasswordseen] = useState(false);
   const { toast } = useToast();
-  const { status, data } = useSession();
+  const { data } = useSession();
   const router = useRouter();
   const {
     register,
