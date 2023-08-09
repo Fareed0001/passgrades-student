@@ -11,6 +11,7 @@ const DashboardClass = () => {
   const { status, data } = useSession();
   const [Courses, setCourses] = useState([]);
   const [Loading, setLoading] = useState(false);
+  const role = data?.user?.data?.role;
   useEffect(() => {
     setLoading(true);
     async function getcourses() {
@@ -20,7 +21,10 @@ const DashboardClass = () => {
           return null;
         }
 
-        const response = await axios.get("/student/mycourses", {
+        const endpoint =
+          role === "student" ? "/student/mycourses" : "/agent/mycourses";
+
+        const response = await axios.get(endpoint, {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
@@ -36,12 +40,6 @@ const DashboardClass = () => {
     getcourses();
   }, [data]);
 
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      Router.replace("/auth/Signin");
-    }
-  }, [status]);
-
   return (
     <>
       <div className="container-fluid body-content">
@@ -56,11 +54,12 @@ const DashboardClass = () => {
                 </div>
               ) : Courses.length === 0 ? (
                 <div className=" mt-10 mx-auto font-semibold text-sm text-gray-500 ">
-                  You Havent Enrolled to Any Course yet
+                  You Haven't Enrolled to Any Course yet🤧
                 </div>
               ) : (
                 Courses.map((course) => (
                   <CourseCard
+                    id={course._id}
                     image={course.cover_image}
                     title={course.title}
                     description={course.description}
@@ -76,4 +75,5 @@ const DashboardClass = () => {
   );
 };
 
+// DashboardClass.auth = true;
 export default DashboardClass;

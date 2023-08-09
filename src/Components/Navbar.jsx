@@ -6,6 +6,8 @@ const Navbar = () => {
   const { status, data } = useSession();
   const firstname = data?.user?.data?.firstname;
   const lastname = data?.user?.data?.lastname;
+  const role = data?.user?.data?.role;
+  console.log(role);
 
   return (
     <header className="pc-header">
@@ -39,8 +41,11 @@ const Navbar = () => {
             <Link href="/Dashboard/Profile" className="dashboard-profile">
               <div className="row">
                 <div className="col-auto header-user-text-col">
-                  <p className="header-user-text">
-                    <span>{ firstname }</span> <br /> <span>{ lastname }</span>
+                  <span className="capitalize">
+                    {role === "agent" ? "agent" : "student"}
+                  </span>
+                  <p className="header-user-text ">
+                    <span>{firstname}</span> <br /> <span>{lastname}</span>
                   </p>
                 </div>
                 <div className="col-auto header-user-img-col">

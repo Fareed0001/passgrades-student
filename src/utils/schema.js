@@ -6,6 +6,7 @@ export default function SchemaPage() {
 }
 
 export const LoginSchema = Yup.object().shape({
+  role: Yup.string().required("role is required"),
   email: Yup.string()
     .email("please be sure to enter a correct email address")
     .required("Email is required")
@@ -47,6 +48,7 @@ export const changePasswordSchema = Yup.object().shape({
 
 export const RegisterSchema = Yup.object().shape({
   firstname: Yup.string().required("Firstname is required"),
+  role: Yup.string().required("role is required"),
   lastname: Yup.string().required("Lastname is required"),
   phonenumber: Yup.string().required("Phone Number is required"),
   email: Yup.string()
@@ -65,4 +67,19 @@ export const RegisterSchema = Yup.object().shape({
   termsAndConditions: Yup.boolean()
     .oneOf([true], "You must agree to the terms and conditions")
     .required("You must agree to the terms and conditions"),
+});
+
+export const RegisterStudentSchema = Yup.object().shape({
+  firstname: Yup.string().required("Firstname is required"),
+  lastname: Yup.string().required("Lastname is required"),
+  phone: Yup.string().required("Phone Number is required"),
+  email: Yup.string()
+    .email("Invalid Email Format")
+    .required("Email is required"),
+  password: Yup.string()
+    .required("Password is required")
+    .matches(
+      /^(?=.*[A-Z])(?=.*\d).{8,}$/,
+      "Password must be at least 8 characters long, contain at least one uppercase letter, and one number"
+    ),
 });
