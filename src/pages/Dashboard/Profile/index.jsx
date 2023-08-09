@@ -168,5 +168,5 @@ const Index = () => {
 //   return { props: { repo } };
 // };
 
-Index.auth = true;
+// Index.auth = true;
 export default Index;

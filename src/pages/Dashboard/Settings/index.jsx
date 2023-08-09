@@ -322,5 +322,5 @@ const index = () => {
     </div>
   );
 };
-index.auth = true;
+// index.auth = true;
 export default index;
