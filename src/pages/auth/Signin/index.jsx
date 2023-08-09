@@ -56,6 +56,7 @@ const index = () => {
               alt="sign-in.gif"
               width={200} // Set the width
               height={200} // Set the height
+              priority
             />
           </div>
           <div className="col-12 col-md-8 col-lg-6 sign-in-second-col">

@@ -3,10 +3,9 @@ import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
 import { Loader2Icon } from "lucide-react";
-import Image from "next/image";
 import black from "public/images/landing-page-images/black.jpg";
 import Router from "next/router";
-import { useToast } from "../../../components/ui/use-toast";
+import { useToast } from "@/Components/ui/use-toast";
 
 //Card Component
 const CourseCard = ({ image, title, description, price, id }) => {
@@ -78,10 +77,8 @@ const CourseCard = ({ image, title, description, price, id }) => {
   return (
     <div className="col">
       <div className="courses-card">
-        <Image
-          height={200}
-          width={200}
-          src={black}
+        <img
+          src={image}
           className="card-img-top courses-card-img h-[200px] w-[200px]"
           alt={title}
         />
@@ -158,7 +155,7 @@ const Index = (props) => {
   return (
     <>
       <div className="available-courses">Courses available</div>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-4 h-full relative">
+      <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4 h-full relative">
         {Loading ? (
           <div className=" absolute flex items-center justify-center  text-xl font-bold animate-pulse  top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
             <Loader2Icon className="animate-spin" />

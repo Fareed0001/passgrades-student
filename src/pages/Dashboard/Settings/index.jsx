@@ -3,8 +3,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Button } from "../../../Components/ui/button";
-import { useToast } from "../../../components/ui/use-toast";
+import { Button } from "@/Components/ui/button";
+import { useToast } from "@/Components/ui/use-toast";
 import {
   Dialog,
   DialogContent,
@@ -309,15 +309,18 @@ const index = () => {
             your account, you will be unsubscribed from all your courses, and
             will lose access forever.
           </p>
+          <button
+            type="submit"
+            className="btn btn-dark settings-button settings-delete-button"
+          >
+            Delete account <i className="fa-solid fa-trash-can"></i>
+          </button>
         </div>
       </div>
-      <button type="submit" className="btn btn-dark settings-button">
-        Change password
-      </button>
 
       {/* <!-- CONTENT END  --> */}
     </div>
   );
 };
-index.auth = true;
+// index.auth = true;
 export default index;

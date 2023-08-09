@@ -11,7 +11,7 @@ const ErrorPage = () => {
           Oops! Something went wrong.
         </p>
         <p className="text-lg text-gray-800 font-semibold">
-          Your login credentials are wrong in with your correct credentials
+          Your login credentials are incorrect; please provide the correct credentials.
         </p>
 
         <Link href="/auth/Signin">

@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useRouter } from "next/navigation";
 import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/Components/ui/use-toast";
 import Image from "next/image";
 
 const Index = () => {
@@ -113,16 +113,14 @@ const Index = () => {
               alt="sign-up.gif"
               width={200} // Set the width
               height={200} // Set the height
+              priority
             />
           </div>
           <div className="col-lg-7 sign-up-second-col">
             <div className="container">
               <p className="sign-up-header student-sign-up">
                 <i className="fa-solid fa-user sign-up-header-icon"></i>
-                Student sign up
-                <a className="toggle-link" href="AgentSignup">
-                  I am an Agent
-                </a>
+                Sign up
               </p>
 
               {/* <!-- FORM  --> */}

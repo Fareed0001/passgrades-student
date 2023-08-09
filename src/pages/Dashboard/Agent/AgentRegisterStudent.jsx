@@ -6,7 +6,7 @@ import { BsEyeSlash } from "react-icons/bs";
 import { useForm } from "react-hook-form";
 import { RegisterStudentSchema } from "@/utils/schema";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useToast } from "../../../components/ui/use-toast";
+import { useToast } from "@/Components/ui/use-toast";
 import { useRouter } from "next/router";
 import { useSession } from "next-auth/react";
 
@@ -71,21 +71,22 @@ const AgentRegisterStudent = () => {
   }, [reset, isSubmitSuccessful]);
 
   return (
-    <div className="h-full w-full  flex flex-col items-center justify-center">
-      <h1 className="capitalize font-bold text-xl  text-gray-500">
+    <div className="h-full w-full">
+      <h1 className="font-bold text-xl  text-gray-500">
         Register a student
       </h1>
       <form
-        className=" w-full md:w-6/12 flex flex-col"
+        className="row g-2 needs-validation form signup-form"
         onSubmit={handleSubmit(SubmitHandler)}
       >
-        <div className="">
-          <label className="mb-2 capitalize" htmlFor="firstname">
+        <div className="col-md-6 mb-0">
+          <label className="orm-label signup-form-label" htmlFor="firstname">
             Student firstname
           </label>
           <Input
             id="firstname"
             type="text"
+            className="form-control mb-0"
             placeholder="Enter your firstname"
             {...register("firstname")}
           />
@@ -93,13 +94,14 @@ const AgentRegisterStudent = () => {
             {errors.firstname?.message}
           </p>
         </div>
-        <div className="">
-          <label className="mb-2 capitalize" htmlFor="lastname">
+        <div className="col-md-6">
+          <label className="form-label signup-form-label" htmlFor="lastname">
             Student lastname
           </label>
           <Input
             id="lastname"
             type="text"
+            className="form-control mb-0"
             placeholder="Enter your lastname"
             {...register("lastname")}
           />
@@ -107,13 +109,14 @@ const AgentRegisterStudent = () => {
             {errors.lastname?.message}
           </p>
         </div>
-        <div className="">
-          <label className="mb-2 capitalize" htmlFor="email">
+        <div className="col-md-6">
+          <label className="form-label signup-form-label" htmlFor="email">
             Student email
           </label>
           <Input
             id="email"
             type="email"
+            className="form-control"
             placeholder="Enter email address"
             {...register("email")}
           />
@@ -121,9 +124,9 @@ const AgentRegisterStudent = () => {
             {errors.email?.message}
           </p>
         </div>
-        <div className="">
-          <label className="mb-2 capitalize" htmlFor="phone">
-            student phone
+        <div className="col-md-6">
+          <label className="form-label signup-form-label" htmlFor="phone">
+            student phone number
           </label>
           <Input
             id="phone"
@@ -135,9 +138,9 @@ const AgentRegisterStudent = () => {
             {errors.phone?.message}
           </p>
         </div>
-        <div className="mb-2 relative">
-          <label className="mb-2 capitalize" htmlFor="password">
-            password
+        <div className="col-md-6">
+          <label className="form-label signup-form-label" htmlFor="password">
+            Student password
           </label>
           <div className="relative ">
             <Input
@@ -168,7 +171,14 @@ const AgentRegisterStudent = () => {
             {errors.password?.message}
           </p>
         </div>
-        <Button>submit</Button>
+        <section className="d-grid">
+          <button
+            className="btn btn-primary create-account-button"
+            type="submit"
+          >
+            Submit
+          </button>
+        </section>
       </form>
     </div>
   );

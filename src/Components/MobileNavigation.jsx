@@ -10,8 +10,11 @@ import {
   BiCommentAdd,
   BiLogIn,
   BiMessage,
+  BiUser,
 } from "react-icons/bi";
 import { FiSettings } from "react-icons/fi";
+
+// STUDENT SIDE BAR START 
 const data = [
   {
     id: 1,
@@ -62,6 +65,112 @@ const data = [
     link: "/",
   },
 ];
+// STUDENT SIDEBAR END
+
+
+
+
+// AGENT SIDEBAR START 
+// const data = [
+//   {
+//     id: 1,
+//     icon: <BiBookAdd className="mobile-side-bar-icon" />,
+//     title: "Dashboard",
+//     link: "/Dashboard",
+//   },
+//   {
+//     id: 2,
+//     icon: <BiUser className="mobile-side-bar-icon" />,
+//     title: "My Students",
+//     link: "/Dashboard/Students",
+//   },
+//   {
+//     id: 3,
+//     icon: <BiChalkboard className="mobile-side-bar-icon" />,
+//     title: "My Class",
+//     link: "/Dashboard/Class",
+//   },
+//   {
+//     id: 4,
+//     icon: <BiCommentAdd className="mobile-side-bar-icon" />,
+//     title: "Courses",
+//     link: "/Dashboard/Courses",
+//   },
+//   {
+//     id: 5,
+//     icon: <BiMessage className="mobile-side-bar-icon" />,
+//     title: "Message",
+//     link: "/Dashboard/Messages",
+//   },
+//   {
+//     id: 6,
+//     icon: <CgProfile className="mobile-side-bar-icon" />,
+//     title: "profile",
+//     link: "/Dashboard/Profile",
+//   },
+//   {
+//     id: 7,
+//     icon: <FiSettings className="mobile-side-bar-icon" />,
+//     title: "settings",
+//     link: "/Dashboard/Settings",
+//   },
+//   {
+//     id: 8,
+//     icon: <BiLogIn className="mobile-side-bar-icon" />,
+//     title: "Logout",
+//     link: "/",
+//   },
+// ];
+// AGENT SIDEBAR END 
+
+
+
+
+// TUTOR SIDEBAR START 
+// const data = [
+//   {
+//     id: 1,
+//     icon: <BiBookAdd className="mobile-side-bar-icon" />,
+//     title: "Dashboard",
+//     link: "/Dashboard",
+//   },
+//   {
+//     id: 2,
+//     icon: <BiChalkboard className="mobile-side-bar-icon" />,
+//     title: "Start Class",
+//     link: "/Dashboard/OnlineClass",
+//   },
+//   {
+//     id: 3,
+//     icon: <BiMessage className="mobile-side-bar-icon" />,
+//     title: "Message",
+//     link: "/Dashboard/Messages",
+//   },
+//   {
+//     id: 4,
+//     icon: <CgProfile className="mobile-side-bar-icon" />,
+//     title: "profile",
+//     link: "/Dashboard/Profile",
+//   },
+//   {
+//     id: 5,
+//     icon: <FiSettings className="mobile-side-bar-icon" />,
+//     title: "settings",
+//     link: "/Dashboard/Settings",
+//   },
+//   {
+//     id: 6,
+//     icon: <BiLogIn className="mobile-side-bar-icon" />,
+//     title: "Logout",
+//     link: "/",
+//   },
+// ];
+// TUTOR SIDEBAR END 
+
+
+
+
+
 const sidebarVariants = {
   open: {
     x: 0,
