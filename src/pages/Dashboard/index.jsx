@@ -20,6 +20,7 @@ const Dashboard = () => {
           alt="dashboard-animation"
           width={100} // Adjust the width
           height={100} // Adjust the height
+          priority
         />
       </div>
     </div>
