@@ -2061,7 +2061,7 @@ input[type="checkbox"] {
   /* ie it ends at 479px */
 
   .courses-card {
-    width: 90%;
+    width: 100%;
     margin: auto;
   }
 }
