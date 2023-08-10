@@ -1,8 +1,42 @@
 import { useSession } from "next-auth/react";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Router from "next/router";
+import axios from "@/utils/axios";
 
 const index = () => {
+  const { data } = useSession();
+  const [Messages, setMessages] = useState([]);
+  const [Loading, setLoading] = useState(false);
+  const role = data?.user?.data?.role;
+
+  useEffect(() => {
+    setLoading(true);
+    async function getMessages() {
+      try {
+        const authToken = data?.user?.token;
+        if (!authToken) {
+          return null;
+        }
+        const endpoint =
+          role === "student" ? "/student/messages" : "/agent/messages";
+        const response = await axios.get(endpoint, {
+          headers: {
+            Authorization: `Bearer ${authToken}`,
+          },
+        });
+
+        const responseData = response?.data;
+        setMessages(responseData?.data);
+        console.log(responseData);
+
+        setLoading(false);
+      } catch (error) {
+        setLoading(false);
+        console.log(error.message);
+      }
+    }
+    getMessages();
+  }, [data]);
   return (
     <div className="container-fluid dashboard-messages-body-content">
       <p className="dashboard-messages-header">Messages</p>
@@ -40,8 +74,6 @@ const index = () => {
           </div>
         </div>
         {/* NORMAL MESSAGES HERE  */}
-
-
       </div>
     </div>
   );

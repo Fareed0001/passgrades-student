@@ -6,6 +6,9 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ["passmark.s3.eu-north-1.amazonaws.com"],
+    domains: [
+      "passmark.s3.amazonaws.com",
+      "passmark.s3.eu-north-1.amazonaws.com",
+    ],
   },
 };

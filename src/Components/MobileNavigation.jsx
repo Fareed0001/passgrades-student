@@ -13,9 +13,11 @@ import {
   BiUser,
 } from "react-icons/bi";
 import { FiSettings } from "react-icons/fi";
+import { useSession } from "next-auth/react";
+import { PencilRulerIcon } from "lucide-react";
 
-// STUDENT SIDE BAR START 
-const data = [
+// STUDENT SIDE BAR START
+const dataside = [
   {
     id: 1,
     icon: <BiBookAdd className="mobile-side-bar-icon" />,
@@ -27,6 +29,12 @@ const data = [
     icon: <BiChalkboard className="mobile-side-bar-icon" />,
     title: "My Class",
     link: "/Dashboard/Class",
+  },
+  {
+    id: 23,
+    icon: <PencilRulerIcon className="mobile-side-bar-icon" />,
+    title: "My students",
+    link: "/Dashboard/Agent",
   },
   {
     id: 3,
@@ -67,10 +75,7 @@ const data = [
 ];
 // STUDENT SIDEBAR END
 
-
-
-
-// AGENT SIDEBAR START 
+// AGENT SIDEBAR START
 // const data = [
 //   {
 //     id: 1,
@@ -121,12 +126,9 @@ const data = [
 //     link: "/",
 //   },
 // ];
-// AGENT SIDEBAR END 
+// AGENT SIDEBAR END
 
-
-
-
-// TUTOR SIDEBAR START 
+// TUTOR SIDEBAR START
 // const data = [
 //   {
 //     id: 1,
@@ -165,11 +167,7 @@ const data = [
 //     link: "/",
 //   },
 // ];
-// TUTOR SIDEBAR END 
-
-
-
-
+// TUTOR SIDEBAR END
 
 const sidebarVariants = {
   open: {
@@ -191,6 +189,8 @@ const sidebarVariants = {
   },
 };
 const MobileNavigation = ({ modalctrl, Open }) => {
+  const { data } = useSession();
+  const role = data?.user?.data?.role;
   return (
     <>
       <motion.div
@@ -202,19 +202,22 @@ const MobileNavigation = ({ modalctrl, Open }) => {
       >
         <LiaTimesSolid onClick={modalctrl} className="close-sidebar-icon" />
         <div className="side-bar-component-div">
-          {data.map((link) => (
-            <Link
-              key={link.id}
-              href={link.link}
-              className="no-underline"
-              onClick={modalctrl}
-            >
-              <div className="side-bar-content">
-                <span>{link.icon}</span>
-                {link.title}
-              </div>
-            </Link>
-          ))}
+          {dataside.map((link) =>
+            (link.title === "My students" && role === "agent") ||
+            link.title !== "My students" ? (
+              <Link
+                key={link.id}
+                href={link.link}
+                className="no-underline"
+                onClick={modalctrl}
+              >
+                <div className="side-bar-content">
+                  <span>{link.icon}</span>
+                  {link.title}
+                </div>
+              </Link>
+            ) : null
+          )}
         </div>
         <img
           className="sidebar-img"

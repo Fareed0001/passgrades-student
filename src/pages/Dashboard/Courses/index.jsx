@@ -4,13 +4,15 @@ import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
 import { Loader2Icon } from "lucide-react";
 import black from "public/images/landing-page-images/black.jpg";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { useToast } from "@/Components/ui/use-toast";
 
 //Card Component
-const CourseCard = ({ image, title, description, price, id }) => {
+const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const [showDescription, setShowDescription] = useState(false);
   const { toast } = useToast();
+  const router = useRouter();
+
   const { status, data } = useSession();
   const { email, phone, firstname, lastname } = data.user.data;
   const token = data?.user?.token;
@@ -49,26 +51,62 @@ const CourseCard = ({ image, title, description, price, id }) => {
   const endpoint = role === "student" ? "/student/course" : "/agent/course";
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
+    const transactionId = response.transaction_id;
+    // const studentEnrollendpoint = `${baseurl}/agent/student/enroll`;
     if (response.status === "successful") {
-      try {
-        const response = await fetch(`${baseurl}${endpoint}/${id}`, {
-          method: "POST",
-          headers: {
-            Authorization: `Bearer ${token} `,
-          },
-        });
-        if (response.ok) {
-          console.log("course enrolled  successfully");
-          toast({
-            title: "Cheers: you got a course",
-            description: ` you just got ${title} and enrolled`,
+      if (studentId) {
+        try {
+          const queryParams = new URLSearchParams({
+            amt: price,
+            tuid: transactionId,
+            cid: id,
+            sid: studentId,
           });
-        } else {
-          console.error("Error in enrolement");
+
+          const endpoint = `${baseurl}/agent/student/enroll?${queryParams}`;
+
+          const fetchOptions = {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          };
+
+          const responsedata = await fetch(endpoint, fetchOptions);
+
+          if (responsedata.ok) {
+            console.log("Course enrolled successfully");
+            toast({
+              title: "Cheers: you got a course",
+              description: `You just got ${title} and enrolled for your student`,
+            });
+          } else {
+            console.error("Error in enrollment");
+          }
+        } catch (error) {
+          console.error("Error:", error);
         }
-      } catch (error) {
-        // Handle network or other errors
-        console.error("Error:", error);
+      } else {
+        try {
+          const response = await fetch(`${baseurl}${endpoint}/${id}`, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${token} `,
+            },
+          });
+          if (response.ok) {
+            console.log("course enrolled  successfully");
+            toast({
+              title: "Cheers: you got a course",
+              description: ` you just got ${title} & enrolled for yourself`,
+            });
+          } else {
+            console.error("Error in enrolement");
+          }
+        } catch (error) {
+          // Handle network or other errors
+          console.error("Error:", error);
+        }
       }
     }
     closePaymentModal();
@@ -124,7 +162,8 @@ const Index = (props) => {
   const [Courses, setCourses] = useState([]);
   const [Loading, setLoading] = useState(false);
   const role = data?.user?.data?.role;
-
+  const router = useRouter();
+  const { studentId } = router.query;
   useEffect(() => {
     setLoading(true);
     async function getcourses() {
@@ -173,6 +212,7 @@ const Index = (props) => {
               price={`${
                 role === "student" ? course.student_price : course.agent_price
               }`}
+              studentId={studentId}
             />
           ))
         )}
