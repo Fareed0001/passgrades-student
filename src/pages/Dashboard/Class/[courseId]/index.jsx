@@ -51,7 +51,11 @@ const index = () => {
       <div className="class-div col-12">
         <p className="class-course-title">{Class?.course?.title}</p>
         <ReactPlayer
-          url={classdetails?.video} // You can use the same video URL for ReactPlayer
+          url={
+            classdetails?.video
+              ? classdetails?.video
+              : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+          } // You can use the same video URL for ReactPlayer
           controls
           width="100%"
           height="auto"

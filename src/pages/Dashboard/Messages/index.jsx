@@ -2,6 +2,8 @@ import { useSession } from "next-auth/react";
 import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import axios from "@/utils/axios";
+import OnlineClassCard from "@/Components/OnlineClassCard";
+import MessageCard from "@/Components/MessageCard";
 
 const index = () => {
   const { data } = useSession();
@@ -27,7 +29,7 @@ const index = () => {
 
         const responseData = response?.data;
         setMessages(responseData?.data);
-        console.log(responseData);
+        console.log(responseData?.data);
 
         setLoading(false);
       } catch (error) {
@@ -41,43 +43,28 @@ const index = () => {
     <div className="container-fluid dashboard-messages-body-content">
       <p className="dashboard-messages-header">Messages</p>
 
-      <div className="row row-cols-1 row-cols-md-2 g-4">
-        {/* ONLINE CLASS CARD START  */}
-        <div className="col">
-          <div className="card">
-            <div className="card-body">
-              <h6 className="card-title">Class title</h6>
-              <p className="card-text">
-                Copy (class title) meeting password: (the password)
-              </p>
-              <a href="#" className="btn btn-primary">
-                Join live class
-              </a>
-            </div>
-          </div>
+      {Messages.length === 0 ? (
+        <p className="text-xl font-bold text-gray-400 capitalize ">
+          you have no messages
+        </p>
+      ) : (
+        <div className="row row-cols-1 row-cols-md-2 g-4">
+          {Messages.map((message) => (
+            <OnlineClassCard
+              courseTitle={message?.course?.title}
+              classTitle={message.title}
+              classTime={message.time}
+              link={message.link}
+              classinstructor={message.instructor}
+              messageType={message.messsage_type}
+              description={message.description}
+              password={message.password}
+            />
+          ))}
         </div>
-        {/* ONLINE CLASS MESSAGES CARD END  */}
-
-        {/* NORMAL MESSAGES HERE  */}
-        <div className="col">
-          <div className="card">
-            <div className="card-body">
-              <h6 class="card-title">Message title</h6>
-              <p class="card-text details-card-text">
-                the message enters here the message enters here
-              </p>
-            </div>
-
-            <div className="courses-card-footer">
-              <small>Details</small>
-            </div>
-          </div>
-        </div>
-        {/* NORMAL MESSAGES HERE  */}
-      </div>
+      )}
     </div>
   );
 };
-// index.auth = true;
 
 export default index;
