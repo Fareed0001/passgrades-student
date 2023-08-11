@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { LoginSchema } from "@/utils/schema";
 import { Loader2Icon } from "lucide-react";
 import Image from "next/image";
+import { BsEyeSlash } from "react-icons/bs";
+import { EyeIcon } from "lucide-react";
 
 const index = () => {
   const session = useSession();
@@ -14,6 +16,7 @@ const index = () => {
   const form = useForm({
     resolver: yupResolver(LoginSchema),
   });
+  const [PasswordSeen, setPasswordSeen] = useState(false);
   const { register, handleSubmit, formState, reset, control } = form;
   const { errors, isSubmitSuccessful } = formState;
   const onSubmit = async (data) => {
@@ -77,13 +80,14 @@ const index = () => {
                     className="form-control mb-0"
                     id="email"
                     required
+                    placeholder="Enter email.."
                   />
                   <p className="text-red-500 text-[0.7rem] font-bold mt-2">
                     {errors.email?.message}
                   </p>
                 </div>
 
-                <div className="col-md-12">
+                <div className="col-md-12 relative">
                   <label
                     htmlFor="inputPassword"
                     className="form-label signin-form-label"
@@ -92,14 +96,30 @@ const index = () => {
                   </label>
                   <input
                     {...register("password")}
-                    type="password"
+                    type={PasswordSeen ? "text" : "password"}
                     className="form-control mb-0"
                     id="inputPassword"
                     required
+                    placeholder="Enter password"
                   />
                   <p className="text-red-500 text-[0.7rem] font-bold mt-2">
                     {errors.password?.message}
                   </p>
+                  {PasswordSeen ? (
+                    <EyeIcon
+                      className="absolute top-1/2 right-4 text-gray-400 cursor-pointer"
+                      onClick={() => {
+                        setPasswordSeen(!PasswordSeen);
+                      }}
+                    />
+                  ) : (
+                    <BsEyeSlash
+                      className="absolute top-1/2 text-2xl right-4 text-gray-400 cursor-pointer"
+                      onClick={() => {
+                        setPasswordSeen(!PasswordSeen);
+                      }}
+                    />
+                  )}
                 </div>
                 <div className="col-md-6 ">
                   <label

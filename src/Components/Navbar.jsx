@@ -7,7 +7,6 @@ const Navbar = () => {
   const firstname = data?.user?.data?.firstname;
   const lastname = data?.user?.data?.lastname;
   const role = data?.user?.data?.role;
-  console.log(role);
 
   return (
     <header className="pc-header">

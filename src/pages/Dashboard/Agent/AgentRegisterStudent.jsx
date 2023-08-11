@@ -13,7 +13,7 @@ import { useSession } from "next-auth/react";
 const AgentRegisterStudent = () => {
   const [passwordseen, setpasswordseen] = useState(false);
   const { toast } = useToast();
-  const { status, data } = useSession();
+  const { data } = useSession();
   const router = useRouter();
   const {
     register,
@@ -48,11 +48,11 @@ const AgentRegisterStudent = () => {
       });
 
       if (!response.ok) {
-        throw new Error(`${response.message}`);
+        throw new Error(`error`);
       } else {
         toast({
           title: "student Registered ",
-          description: `${response.message}`,
+          description: `you have sucessfully registered a student`,
         });
       }
       const res = await response.json();
@@ -72,9 +72,7 @@ const AgentRegisterStudent = () => {
 
   return (
     <div className="h-full w-full">
-      <h1 className="font-bold text-xl  text-gray-500">
-        Register a student
-      </h1>
+      <h1 className="font-bold text-xl  text-gray-500">Register a student</h1>
       <form
         className="row g-2 needs-validation form signup-form"
         onSubmit={handleSubmit(SubmitHandler)}

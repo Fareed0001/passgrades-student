@@ -33,6 +33,7 @@ const DashboardClass = () => {
         });
 
         const responseData = response?.data;
+
         setCourses(responseData?.data);
         setLoading(false);
       } catch (error) {
@@ -70,6 +71,7 @@ const DashboardClass = () => {
                 ))
               )}
             </div>
+            
           </div>
         </div>
       </div>
