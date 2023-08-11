@@ -137,6 +137,7 @@ const index = () => {
                         <option value="">Select a role</option>
                         <option value="student">Student</option>
                         <option value="agent">Agent</option>
+                        <option value="instructor" disabled>Instructor</option>
                       </select>
                     )}
                   />
