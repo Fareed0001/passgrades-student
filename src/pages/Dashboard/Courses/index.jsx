@@ -18,6 +18,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const token = data?.user?.token;
   const role = data?.user?.data?.role;
 
+  console.log(id);
   useEffect(() => {
     if (status === "unauthenticated") {
       Router.replace("/auth/Signin");
@@ -52,19 +53,12 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
     const transactionId = response.transaction_id;
+    console.log(transactionId);
     // const studentEnrollendpoint = `${baseurl}/agent/student/enroll`;
     if (response.status === "successful") {
       if (studentId) {
         try {
-          const queryParams = new URLSearchParams({
-            amt: price,
-            tuid: transactionId,
-            cid: id,
-            sid: studentId,
-          });
-
-          const endpoint = `${baseurl}/agent/student/enroll?${queryParams}`;
-
+          const endpoint = `${baseurl}/agent/student/enroll?amt=${price}&tuid=${transactionId}&cid=${id}&sid=${studentId}`;
           const fetchOptions = {
             method: "POST",
             headers: {

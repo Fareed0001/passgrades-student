@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-
 const ReactPlayer = dynamic(() => import("react-player"), {
   ssr: false, // Disable server-side rendering for this component
 });
@@ -12,13 +11,12 @@ const ReactPlayer = dynamic(() => import("react-player"), {
 const index = () => {
   const { data } = useSession();
   const [Class, setClass] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [Loading, setLoading] = useState(false);
   const router = useRouter();
   const courseid = router.query.courseId;
-
-  const classdetails = Class?.classes?.[0];
-
   const role = data?.user?.data?.role;
+  const currentItem = Class?.classes?.[currentIndex];
 
   useEffect(() => {
     setLoading(true);
@@ -28,15 +26,16 @@ const index = () => {
         if (!authToken) {
           return null;
         }
-
-        const response = await axios.get(`/student/mycourse/${courseid}`, {
+        const endpoint =
+          role === "student" ? "/student/mycourse/" : "/agent/mycourse/";
+        const response = await axios.get(`${endpoint}${courseid}`, {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
         });
 
         const responseData = response?.data;
-        console.log(responseData.data.classes[0]);
+
         setClass(responseData?.data);
         setLoading(false);
       } catch (error) {
@@ -46,39 +45,65 @@ const index = () => {
     }
     getcourses();
   }, [data]);
+
+  const handleNext = () => {
+    if (currentIndex < Class?.classes.length - 1) {
+      setCurrentIndex(currentIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentIndex !== 0) {
+      setCurrentIndex(currentIndex - 1);
+    }
+  };
   return (
     <div className="row">
       <div className="class-div col-12">
-        <p className="class-course-title">{Class?.course?.title}</p>
-        <ReactPlayer
-          url={
-            classdetails?.video
-              ? classdetails?.video
-              : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
-          } // You can use the same video URL for ReactPlayer
-          controls
-          width="100%"
-          height="auto"
-        />
-        <p className="class-title">{classdetails?.title}</p>
+        <p className="class-course-title">{currentItem?.course?.title}</p>
+        <div className="h-[500px] ">
+          <ReactPlayer
+            url={
+              currentItem?.video
+                ? currentItem?.video
+                : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
+            }
+            controls
+            width="100%"
+            height="100%"
+          />
+        </div>
 
-        <a href={classdetails?.resource} target="_blank">
-          <Button className="class-resources">download class resource</Button>
+        <p className="class-title">{currentItem?.title}</p>
+
+        <a href={currentItem?.resource} target="_blank">
+          <Button className="class-resources mt-3">
+            download class resource
+          </Button>
         </a>
 
-        <div className="class-description">{classdetails?.description}</div>
+        <div className="class-description text-gray-500 font-bold mt-3">
+          {currentItem?.description}
+        </div>
       </div>
 
-      <div className="second-class-div col-12">
+      <div className="second-class-div col-12 flex justify-between">
         <div className="d-grid">
-          <button type="button" className="btn btn-primary class-button">
-            Next class name{/* class title */}
+          <button
+            type="button"
+            className="btn btn-primary w-40 class-button"
+            onClick={handlePrev}
+          >
+            prev class
           </button>
-          <button type="button" className="btn btn-primary class-button">
-            Next class name
-          </button>
-          <button type="button" className="btn btn-primary class-button">
-            Next class name
+        </div>
+        <div className="d-grid">
+          <button
+            type="button"
+            className="btn btn-primary w-40 class-button"
+            onClick={handleNext}
+          >
+            Next class
           </button>
         </div>
       </div>
@@ -139,3 +164,4 @@ const index = () => {
 //   }
 // }
 export default index;
+// http://passmark.eu-north-1.elasticbeanstalk.com/api/v1/agent/student/enroll?amt=4000&tuid=4523499&cid=64d157d65f0edc16daaea31b&sid=64d2b4d55f0edc16daaea3e4
