@@ -3,11 +3,9 @@ import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
 import axios from "@/utils/axios";
 import { useSession } from "next-auth/react";
 import { Loader2Icon } from "lucide-react";
-import black from "public/images/landing-page-images/black.jpg";
 import Router, { useRouter } from "next/router";
 import { useToast } from "@/Components/ui/use-toast";
 
-//Card Component
 const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const [showDescription, setShowDescription] = useState(false);
   const { toast } = useToast();
@@ -37,7 +35,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     customizations: {
       title: title,
       description: description,
-      logo: image,
+      // logo: image,
     },
   };
 
@@ -48,6 +46,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   };
 
   const endpoint = role === "student" ? "/student/course" : "/agent/course";
+
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
     const transactionId = response.transaction_id;
@@ -61,10 +60,13 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
             },
           };
 
-          const responsedata = await fetch(endpoint, fetchOptions);
+          const responsedata = await fetch(enrollEndpoint, fetchOptions);
+          console.log("enrollEndpoint:", enrollEndpoint);
+          console.log("fetchOptions:", fetchOptions);
 
           if (responsedata.ok) {
             console.log("Course enrolled successfully");
@@ -73,10 +75,11 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
               description: `You just got ${title} and enrolled for your student`,
             });
           } else {
-            console.error("Error in enrollment");
+            const errorResponse = await responsedata.json();
+            console.error("Server responded with an error:", responsedata);
           }
         } catch (error) {
-          console.error("Error:", error);
+          console.error("An error occurred during the fetch:", error);
         }
       } else {
         try {
@@ -93,10 +96,9 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
               description: ` you just got ${title} & enrolled for yourself`,
             });
           } else {
-            console.error("Error in enrolement");
+            console.error("Error in enrollment");
           }
         } catch (error) {
-          // Handle network or other errors
           console.error("Error:", error);
         }
       }
@@ -213,33 +215,4 @@ const Index = (props) => {
   );
 };
 
-// export async function getStaticProps() {
-//   const response = await axios("student/mycourses", {
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${Cookies.get("AuthToken")}`,
-//     },
-//   });
-
-//   const courses = response.data;
-//   console.log(courses);
-
-//   return {
-//     props: {
-//       courses: courses,
-//     },
-//   };
-// }
 export default Index;
-
-{
-  /* <CourseCard
-        image="/images/dashboard-images/sat.png"
-        title="SAT"
-        description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-        price="₦5,000"
-      /> */
-}
-{
-  /* Add more CourseCard components for other courses */
-}

@@ -4,6 +4,8 @@ import { useSession } from "next-auth/react";
 import axios from "@/utils/axios";
 import Router from "next/router";
 import { Loader2Icon } from "lucide-react";
+import Image from "next/image";
+
 
 //Card Component
 
@@ -60,15 +62,16 @@ const DashboardClass = () => {
               ) : (
                 Courses.map((course) => (
                   <CourseCard
-                    id={course._id}
+                    key={course._id}
+                    id={course._id}              
                     image={course.cover_image}
                     title={course.title}
                     description={course.description}
-                    price={course.student_price}
                   />
                 ))
               )}
             </div>
+            
           </div>
         </div>
       </div>

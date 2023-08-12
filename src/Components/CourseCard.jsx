@@ -12,7 +12,7 @@ export const CourseCard = ({ image, title, description, price, id }) => {
 
   return (
     <div className="col">
-      <div className="courses-card">
+      <div className="courses-card h-100">
         <Image
           src={image}
           className="card-img-top courses-card-img h-[200px] w-[200px]"
