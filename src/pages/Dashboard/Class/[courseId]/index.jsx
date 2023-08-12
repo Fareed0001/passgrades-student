@@ -68,10 +68,14 @@ const index = () => {
                 ? currentItem?.video
                 : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
             }
-            controls
-            width="100%"
-            height="100%"
-          />
+            config={{
+            file: {
+              attributes: {
+                controlsList: 'nodownload',
+              },
+            },
+          }}
+        />
         </div>
 
         <p className="class-title">{currentItem?.title}</p>

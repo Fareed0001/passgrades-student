@@ -55,7 +55,15 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     if (response.status === "successful") {
       if (studentId) {
         try {
+          const queryParams = new URLSearchParams({
+            amt: price,
+            tuid: transactionId,
+            cid: id,
+            sid: studentId,
+          });
+
           const endpoint = `${baseurl}/agent/student/enroll?amt=${price}&tuid=${transactionId}&cid=${id}&sid=${studentId}`;
+
           const fetchOptions = {
             method: "POST",
             headers: {
