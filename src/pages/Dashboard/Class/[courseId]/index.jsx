@@ -69,13 +69,13 @@ const index = () => {
                 : "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
             }
             config={{
-            file: {
-              attributes: {
-                controlsList: 'nodownload',
+              file: {
+                attributes: {
+                  controlsList: "nodownload",
+                },
               },
-            },
-          }}
-        />
+            }}
+          />
         </div>
 
         <p className="class-title">{currentItem?.title}</p>
@@ -110,8 +110,7 @@ const index = () => {
             Next class
           </button>
         </div>
-      </div> */}
-
+      </div>
     </div>
   );
 };
