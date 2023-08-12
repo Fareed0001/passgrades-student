@@ -50,7 +50,7 @@ const DashboardClass = () => {
           <div className="third-class-div col-12">
             <p className="third-class-div-header">Enrolled courses</p>
 
-            <div className="row row-cols-1 row-cols-md-2  row-cols-lg-3 g-4">
+            <div className="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 mt-4 h-full">
               {Loading ? (
                 <div className=" absolute mx-auto flex items-center justify-center  text-xl font-bold animate-pulse  top-[30%] left-1/2 -translate-x-1/2 -translate-y-1/2 ">
                   <Loader2Icon className="animate-spin" />

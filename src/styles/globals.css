@@ -2001,6 +2001,7 @@ input[type="checkbox"] {
 
 .courses-card-img {
   border-radius: 6px 6px 0 0;
+  height: 40%;
 }
 
 .courses-card-body {
