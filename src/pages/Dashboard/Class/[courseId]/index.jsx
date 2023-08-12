@@ -72,12 +72,12 @@ const index = () => {
             width="100%"
             height="100%"
             config={{
-            file: {
-              attributes: {
-                controlsList: 'nodownload',
+              file: {
+                attributes: {
+                  controlsList: "nodownload",
+                },
               },
-            },
-          }}
+            }}
           />
         </div>
 
