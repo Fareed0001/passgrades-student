@@ -16,6 +16,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const token = data?.user?.token;
   const role = data?.user?.data?.role;
 
+  console.log(id);
   useEffect(() => {
     if (status === 'unauthenticated') {
       Router.replace('/auth/Signin');
@@ -51,8 +52,9 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
     const transactionId = response.transaction_id;
-  
-    if (response.status === 'successful') {
+    console.log(transactionId);
+    // const studentEnrollendpoint = `${baseurl}/agent/student/enroll`;
+    if (response.status === "successful") {
       if (studentId) {
         try {
           const queryParams = new URLSearchParams({
@@ -62,8 +64,8 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
             sid: studentId,
           });
   
-          const enrollEndpoint = `http://passmark.eu-north-1.elasticbeanstalk.com/api/v1/agent/student/enroll?${queryParams}`;
-  
+          const endpoint = `${baseurl}/agent/student/enroll?amt=${price}&tuid=${transactionId}&cid=${id}&sid=${studentId}`;  
+         
           const fetchOptions = {
             method: 'POST',
             headers: {
