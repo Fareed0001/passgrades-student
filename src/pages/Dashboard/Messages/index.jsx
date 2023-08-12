@@ -3,9 +3,8 @@ import React, { useEffect, useState } from "react";
 import Router from "next/router";
 import axios from "@/utils/axios";
 import OnlineClassCard from "@/Components/OnlineClassCard";
-import MessageCard from "@/Components/MessageCard";
 
-const index = () => {
+const Index = () => {
   const { data } = useSession();
   const [Messages, setMessages] = useState([]);
   const [Loading, setLoading] = useState(false);
@@ -67,4 +66,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Index;

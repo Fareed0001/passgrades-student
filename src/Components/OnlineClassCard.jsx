@@ -20,7 +20,7 @@ const OnlineClassCard = ({
           <h6 className="card-title ml-3">
             {classTitle} at {classTime}
           </h6>
-          <p className="card-text ml-3">
+          {/* <p className="card-text ml-3">
             Copy {classTitle} meeting password: {password}
           </p>
 
@@ -29,13 +29,13 @@ const OnlineClassCard = ({
               {messageType} by {classinstructor}
             </h6>
             <p className="card-text details-card-text ">{description}</p>
-          </div>
+          </div> */}
           <a href={link} target="_blank" className="btn btn-primary ml-3">
             Join live class
           </a>
-          <div className="courses-card-footer">
+          {/* <div className="courses-card-footer">
             <small>Details</small>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

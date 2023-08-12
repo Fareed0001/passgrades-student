@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from "react";
-import { useFlutterwave, closePaymentModal } from "flutterwave-react-v3";
-import axios from "@/utils/axios";
-import { useSession } from "next-auth/react";
-import { Loader2Icon } from "lucide-react";
-import black from "public/images/landing-page-images/black.jpg";
-import Router, { useRouter } from "next/router";
-import { useToast } from "@/Components/ui/use-toast";
+import React, { useEffect, useState } from 'react';
+import { useFlutterwave, closePaymentModal } from 'flutterwave-react-v3';
+import axios from '@/utils/axios';
+import { useSession } from 'next-auth/react';
+import { Loader2Icon } from 'lucide-react';
+import Router, { useRouter } from 'next/router';
+import { useToast } from '@/Components/ui/use-toast';
 
-//Card Component
 const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const [showDescription, setShowDescription] = useState(false);
   const { toast } = useToast();
@@ -19,8 +17,8 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const role = data?.user?.data?.role;
 
   useEffect(() => {
-    if (status === "unauthenticated") {
-      Router.replace("/auth/Signin");
+    if (status === 'unauthenticated') {
+      Router.replace('/auth/Signin');
     }
   }, [status]);
 
@@ -28,8 +26,8 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY,
     tx_ref: Date.now(),
     amount: price,
-    currency: "NGN",
-    payment_options: "card,mobilemoney,ussd",
+    currency: 'NGN',
+    payment_options: 'card,mobilemoney,ussd',
     customer: {
       email: email,
       phone_number: phone,
@@ -38,7 +36,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     customizations: {
       title: title,
       description: description,
-      logo: image,
+      // logo: image,
     },
   };
 
@@ -48,12 +46,13 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     setShowDescription((prevShowDescription) => !prevShowDescription);
   };
 
-  const endpoint = role === "student" ? "/student/course" : "/agent/course";
+  const endpoint = role === 'student' ? '/student/course' : '/agent/course';
+
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
     const transactionId = response.transaction_id;
-    // const studentEnrollendpoint = `${baseurl}/agent/student/enroll`;
-    if (response.status === "successful") {
+  
+    if (response.status === 'successful') {
       if (studentId) {
         try {
           const queryParams = new URLSearchParams({
@@ -62,56 +61,59 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
             cid: id,
             sid: studentId,
           });
-
-          const endpoint = `${baseurl}/agent/student/enroll?${queryParams}`;
-
+  
+          const enrollEndpoint = `http://passmark.eu-north-1.elasticbeanstalk.com/api/v1/agent/student/enroll?${queryParams}`;
+  
           const fetchOptions = {
-            method: "POST",
+            method: 'POST',
             headers: {
               Authorization: `Bearer ${token}`,
+              'Content-Type': 'application/json',
             },
           };
-
-          const responsedata = await fetch(endpoint, fetchOptions);
-
+  
+          const responsedata = await fetch(enrollEndpoint, fetchOptions);
+          console.log("enrollEndpoint:", enrollEndpoint);
+          console.log("fetchOptions:", fetchOptions);
+          
           if (responsedata.ok) {
-            console.log("Course enrolled successfully");
+            console.log('Course enrolled successfully');
             toast({
-              title: "Cheers: you got a course",
+              title: 'Cheers: you got a course',
               description: `You just got ${title} and enrolled for your student`,
             });
           } else {
-            console.error("Error in enrollment");
+            const errorResponse = await responsedata.json();
+            console.error("Server responded with an error:", responsedata);
           }
         } catch (error) {
-          console.error("Error:", error);
+          console.error("An error occurred during the fetch:", error);
         }
       } else {
         try {
           const response = await fetch(`${baseurl}${endpoint}/${id}`, {
-            method: "POST",
+            method: 'POST',
             headers: {
               Authorization: `Bearer ${token} `,
             },
           });
           if (response.ok) {
-            console.log("course enrolled  successfully");
+            console.log('course enrolled  successfully');
             toast({
-              title: "Cheers: you got a course",
+              title: 'Cheers: you got a course',
               description: ` you just got ${title} & enrolled for yourself`,
             });
           } else {
-            console.error("Error in enrolement");
+            console.error('Error in enrollment');
           }
         } catch (error) {
-          // Handle network or other errors
-          console.error("Error:", error);
+          console.error('Error:', error);
         }
       }
     }
     closePaymentModal();
   };
-
+    
   return (
     <div className="col">
       <div className="courses-card">
@@ -124,7 +126,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
           <p className="courses-card-title">{title}</p>
           <p
             className={`courses-card-text ${
-              showDescription ? "" : "course-card-text-hide"
+              showDescription ? '' : 'course-card-text-hide'
             }`}
           >
             {description}
@@ -173,7 +175,7 @@ const Index = (props) => {
           return null;
         }
 
-        const response = await axios.get("/courses", {
+        const response = await axios.get('/courses', {
           headers: {
             Authorization: `Bearer ${authToken}`,
           },
@@ -210,7 +212,7 @@ const Index = (props) => {
               title={course.title}
               description={course.description}
               price={`${
-                role === "student" ? course.student_price : course.agent_price
+                role === 'student' ? course.student_price : course.agent_price
               }`}
               studentId={studentId}
             />
@@ -221,33 +223,4 @@ const Index = (props) => {
   );
 };
 
-// export async function getStaticProps() {
-//   const response = await axios("student/mycourses", {
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${Cookies.get("AuthToken")}`,
-//     },
-//   });
-
-//   const courses = response.data;
-//   console.log(courses);
-
-//   return {
-//     props: {
-//       courses: courses,
-//     },
-//   };
-// }
 export default Index;
-
-{
-  /* <CourseCard
-        image="/images/dashboard-images/sat.png"
-        title="SAT"
-        description="This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longerThis is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer."
-        price="₦5,000"
-      /> */
-}
-{
-  /* Add more CourseCard components for other courses */
-}

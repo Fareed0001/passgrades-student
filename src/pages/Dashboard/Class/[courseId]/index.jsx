@@ -59,20 +59,28 @@ const index = () => {
           controls
           width="100%"
           height="auto"
+          config={{
+            file: {
+              attributes: {
+                controlsList: 'nodownload',
+              },
+            },
+          }}
         />
         <p className="class-title">{classdetails?.title}</p>
 
-        <a href={classdetails?.resource} target="_blank">
+        {/* <a href={classdetails?.resource} target="_blank"> */}
+        <a href="public\images\Umoh details.docx" download="Passgrades-updates">
           <Button className="class-resources">download class resource</Button>
         </a>
 
         <div className="class-description">{classdetails?.description}</div>
       </div>
 
-      <div className="second-class-div col-12">
+      {/* <div className="second-class-div col-12">
         <div className="d-grid">
           <button type="button" className="btn btn-primary class-button">
-            Next class name{/* class title */}
+            Next class name
           </button>
           <button type="button" className="btn btn-primary class-button">
             Next class name
@@ -81,7 +89,8 @@ const index = () => {
             Next class name
           </button>
         </div>
-      </div>
+      </div> */}
+
     </div>
   );
 };
