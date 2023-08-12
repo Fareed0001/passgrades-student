@@ -12,13 +12,11 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const [showDescription, setShowDescription] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
-
   const { status, data } = useSession();
   const { email, phone, firstname, lastname } = data.user.data;
   const token = data?.user?.token;
   const role = data?.user?.data?.role;
 
-  console.log(id);
   useEffect(() => {
     if (status === "unauthenticated") {
       Router.replace("/auth/Signin");

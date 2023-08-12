@@ -15,7 +15,7 @@ export const CourseCard = ({ image, title, description, price, id }) => {
       <div className="courses-card">
         <Image
           src={image}
-          className="card-img-top courses-card-img"
+          className="card-img-top courses-card-img h-[200px] w-[200px]"
           alt={title}
           width={200} // Set the width
           height={200} // Set the height
