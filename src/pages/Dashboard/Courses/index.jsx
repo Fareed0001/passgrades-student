@@ -16,7 +16,6 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const token = data?.user?.token;
   const role = data?.user?.data?.role;
 
-  console.log(id);
   useEffect(() => {
     if (status === 'unauthenticated') {
       Router.replace('/auth/Signin');
@@ -52,9 +51,8 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const flutterwaveresp = async (response) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
     const transactionId = response.transaction_id;
-    console.log(transactionId);
-    // const studentEnrollendpoint = `${baseurl}/agent/student/enroll`;
-    if (response.status === "successful") {
+
+    if (response.status === 'successful') {
       if (studentId) {
         try {
           const queryParams = new URLSearchParams({
@@ -63,9 +61,9 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
             cid: id,
             sid: studentId,
           });
-  
-          const endpoint = `${baseurl}/agent/student/enroll?amt=${price}&tuid=${transactionId}&cid=${id}&sid=${studentId}`;  
-         
+
+          const enrollEndpoint = `${baseurl}/agent/student/enroll?${queryParams}`;
+
           const fetchOptions = {
             method: 'POST',
             headers: {
@@ -73,11 +71,9 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
               'Content-Type': 'application/json',
             },
           };
-  
+
           const responsedata = await fetch(enrollEndpoint, fetchOptions);
-          console.log("enrollEndpoint:", enrollEndpoint);
-          console.log("fetchOptions:", fetchOptions);
-          
+
           if (responsedata.ok) {
             console.log('Course enrolled successfully');
             toast({
@@ -86,10 +82,10 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
             });
           } else {
             const errorResponse = await responsedata.json();
-            console.error("Server responded with an error:", responsedata);
+            console.error('Server responded with an error:', errorResponse);
           }
         } catch (error) {
-          console.error("An error occurred during the fetch:", error);
+          console.error('An error occurred during the fetch:', error);
         }
       } else {
         try {
@@ -115,7 +111,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     }
     closePaymentModal();
   };
-    
+
   return (
     <div className="col">
       <div className="courses-card">
@@ -168,6 +164,7 @@ const Index = (props) => {
   const role = data?.user?.data?.role;
   const router = useRouter();
   const { studentId } = router.query;
+
   useEffect(() => {
     setLoading(true);
     async function getcourses() {
