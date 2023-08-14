@@ -8,14 +8,24 @@ const authOptions = {
     CredentialsProvider({
       type: "credentials",
       credentials: {
-        email: { label: "email", type: "text ", placeholder: "jsmith" },
+        email: { label: "email", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials, req) {
-        // Add logic here to look up the user from the credentials supplied
         const { email, password, role } = credentials;
 
-        const endpoint = role === "student" ? "/student/login" : "/agent/login";
+        let endpoint = "";
+
+        if (role === "student") {
+          endpoint = "/student/login";
+        } else if (role === "agent") {
+          endpoint = "/agent/login";
+        } else if (role === "instructor") {
+          endpoint = "/instructor/login";
+        } else {
+          console.log("Error from login role:", role); 
+        }
+        console.log("Role:", role); 
 
         const response = await fetch(`${baseUrl}${endpoint}`, {
           method: "POST",
@@ -62,4 +72,5 @@ const authOptions = {
     signOut: "/auth/Signin",
   },
 };
+
 export default NextAuth(authOptions);

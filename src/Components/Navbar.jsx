@@ -3,10 +3,31 @@ import React from "react";
 import Link from "next/link";
 
 const Navbar = () => {
-  const { status, data } = useSession();
-  const firstname = data?.user?.data?.firstname;
-  const lastname = data?.user?.data?.lastname;
-  const role = data?.user?.data?.role;
+  const { data: sessionData, status } = useSession();
+  const firstname = sessionData?.user?.data?.firstname;
+  const lastname = sessionData?.user?.data?.lastname;
+  const role = sessionData?.user?.data?.role;
+
+  console.log("Role:", role); // Added console log for role
+
+  // Display loading or error state if needed
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "error") {
+    return <p>Error loading session data.</p>;
+  }
+
+  let roleDisplayName = "";
+  if (role === "agent") {
+    roleDisplayName = "Agent";
+  } else if (role === "student") {
+    roleDisplayName = "Student";
+  } else {
+    roleDisplayName = "instructor";
+  }  console.log(roleDisplayName); // Added console log for role
+
 
   return (
     <header className="pc-header">
@@ -40,9 +61,7 @@ const Navbar = () => {
             <Link href="/Dashboard/Profile" className="dashboard-profile">
               <div className="row">
                 <div className="col-auto header-user-text-col">
-                  <span className="capitalize">
-                    {role === "agent" ? "agent" : "student"}
-                  </span>
+                  <span className="capitalize">{roleDisplayName}</span>
                   <p className="header-user-text ">
                     <span>{firstname}</span> <br /> <span>{lastname}</span>
                   </p>

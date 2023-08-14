@@ -14,7 +14,7 @@ const ErrorPage = () => {
           Your login credentials are incorrect; please provide the correct credentials.
         </p>
 
-        <Link href="/auth/Signin">
+        <Link href="/auth/Signin" className="signup-link">
           <span className="mt-6 flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-400 no-underline rounded-md">
             Go to back to signin
           </span>

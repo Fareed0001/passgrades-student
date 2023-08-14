@@ -32,6 +32,7 @@ const index = () => {
         callbackUrl: "/Dashboard",
       });
       setLoading(false);
+      console.log(role);
     } catch (error) {
       toast({
         title: "Something went wrong",
@@ -137,7 +138,7 @@ const index = () => {
                         <option value="">Select a role</option>
                         <option value="student">Student</option>
                         <option value="agent">Agent</option>
-                        <option value="instructor" disabled>Instructor</option>
+                        <option value="instructor">Instructor</option>
                       </select>
                     )}
                   />
