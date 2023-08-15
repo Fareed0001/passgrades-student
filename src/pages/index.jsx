@@ -82,11 +82,11 @@ export default function Home() {
               <div className="row">
                 <div className="first-div-col1 col-md order-md-2">
                   <Image
-                    height={100}
-                    width={100}
                     className="first-div-gif"
                     src="/images/landing-page-images/e-learning.gif"
-                    alt="e-learning gif"
+                    alt="e-learning gif" width={600} // Adjust the width to the desired size
+                    height={600} // Adjust the height to the desired size
+                    layout="responsive" // Set layout to responsive
                     priority
                   />
                 </div>
@@ -104,14 +104,14 @@ export default function Home() {
                   </p>
 
                   <section className="">
-                      <button
-                        type="button"
-                        className="nav-button try-now-button signup-link"
-                        onClick={() => signIn()}
-                      >
+                    <button
+                      type="button"
+                      className="nav-button try-now-button signup-link"
+                      onClick={() => signIn()}
+                    >
                       <BiSolidLogInCircle className="animate-pulse play-video-icon0" />{" "}
-                        Sign in
-                      </button>
+                      Sign in
+                    </button>
                     <Link href="/auth/signup">
                       <button
                         type="button"
@@ -730,11 +730,12 @@ export default function Home() {
               <div className="row">
                 <div className="col-12 col-lg-6 third-div-col0">
                   <Image
-                    height={100}
-                    width={100}
                     className="third-div-img"
                     src="/images/landing-page-images/scale-up.png"
                     alt="scale-up.jpg"
+                    width={600} // Adjust the width to the desired size
+                    height={600} // Adjust the height to the desired size
+                    layout="responsive" // Set layout to responsive
                   />
 
                 </div>
@@ -771,9 +772,10 @@ export default function Home() {
                       <Image
                         src="/images/landing-page-images/instructor1.jpg"
                         className="forth-div-card-img card-img-top"
-                        alt="..."
-                        width={100} // Adjust the width as needed
-                        height={100} // Adjust the height as needed
+                        alt="landing page image"
+                        width={600} // Adjust the width to the desired size
+                        height={600} // Adjust the height to the desired size
+                        layout="responsive" // Set layout to responsive
                       />
                       <div className="forth-div-card-body">
                         <p className="forth-div-card-header">
@@ -793,9 +795,10 @@ export default function Home() {
                       <Image
                         src="/images/landing-page-images/instructor.jpg"
                         className="forth-div-card-img card-img-top"
-                        alt="..."
-                        width={100} // Adjust the width as needed
-                        height={100} // Adjust the height as needed
+                        alt="landing page image"
+                        width={600} // Adjust the width to the desired size
+                        height={600} // Adjust the height to the desired size
+                        layout="responsive" // Set layout to responsive
                       />
 
                       <div className="forth-div-card-body">
@@ -817,8 +820,9 @@ export default function Home() {
                         src="/images/landing-page-images/instructor6.jpg"
                         className="forth-div-card-img card-img-top"
                         alt="landing page image"
-                        width={100} // Adjust the width as needed
-                        height={100} // Adjust the height as needed
+                        width={600} // Adjust the width to the desired size
+                        height={600} // Adjust the height to the desired size
+                        layout="responsive" // Set layout to responsive
                       />
 
                       <div className="forth-div-card-body">
@@ -840,8 +844,9 @@ export default function Home() {
                         src="/images/landing-page-images/instructor3.jpg"
                         className="forth-div-card-img card-img-top"
                         alt="landing page image"
-                        width={100} // Adjust the width as needed
-                        height={100} // Adjust the height as needed
+                        width={600} // Adjust the width to the desired size
+                        height={600} // Adjust the height to the desired size
+                        layout="responsive" // Set layout to responsive
                       />
 
                       <div className="forth-div-card-body">
@@ -870,8 +875,9 @@ export default function Home() {
                     className="fifth-div-img"
                     src="/images/landing-page-images/track-learning.gif"
                     alt="scale-up.jpg"
-                    width={100} // Adjust the width as needed
-                    height={100} // Adjust the height as needed
+                    width={600} // Adjust the width to the desired size
+                    height={600} // Adjust the height to the desired size
+                    layout="responsive" // Set layout to responsive
                   />
 
                 </div>
@@ -913,8 +919,9 @@ export default function Home() {
                     className="seventh-div-img"
                     src="/images/landing-page-images/register-gif.gif"
                     alt="register-gif"
-                    width={100} // Adjust the width as needed
-                    height={100} // Adjust the height as needed
+                    width={100} // Adjust the width to the desired size
+                    height={100} // Adjust the height to the desired size
+                    layout="responsive" // Set layout to responsive
                   />
                 </div>
                 <div className="seventh-div-col1 col-md">

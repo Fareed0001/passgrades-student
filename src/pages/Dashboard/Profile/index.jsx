@@ -83,9 +83,9 @@ const Index = () => {
           className="user-profile-image"
           src="/images/landing-page-images/black.jpg"
           alt="user image"
-          width={100}
-          height={100}
-          layout="fixed"
+          width={800} // Adjust the width to the desired size
+          height={600} // Adjust the height to the desired size
+          layout="responsive" // Set layout to responsive
         />
         <label for="profilePicInput" className="user-camera-icon-label">
           <BsFillCameraFill className="user-camera-icon" />

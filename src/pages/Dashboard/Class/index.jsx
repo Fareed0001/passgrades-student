@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 import axios from "@/utils/axios";
 import Router from "next/router";
 import { Loader2Icon } from "lucide-react";
-import Image from "next/image";
 
 
 //Card Component

@@ -18,8 +18,9 @@ const Dashboard = () => {
           className="dashboard-content-board-img"
           src="/images/dashboard-images/dashboard.jpg"
           alt="dashboard-animation"
-          width={100} // Adjust the width
-          height={100} // Adjust the height
+          width={800} // Adjust the width to the desired size
+          height={600} // Adjust the height to the desired size
+          layout="responsive" // Set layout to responsive
           priority
         />
       </div>

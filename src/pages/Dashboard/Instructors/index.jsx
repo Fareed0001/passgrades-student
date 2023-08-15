@@ -11,9 +11,10 @@ const index = () => {
             <Image
               src="/images/landing-page-images/instructor1.jpg"
               className="forth-div-card-img card-img-top"
-              alt="..."
-              width={100} // Adjust the width as needed
-              height={100} // Adjust the height as needed
+              alt="landing page image"
+              width={800} // Adjust the width to the desired size
+              height={600} // Adjust the height to the desired size
+              layout="responsive" // Set layout to responsive
             />
             <div className="forth-div-card-body">
               <p className="forth-div-card-header">
@@ -31,9 +32,10 @@ const index = () => {
             <Image
               src="/images/landing-page-images/instructor.jpg"
               className="forth-div-card-img card-img-top"
-              alt="..."
-              width={100} // Adjust the width as needed
-              height={100} // Adjust the height as needed
+              alt="landing page image"
+              width={800} // Adjust the width to the desired size
+              height={600} // Adjust the height to the desired size
+              layout="responsive" // Set layout to responsive
             />
 
             <div className="forth-div-card-body">
@@ -53,8 +55,9 @@ const index = () => {
               src="/images/landing-page-images/instructor6.jpg"
               className="forth-div-card-img card-img-top"
               alt="landing page image"
-              width={100} // Adjust the width as needed
-              height={100} // Adjust the height as needed
+              width={800} // Adjust the width to the desired size
+              height={600} // Adjust the height to the desired size
+              layout="responsive" // Set layout to responsive
             />
 
             <div className="forth-div-card-body">
@@ -74,8 +77,9 @@ const index = () => {
               src="/images/landing-page-images/instructor3.jpg"
               className="forth-div-card-img card-img-top"
               alt="landing page image"
-              width={100} // Adjust the width as needed
-              height={100} // Adjust the height as needed
+              width={800} // Adjust the width to the desired size
+              height={600} // Adjust the height to the desired size
+              layout="responsive" // Set layout to responsive
             />
 
             <div className="forth-div-card-body">

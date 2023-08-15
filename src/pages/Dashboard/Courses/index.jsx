@@ -6,7 +6,7 @@ import { Loader2Icon } from 'lucide-react';
 import Router, { useRouter } from 'next/router';
 import { useToast } from '@/Components/ui/use-toast';
 
-const CourseCard = ({ image, title, description, price, id, studentId }) => {
+const CourseCard = ({ image, title, description, studentPrice, agentPrice, id, studentId }) => {
   const [showDescription, setShowDescription] = useState(false);
   const { toast } = useToast();
   const router = useRouter();
@@ -25,7 +25,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
   const config = {
     public_key: process.env.NEXT_PUBLIC_FLUTTERWAVE_KEY,
     tx_ref: Date.now(),
-    amount: price,
+    amount: role === 'agent' ? agentPrice : studentPrice,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
@@ -36,7 +36,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
     customizations: {
       title: title,
       description: description,
-      // logo: image,
+      logo: image,
     },
   };
 
@@ -56,7 +56,7 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
       if (studentId) {
         try {
           const queryParams = new URLSearchParams({
-            amt: price,
+            amt: role === 'agent' ? agentPrice : studentPrice,
             tuid: transactionId,
             cid: id,
             sid: studentId,
@@ -127,11 +127,12 @@ const CourseCard = ({ image, title, description, price, id, studentId }) => {
               showDescription ? '' : 'course-card-text-hide'
             }`}
           >
+            {role === 'agent' ? `Student price is ₦${studentPrice} <br />` : ''}
             {description}
           </p>
         </div>
         <p className="course-price">
-          ₦{price}
+          ₦{role === 'agent' ? agentPrice : studentPrice}
           <button
             className="course-price-span"
             onClick={() =>
@@ -210,9 +211,8 @@ const Index = (props) => {
               image={course.cover_image}
               title={course.title}
               description={course.description}
-              price={`${
-                role === 'student' ? course.student_price : course.agent_price
-              }`}
+              studentPrice={course.student_price}
+              agentPrice={course.agent_price}
               studentId={studentId}
             />
           ))
