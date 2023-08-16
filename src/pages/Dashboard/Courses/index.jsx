@@ -127,7 +127,8 @@ const CourseCard = ({ image, title, description, studentPrice, agentPrice, id, s
               showDescription ? '' : 'course-card-text-hide'
             }`}
           >
-            {role === 'agent' ? `Student price is ₦${studentPrice} <br />` : ''}
+            {role === 'agent' ? `Student price is ₦${studentPrice}` : ''}
+            <br />
             {description}
           </p>
         </div>
