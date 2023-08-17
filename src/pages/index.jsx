@@ -5,7 +5,6 @@ import Link from "next/link";
 import { BsFillCheckCircleFill, BsFillSignIntersectionFill } from "react-icons/bs";
 import { BiSolidLogInCircle } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
-import { signIn, useSession } from "next-auth/react";
 const inter = Inter({ subsets: ["latin"] });
 import Image from "next/image";
 
@@ -56,13 +55,14 @@ export default function Home() {
                       </p>
                     </div>
                     <section className="nav-div-2">
-                      <button
-                        type="button"
-                        className="nav-button nav-sign-in"
-                        onClick={() => signIn()}
-                      >
-                        Sign in
-                      </button>
+                      <Link href="/auth/Signin">
+                        <button
+                          type="button"
+                          className="nav-button nav-sign-in"
+                        >
+                          Sign in
+                        </button>
+                      </Link>
                       <Link href="/auth/signup">
                         <button
                           type="button"
@@ -86,7 +86,6 @@ export default function Home() {
                     src="/images/landing-page-images/e-learning.gif"
                     alt="e-learning gif" width={600} // Adjust the width to the desired size
                     height={600} // Adjust the height to the desired size
-                    layout="responsive" // Set layout to responsive
                     priority
                   />
                 </div>
@@ -104,14 +103,15 @@ export default function Home() {
                   </p>
 
                   <section className="">
-                    <button
-                      type="button"
-                      className="nav-button try-now-button signup-link"
-                      onClick={() => signIn()}
-                    >
-                      <BiSolidLogInCircle className="animate-pulse play-video-icon0" />{" "}
-                      Sign in
-                    </button>
+                    <Link href="/auth/Signin">
+                      <button
+                        type="button"
+                        className="nav-button try-now-button signup-link"
+                      >
+                        <BiSolidLogInCircle className="animate-pulse play-video-icon0" />{" "}
+                        Sign in
+                      </button>
+                    </Link>
                     <Link href="/auth/signup">
                       <button
                         type="button"
@@ -721,6 +721,8 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                
               </div>
             </div>
             {/* <!-- SECOND DIV END -->
@@ -735,7 +737,6 @@ export default function Home() {
                     alt="scale-up.jpg"
                     width={600} // Adjust the width to the desired size
                     height={600} // Adjust the height to the desired size
-                    layout="responsive" // Set layout to responsive
                   />
 
                 </div>
@@ -775,7 +776,6 @@ export default function Home() {
                         alt="landing page image"
                         width={600} // Adjust the width to the desired size
                         height={600} // Adjust the height to the desired size
-                        layout="responsive" // Set layout to responsive
                       />
                       <div className="forth-div-card-body">
                         <p className="forth-div-card-header">
@@ -798,7 +798,6 @@ export default function Home() {
                         alt="landing page image"
                         width={600} // Adjust the width to the desired size
                         height={600} // Adjust the height to the desired size
-                        layout="responsive" // Set layout to responsive
                       />
 
                       <div className="forth-div-card-body">
@@ -822,7 +821,6 @@ export default function Home() {
                         alt="landing page image"
                         width={600} // Adjust the width to the desired size
                         height={600} // Adjust the height to the desired size
-                        layout="responsive" // Set layout to responsive
                       />
 
                       <div className="forth-div-card-body">
@@ -846,7 +844,6 @@ export default function Home() {
                         alt="landing page image"
                         width={600} // Adjust the width to the desired size
                         height={600} // Adjust the height to the desired size
-                        layout="responsive" // Set layout to responsive
                       />
 
                       <div className="forth-div-card-body">
@@ -877,7 +874,6 @@ export default function Home() {
                     alt="scale-up.jpg"
                     width={600} // Adjust the width to the desired size
                     height={600} // Adjust the height to the desired size
-                    layout="responsive" // Set layout to responsive
                   />
 
                 </div>
@@ -921,7 +917,6 @@ export default function Home() {
                     alt="register-gif"
                     width={100} // Adjust the width to the desired size
                     height={100} // Adjust the height to the desired size
-                    layout="responsive" // Set layout to responsive
                   />
                 </div>
                 <div className="seventh-div-col1 col-md">
