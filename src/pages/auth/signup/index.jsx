@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import { RegisterSchema } from "@/utils/schema";
 import Link from "next/link";
 import { useToast } from "@/Components/ui/use-toast";
@@ -25,11 +25,12 @@ const Index = () => {
       phonenumber: "",
       password: "",
       confirmPassword: "",
+      role: "",
     },
     resolver: yupResolver(RegisterSchema),
   });
   const password = watch("password");
-  const confirmpassword = watch("confirmpassword");
+  const confirmpassword = watch("confirmPassword");
 
   const submitHandler = async (data) => {
     const baseurl = process.env.NEXT_PUBLIC_BASE_URL;
@@ -41,7 +42,6 @@ const Index = () => {
       password,
       role,
     } = data;
-    console.log(role);
 
     try {
       let formattedData = {
@@ -59,7 +59,6 @@ const Index = () => {
         };
       }
 
-      console.log(formattedData);
       const endpoint =
         role === "student" ? "student/register" : "agent/register";
 
@@ -81,7 +80,14 @@ const Index = () => {
       }
 
       await response.json();
-      router.push("/auth/Signin");
+
+      // Redirect and show an alert message for agent role
+      if (role === "agent") {
+        router.push("/");
+        alert("Your application is successful and under review. Try signing up later to know if your application is accepted or rejected.");
+      } else {
+        router.push("/auth/Signin");
+      }
     } catch (error) {
       toast({
         title: "Error",
