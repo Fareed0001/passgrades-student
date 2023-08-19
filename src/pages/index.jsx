@@ -7,8 +7,37 @@ import { BiSolidLogInCircle } from "react-icons/bi";
 import { IoMdAdd } from "react-icons/io";
 const inter = Inter({ subsets: ["latin"] });
 import Image from "next/image";
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    const cards = document.querySelectorAll(".second-div-card");
+    
+    cards.forEach(function (card, index) {
+      card.addEventListener("click", function () {
+        const modalId = "myModal" + (index + 1);
+        const modal = document.getElementById(modalId);
+        
+        if (modal) {
+          modal.style.display = "block";
+        }
+      });
+    });
+    
+    // Close modal when the close button is clicked
+    const closeButtons = document.querySelectorAll(".modal .btn-close");
+    
+    closeButtons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        const modal = button.closest(".modal");
+        
+        if (modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  }, []);
+
   return (
     <>
       <div className="landingPageDiv">
